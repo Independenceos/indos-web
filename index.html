@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Independence OS</title>
 <meta name="description" content="Independence OS runs its own clinics and builds the software that runs them. An operating system for American healthcare. Pre-launch.">
-<meta name="color-scheme" content="dark">
+<meta name="color-scheme" content="light">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect width='20' height='20' rx='5' fill='%2313140F'/%3E%3Crect x='2.5' y='2.5' width='15' height='15' rx='3.5' fill='none' stroke='%23ECEAE0' stroke-width='1.4'/%3E%3Crect x='7' y='7' width='6' height='6' rx='1.4' fill='%2362B488'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -456,18 +456,41 @@
   .flow .nHub{fill:rgba(98,180,136,.13);stroke:#62B488;stroke-width:1.6;}
   .flow .ta-s{text-anchor:start;} .flow .ta-m{text-anchor:middle;} .flow .ta-e{text-anchor:end;}
   .cmap-wrap{margin:40px 0 0;overflow-x:auto;}
-  .cmap{width:100%;min-width:760px;max-width:1040px;height:auto;display:block;margin:0 auto;}
+  .cmap{width:100%;min-width:860px;max-width:988px;height:auto;display:block;margin:0 auto;}
+  .cmap .cgd{fill:var(--bone-3);fill-opacity:.13;}
+  .cmap .rim{fill:none;stroke:var(--bone-3);stroke-opacity:.16;stroke-width:1.2;stroke-dasharray:2 8;}
+  .cmap .ctick{fill:none;stroke:var(--bone-3);stroke-opacity:.5;stroke-width:1.4;stroke-linecap:round;}
+  .cmap .ccap{fill:var(--bone-3);font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;}
   .cmap .root{fill:rgba(102,179,166,.10);stroke:#66B3A6;stroke-width:1.5;}
-  .cmap .rname{fill:var(--bone);font-family:var(--serif);font-size:16px;font-weight:500;text-anchor:middle;}
+  .cmap .rk{fill:#66B3A6;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-anchor:middle;}
+  .cmap .rname{fill:var(--bone);font-family:var(--serif);font-size:17px;font-weight:500;text-anchor:middle;}
+  .cmap .rline{stroke:#66B3A6;stroke-opacity:.5;stroke-width:1.4;stroke-linecap:round;}
   .cmap .grp{fill:rgba(26,27,20,.7);stroke-width:1.4;}
-  .cmap .gname{fill:var(--bone);font-family:var(--sans);font-size:13.5px;font-weight:600;text-anchor:middle;}
+  .cmap .gtab{stroke:none;}
+  .cmap .gix{font-family:var(--mono);font-size:9px;letter-spacing:.1em;}
+  .cmap .gname{fill:var(--bone);font-family:var(--sans);font-size:12.5px;font-weight:600;text-anchor:middle;}
   .cmap .leaf{fill:rgba(26,27,20,.5);stroke-width:1.2;}
-  .cmap .lname{fill:var(--bone);font-family:var(--sans);font-size:13px;font-weight:600;}
-  .cmap .ldesc{fill:var(--bone-3);font-family:var(--sans);font-size:12px;}
-  .cmap .conn{fill:none;stroke-width:1.3;stroke-opacity:.5;}
   .cmap .lbar{stroke:none;}
+  .cmap .lname{fill:var(--bone);font-family:var(--sans);font-size:13.5px;font-weight:600;}
+  .cmap .ldesc{fill:var(--bone-3);font-family:var(--sans);font-size:11.5px;}
+  .cmap .ldiv{stroke:var(--line);stroke-width:1;}
+  .cmap .lix{fill:var(--bone-3);font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-anchor:end;}
+  .cmap .vtag{fill:none;stroke:var(--line);}
+  .cmap .vtx{fill:var(--bone-3);font-family:var(--mono);font-size:9px;letter-spacing:.04em;text-anchor:middle;}
+  .cmap .pt{stroke:none;} .cmap .jct{stroke:none;}
+  .cmap .conn{fill:none;stroke-width:1.4;stroke-opacity:.5;}
+  .cmap .flow{fill:none;stroke-width:1.6;stroke-dasharray:2 15;stroke-linecap:round;opacity:0;}
   .cmap .t{stroke:#66B3A6;} .cmap .g{stroke:#62B488;} .cmap .b{stroke:#6FAAD6;}
   .cmap .ft{fill:#66B3A6;} .cmap .fg{fill:#62B488;} .cmap .fb{fill:#6FAAD6;}
+  .cmap .gix.t{fill:#66B3A6;} .cmap .gix.g{fill:#62B488;} .cmap .gix.b{fill:#6FAAD6;}
+  .js .cmap .conn{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .95s ease;}
+  .js .reveal.in .cmap .conn{stroke-dashoffset:0;}
+  .js .cmap .conn.c2{transition-delay:.32s;}
+  .js .cmap .pt,.js .cmap .jct{opacity:0;}
+  .js .reveal.in .cmap .pt,.js .reveal.in .cmap .jct{opacity:1;transition:opacity .5s ease .45s;}
+  .js .reveal.in .cmap .flow{opacity:.85;transition:opacity .5s ease .85s;animation:cmapflow 1.5s linear infinite .85s;}
+  @keyframes cmapflow{to{stroke-dashoffset:-17;}}
+  @media (prefers-reduced-motion:reduce){ .js .cmap .conn{stroke-dashoffset:0;transition:none;} .cmap .flow{display:none;} .js .cmap .pt,.js .cmap .jct{opacity:1;} }
   .vhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
   .eco-wrap{margin:42px 0 2px;}
   .eco-board{width:100%;max-width:880px;height:auto;display:block;margin:0 auto;}
@@ -499,6 +522,81 @@
   .pcred{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px;padding-right:18px;}
   .pbadge{font-family:var(--mono);font-size:10.2px;color:var(--green-2);border:1px solid var(--green-line);background:var(--green-soft);border-radius:999px;padding:2px 7px;line-height:1.35;white-space:nowrap;}
   .pbadge.muted{color:var(--bone-2);border-color:var(--line);background:rgba(236,234,224,.045);}
+
+  /* ===== theme toggle ===== */
+  .theme-toggle{margin-left:12px;width:34px;height:34px;padding:0;border-radius:9px;border:1px solid var(--line);background:transparent;color:var(--bone-2);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex:0 0 auto;transition:color .18s ease,border-color .18s ease,background .18s ease;}
+  .theme-toggle:hover{color:var(--bone);border-color:var(--green-line);background:var(--green-soft);}
+  .theme-toggle svg{width:17px;height:17px;display:block;}
+  .theme-toggle .i-moon{display:none;}
+  html[data-theme="light"] .theme-toggle .i-sun{display:none;}
+  html[data-theme="light"] .theme-toggle .i-moon{display:block;}
+
+  /* ===== light theme ===== */
+  html[data-theme="light"]{
+    --ink:#EDEBE1; --ink-2:#F6F4EC; --ink-3:#FBFAF4;
+    --bone:#1C1D16; --bone-2:#56564A; --bone-3:#7C7B6B;
+    --line:rgba(20,21,15,.12); --line-2:rgba(20,21,15,.06);
+    --green:#2C8175; --green-2:#37968A; --green-soft:rgba(44,129,117,.10); --green-line:rgba(44,129,117,.30);
+    --pos:#2C8A5C; --pos-2:#34A06D; --pos-soft:rgba(44,138,92,.11); --pos-line:rgba(44,138,92,.30);
+  }
+  html[data-theme="light"]{background:#EDEBE1;}
+  html[data-theme="light"] body::before{background:radial-gradient(900px 540px at 12% -6%, rgba(44,129,117,.11), transparent 56%), radial-gradient(840px 600px at 90% 8%, rgba(59,127,180,.12), transparent 58%), radial-gradient(900px 760px at 55% 116%, rgba(59,127,180,.08), transparent 60%), radial-gradient(700px 560px at 82% 60%, rgba(59,127,180,.05), transparent 60%), radial-gradient(640px 540px at 20% 82%, rgba(176,140,70,.07), transparent 60%), linear-gradient(180deg,#F0EEE5 0%,#EDEBE1 46%,#E8E5DB 100%);}
+  html[data-theme="light"] .aurora{background:radial-gradient(38% 40% at 24% 28%, rgba(44,129,117,.06), transparent 70%), radial-gradient(36% 38% at 78% 42%, rgba(59,127,180,.08), transparent 70%), radial-gradient(30% 32% at 55% 88%, rgba(176,140,70,.05), transparent 70%);}
+  html[data-theme="light"] header.nav.scrolled{background:rgba(246,244,236,.82);border-bottom:1px solid var(--line);}
+  html[data-theme="light"] .nav-links a:hover{color:var(--bone);background:rgba(20,21,15,.05);}
+  html[data-theme="light"] .nav-links a.current{color:var(--bone);background:rgba(20,21,15,.06);}
+  html[data-theme="light"] .pcard{background:linear-gradient(180deg, rgba(255,255,255,.80), rgba(248,246,239,.55));}
+  html[data-theme="light"] .pcard:hover{background:linear-gradient(180deg, #FFFFFF, rgba(250,248,242,.82));}
+  html[data-theme="light"] .person{background:linear-gradient(180deg, rgba(255,255,255,.72), rgba(248,246,239,.5));}
+  html[data-theme="light"] .person:hover{background:linear-gradient(180deg, #FFFFFF, rgba(250,248,242,.7));}
+  html[data-theme="light"] .a1{background:rgba(176,140,70,.13);color:#7A5C18;border-color:rgba(176,140,70,.30);}
+  html[data-theme="light"] .a2{background:rgba(44,138,92,.12);color:#226B45;border-color:rgba(44,138,92,.28);}
+  html[data-theme="light"] .a3{background:rgba(178,110,80,.12);color:#8A4A2E;border-color:rgba(178,110,80,.28);}
+  html[data-theme="light"] .a4{background:rgba(120,116,96,.13);color:#54533F;border-color:rgba(120,116,96,.28);}
+  html[data-theme="light"] .a5{background:rgba(120,100,150,.12);color:#574277;border-color:rgba(120,100,150,.28);}
+  html[data-theme="light"] .grp-green{--accent:#2C8175;--accent-soft:rgba(44,129,117,.12);--accent-line:rgba(44,129,117,.32);}
+  html[data-theme="light"] .grp-blue{--accent:#3B7FB4;--accent-soft:rgba(59,127,180,.12);--accent-line:rgba(59,127,180,.34);}
+  html[data-theme="light"] .grp-amber{--accent:#9B6E1F;--accent-soft:rgba(155,110,31,.12);--accent-line:rgba(155,110,31,.32);}
+  html[data-theme="light"] .grp-violet{--accent:#6E55A6;--accent-soft:rgba(110,85,166,.13);--accent-line:rgba(110,85,166,.34);}
+  html[data-theme="light"] .ac-green{--accent:#2C8A5C;--accent-soft:rgba(44,138,92,.12);--accent-line:rgba(44,138,92,.32);}
+  html[data-theme="light"] .ac-blue{--accent:#3B7FB4;--accent-soft:rgba(59,127,180,.12);--accent-line:rgba(59,127,180,.34);}
+  html[data-theme="light"] .pill.warn{color:#9B6E1F;border-color:rgba(155,110,31,.32);background:rgba(155,110,31,.10);}
+  html[data-theme="light"] .pbadge.muted{background:rgba(20,21,15,.045);}
+  html[data-theme="light"] .emap .mod{fill:rgba(252,251,246,.72);}
+  html[data-theme="light"] .emap .jx{stroke:#EAE7DD;}
+  html[data-theme="light"] .flow .node{fill:rgba(252,251,246,.78);stroke:rgba(20,21,15,.13);}
+  html[data-theme="light"] .cmap .grp{fill:rgba(252,251,246,.80);}
+  html[data-theme="light"] .cmap .leaf{fill:rgba(252,251,246,.66);}
+  html[data-theme="light"] .eco-board .port{fill:rgba(252,251,246,.84);}
+  html[data-theme="light"] .eco-board .jx{stroke:#EAE7DD;}
+  html[data-theme="light"] .eco-board .mod{fill:rgba(252,251,246,.72);}
+  html[data-theme="light"] section.band-soft{background:linear-gradient(180deg,#F4F2EA,#F0EEE4);}
+  html[data-theme="light"] section.band-green{background:radial-gradient(760px 380px at 50% 32%, rgba(44,138,92,.12), transparent 66%), #EFEEE5;border-top:1px solid var(--line);}
+  /* ===== team / roster ===== */
+  .roster .col-label{padding-top:3px;}
+  .roster .cl-ix{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--green);margin:0 0 10px;}
+  .roster .cl-name{display:block;font-size:16.5px;font-weight:600;color:var(--bone);line-height:1.18;letter-spacing:-.012em;}
+  .roster .cl-name::before{display:none;}
+  .roster .cl-rule{display:block;width:26px;height:2px;border-radius:2px;background:var(--green);opacity:.55;margin:12px 0 0;}
+  .roster .cl-meta{display:block;font-family:var(--mono);font-size:10.5px;color:var(--bone-3);letter-spacing:.04em;margin:11px 0 0;}
+  .people{display:grid;grid-template-columns:repeat(auto-fill,minmax(254px,1fr));gap:14px;}
+  .person{position:relative;display:block;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg, rgba(26,27,20,.72), rgba(18,19,14,.5));padding:17px 18px 16px 21px;overflow:hidden;transition:transform .25s ease,border-color .25s ease,background .25s ease;}
+  .person::before{content:"";position:absolute;left:0;top:16px;bottom:16px;width:2px;border-radius:0 2px 2px 0;background:var(--green);opacity:.34;transition:opacity .25s ease,top .25s ease,bottom .25s ease;}
+  .person:hover{transform:translateY(-3px);border-color:var(--green-line);background:linear-gradient(180deg, rgba(32,34,24,.82), rgba(22,24,17,.6));}
+  .person:hover::before{opacity:.95;top:11px;bottom:11px;}
+  .p-head{display:flex;align-items:center;gap:13px;}
+  .mtile{flex:0 0 auto;position:relative;width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:14.5px;font-weight:700;letter-spacing:.02em;border:1px solid var(--line);}
+  .mtile::after{content:"";position:absolute;right:5px;bottom:5px;width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;opacity:.45;}
+  .mtile img{width:100%;height:100%;object-fit:cover;display:block;border-radius:11px;}
+  .p-id{min-width:0;padding-right:24px;}
+  .pname{font-size:1rem;font-weight:600;color:var(--bone);margin:0;line-height:1.22;letter-spacing:-.01em;}
+  .prole-title{display:block;font-family:var(--mono);font-size:10.3px;letter-spacing:.05em;text-transform:uppercase;color:var(--green-2);margin:5px 0 0;line-height:1.35;}
+  .prole{font-size:.89rem;color:var(--bone-2);margin:13px 0 0;line-height:1.5;}
+  .pli{position:absolute;top:14px;right:14px;color:var(--bone-3);opacity:.6;transition:color .2s ease,opacity .2s ease;}
+  .pli:hover{color:var(--green-2);opacity:1;} .pli svg{display:block;}
+  .roster .joinbox{border:1px dashed var(--line);border-radius:14px;padding:19px 21px;background:linear-gradient(180deg, rgba(26,27,20,.4), rgba(18,19,14,.25));}
+  html[data-theme="light"] .roster .joinbox{background:linear-gradient(180deg, rgba(255,255,255,.5), rgba(248,246,239,.3));}
+  @media (max-width:520px){ .people{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -516,6 +614,10 @@
       <a data-nav="products" href="#products">Products</a>
       <a data-nav="vision" href="#vision">Vision</a>
       <a data-nav="team" href="#team">Team</a>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" aria-pressed="true" title="Toggle theme">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.1"></circle><path d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6M18.7 18.7l-1.6-1.6M6.9 6.9 5.3 5.3"></path></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.4A8 8 0 1 1 9.6 4 6.3 6.3 0 0 0 20 14.4z"></path></svg>
+      </button>
     </nav>
   </div>
 </header>
@@ -529,9 +631,9 @@
       <canvas class="hero-field" aria-hidden="true"></canvas>
       <div class="container hero-grid">
         <div class="hero-content">
-          <p class="eyebrow"><span class="sq"></span> An operating system for American healthcare</p>
-          <h1 class="hero">We run our own clinics, and build the software that runs them.</h1>
-          <p class="lead">Independence OS is a connected set of agents and models that handle the work of a medical practice, <b>from the front desk to the claim</b>. Everything we build goes to work in our own clinics first, then to everyone else's.</p>
+          <p class="eyebrow"><span class="sq"></span> We run our own clinics</p>
+          <h1 class="hero">Building the AI ecosystem for American healthcare.</h1>
+          <p class="lead">Independence OS is building <b>a suite of AI products</b> for the practice, across admin, diagnosis, insurance, and personalized care. We aim to bring better healthcare to far more people.</p>
           <div class="facts"><span>Houston and Bangalore</span><span class="d"></span><span>Six clinics</span><span class="d"></span><span>Launching v1</span></div>
         </div>
         <div class="hero-visual">
@@ -551,7 +653,7 @@
         <div class="sec-head">
           <p class="kicker"><span class="sq"></span> The system</p>
           <h2>A morning at the practice, handled.</h2>
-          <div class="prose"><p>One operating system across every surface of the clinic. Here is a slice of an ordinary morning, running on it.</p></div>
+          <div class="prose"><p>One system across every surface of the clinic, on an ordinary morning.</p></div>
           <span class="live-pill"><span class="live-dot"></span>Live in our clinics</span>
         </div>
         <div class="board">
@@ -603,8 +705,8 @@
           <div>
             <h2>Built in real clinics, not in a demo.</h2>
             <div class="prose">
-              <p>Healthcare in the United States runs on an enormous amount of work that has nothing to do with care. Scheduling, documentation, coding, claims, denials, follow-ups, quality measures. Most of it lands on physicians and their staff.</p>
-              <p>We are building the software that takes this work off their plate, so a practice can run with far less overhead. We build and run all of it inside our own clinics first, which gives us real patients, real billing, and real data instead of a sandbox. Once an agent is good enough for our practices, we extend it outward.</p>
+              <p>Most of a practice runs on work that has nothing to do with care: scheduling, coding, claims, follow-ups. We build the AI that takes it off the staff, proven on real patients and real billing in our own clinics before it goes anywhere else.</p>
+              
             </div>
           </div>
           <div class="aside">
@@ -625,40 +727,40 @@
         <div class="sec-head">
           <p class="kicker"><span class="sq"></span> What we build</p>
           <h2>One system, several products.</h2>
-          <div class="prose"><p>The surfaces above are these agents working together on a shared foundation. Here is what each one is, and what is coming next.</p></div>
+          <div class="prose"><p>The same products, working together on one shared foundation.</p></div>
         </div>
 
         <div class="row">
           <div class="col-label"><span class="cl-name">Foundation</span><span class="cl-desc">What everything else is built on.</span><ul class="cl-list"><li>Foundry</li><li>Models</li></ul><a class="cl-link" data-nav="products" href="#products">View details</a></div>
           <div class="pcards">
-            <div class="pcard"><p class="pc-cat">Data layer</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.7" rx="6.7" ry="2.7"/><path d="M5.3 5.7v6.6c0 1.5 3 2.7 6.7 2.7s6.7-1.2 6.7-2.7V5.7"/><path d="M5.3 9c0 1.5 3 2.7 6.7 2.7s6.7-1.2 6.7-2.7"/></svg></span><h4>Foundry</h4><p>The data layer underneath everything. It structures information from every clinic, product, and agent into the shared record the rest of the system reads from.</p></div>
-            <div class="pcard"><p class="pc-cat">Models</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5.5" r="2.3"/><circle cx="5.5" cy="17.5" r="2.3"/><circle cx="18.5" cy="17.5" r="2.3"/><path d="M10.8 7.5 6.5 15.4M13.2 7.5 17.5 15.4M7.8 17.5h8.4"/></svg></span><h4>Models</h4><p>Our own models for clinical and voice tasks. Today they power Scribe and our voice agents. Foundational healthcare models are next.</p></div>
+            <div class="pcard"><p class="pc-cat">Data layer</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.7" rx="6.7" ry="2.7"/><path d="M5.3 5.7v6.6c0 1.5 3 2.7 6.7 2.7s6.7-1.2 6.7-2.7V5.7"/><path d="M5.3 9c0 1.5 3 2.7 6.7 2.7s6.7-1.2 6.7-2.7"/></svg></span><h4>Foundry</h4><p>The data layer underneath everything. One shared record every product reads from and writes to.</p></div>
+            <div class="pcard"><p class="pc-cat">Models</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5.5" r="2.3"/><circle cx="5.5" cy="17.5" r="2.3"/><circle cx="18.5" cy="17.5" r="2.3"/><path d="M10.8 7.5 6.5 15.4M13.2 7.5 17.5 15.4M7.8 17.5h8.4"/></svg></span><h4>Models</h4><p>Our own clinical and voice models, with foundational healthcare models next.</p></div>
           </div>
         </div>
 
         <div class="row ac-green">
           <div class="col-label"><span class="cl-name">In the clinic</span><span class="cl-desc">The agents that run the visit and the front office.</span><ul class="cl-list"><li>Scribe</li><li>Clinics</li><li>Guardian</li></ul><a class="cl-link" data-nav="products" href="#products">View details</a></div>
           <div class="pcards">
-            <div class="pcard"><p class="pc-cat">Documentation</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3.5" width="12" height="17" rx="2"/><path d="M9 8.5h6M9 12h6M9 15.5h3.5"/></svg></span><h4>Scribe</h4><p>Sits in the visit and handles the writing. It transcribes the conversation, surfaces the patient's history beforehand, drafts the note and summary, and assigns ICD and CPT codes.</p></div>
-            <div class="pcard"><p class="pc-cat">Front desk</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h2.6l1.5 4-2.1 1.4a11.5 11.5 0 0 0 5.1 5.1l1.4-2.1 4 1.5V17a2.5 2.5 0 0 1-2.7 2.5A15.5 15.5 0 0 1 4.5 6.2 2.5 2.5 0 0 1 7 3.5Z"/></svg></span><h4>Clinics</h4><p>A voice-native agent for the front desk. It answers calls, books and moves appointments, and handles routine follow-ups.</p></div>
-            <div class="pcard"><p class="pc-cat">Care</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="4.5" width="13" height="15" rx="2"/><rect x="9" y="3" width="6" height="3.2" rx="1"/><path d="m9 12.2 2 2 3.4-4"/></svg></span><h4>Guardian</h4><p>Watches care over time. It draws on Clinics, Scribe, and RCM to follow HEDIS and preventive care, check dosages and adherence, and flag follow-ups.</p></div>
+            <div class="pcard"><p class="pc-cat">Documentation</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3.5" width="12" height="17" rx="2"/><path d="M9 8.5h6M9 12h6M9 15.5h3.5"/></svg></span><h4>Scribe</h4><p>Sits in the visit and writes the note, the summary, and the billing codes.</p></div>
+            <div class="pcard"><p class="pc-cat">Front desk</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h2.6l1.5 4-2.1 1.4a11.5 11.5 0 0 0 5.1 5.1l1.4-2.1 4 1.5V17a2.5 2.5 0 0 1-2.7 2.5A15.5 15.5 0 0 1 4.5 6.2 2.5 2.5 0 0 1 7 3.5Z"/></svg></span><h4>Clinics</h4><p>A voice agent for the front desk. It answers calls, books visits, and handles follow-ups.</p></div>
+            <div class="pcard"><p class="pc-cat">Care</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="4.5" width="13" height="15" rx="2"/><rect x="9" y="3" width="6" height="3.2" rx="1"/><path d="m9 12.2 2 2 3.4-4"/></svg></span><h4>Guardian</h4><p>Watches care over time: preventive measures, dosages, adherence, and gaps.</p></div>
           </div>
         </div>
 
         <div class="row ac-blue">
           <div class="col-label"><span class="cl-name">Revenue and operations</span><span class="cl-desc">Getting paid, and keeping the practice stocked.</span><ul class="cl-list"><li>RCM</li><li>Credentialing</li><li>Supply chain</li></ul><a class="cl-link" data-nav="products" href="#products">View details</a></div>
           <div class="pcards">
-            <div class="pcard"><p class="pc-cat">Billing</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6.5" width="18" height="11" rx="2"/><circle cx="12" cy="12" r="2.4"/><path d="M6.4 12h.02M17.6 12h.02"/></svg></span><h4>RCM</h4><p>The money side of a practice. It manages insurance claims, denials, and appeals.</p></div>
-            <div class="pcard"><p class="pc-cat">Eligibility</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="m9.8 9 1.5 1.5L14.4 7.4"/><path d="M8.7 13.4 7.6 20l4.4-2.1 4.4 2.1-1.1-6.6"/></svg></span><h4>Credentialing</h4><p>Checks patient eligibility and payer coverage so claims actually go through.</p></div>
-            <div class="pcard"><p class="pc-cat">Inventory</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="7" height="8" rx="1"/><rect x="13" y="11" width="7" height="8" rx="1"/><rect x="8.5" y="3.5" width="7" height="7" rx="1"/></svg></span><h4>Supply chain</h4><p>Tracks and automates a clinic's supplies and inventory, from placing orders to predicting what it will run low on.</p></div>
+            <div class="pcard"><p class="pc-cat">Billing</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6.5" width="18" height="11" rx="2"/><circle cx="12" cy="12" r="2.4"/><path d="M6.4 12h.02M17.6 12h.02"/></svg></span><h4>RCM</h4><p>The money side of a practice. It files claims and works denials and appeals.</p></div>
+            <div class="pcard"><p class="pc-cat">Eligibility</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="m9.8 9 1.5 1.5L14.4 7.4"/><path d="M8.7 13.4 7.6 20l4.4-2.1 4.4 2.1-1.1-6.6"/></svg></span><h4>Credentialing</h4><p>Checks eligibility and payer coverage so claims go through.</p></div>
+            <div class="pcard"><p class="pc-cat">Inventory</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="7" height="8" rx="1"/><rect x="13" y="11" width="7" height="8" rx="1"/><rect x="8.5" y="3.5" width="7" height="7" rx="1"/></svg></span><h4>Supply chain</h4><p>Tracks inventory and reorders before the clinic runs low.</p></div>
           </div>
         </div>
 
         <div class="row ac-green">
           <div class="col-label"><span class="cl-name">Beyond the clinic</span><span class="cl-desc">Where the system goes next.</span><ul class="cl-list"><li>OpenDoor</li><li>Bishop</li></ul><a class="cl-link" data-nav="products" href="#products">View details</a></div>
           <div class="pcards">
-            <div class="pcard"><p class="pc-cat">Marketplace</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5 5.3 5.2h13.4L20 9.5"/><path d="M5 9.5v9.3a.7.7 0 0 0 .7.7h12.6a.7.7 0 0 0 .7-.7V9.5"/><path d="M10 20v-4.5h4V20"/></svg></span><h4>OpenDoor</h4><p>A marketplace for buying and selling medical practices. It is how we find and acquire clinics today, and how others will in time.</p></div>
-            <div class="pcard"><p class="pc-cat">Patient</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.3"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/></svg></span><h4>Bishop <span class="tag">v2</span></h4><p>A personalised health assistant for patients. It connects to a person's records, labs, and daily activity, and helps them manage their own health. Guardian is the reasoning layer behind it.</p></div>
+            <div class="pcard"><p class="pc-cat">Marketplace</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5 5.3 5.2h13.4L20 9.5"/><path d="M5 9.5v9.3a.7.7 0 0 0 .7.7h12.6a.7.7 0 0 0 .7-.7V9.5"/><path d="M10 20v-4.5h4V20"/></svg></span><h4>OpenDoor</h4><p>A marketplace for buying and selling practices, and how we acquire clinics.</p></div>
+            <div class="pcard"><p class="pc-cat">Patient</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.3"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/></svg></span><h4>Bishop <span class="tag">v2</span></h4><p>A personal health assistant for patients, connected to their records, labs, and daily activity.</p></div>
           </div>
         </div>
       </div>
@@ -669,26 +771,26 @@
         <div class="sec-head">
           <p class="kicker"><span class="sq"></span> Where we are</p>
           <h2>Launching v1 now.</h2>
-          <div class="prose"><p>We are putting v1 into our own clinics. As it runs, we collect data, build the harnesses to measure it, and make the agents and models better. That is what the next version is built on.</p></div>
+          <div class="prose"><p>v1 is going into our own clinics now. The data it produces trains the next generation of agents and models.</p></div>
         </div>
         <div class="timeline">
           <div class="tphase">
             <div class="tnode">01</div>
             <p class="twhen">v1, now</p>
             <h4>Live in our clinics</h4>
-            <p>The agents go into our own practices. Real visits, real claims, and real data from day one.</p>
+            <p>Into our own practices, on real visits, claims, and data from day one.</p>
           </div>
           <div class="tphase">
             <div class="tnode">02</div>
             <p class="twhen">Next</p>
             <h4>Data and models</h4>
-            <p>We turn that data into evaluation harnesses, stronger agents, and our own foundational models.</p>
+            <p>That data becomes harnesses, stronger agents, and our own foundational models.</p>
           </div>
           <div class="tphase">
             <div class="tnode">03</div>
             <p class="twhen">v2</p>
             <h4>Bishop and beyond</h4>
-            <p>The next generation, including Bishop, and the start of expanding to practices beyond our own.</p>
+            <p>The next generation, including Bishop, and expansion beyond our own clinics.</p>
           </div>
         </div>
         <p class="note">We are growing quickly.</p>
@@ -702,7 +804,7 @@
           <div>
             <h2>Six practices of our own.</h2>
             <div class="prose">
-              <p>We own and operate six clinics in the United States. The first is Roots Health (Nag Pediatrics) in Pasadena, Texas, a busy pediatric practice caring for thousands of patients. These clinics are where everything we build is used first, and the standard it has to meet. We are actively acquiring more.</p>
+              <p>We own and operate six clinics in the US, starting with Roots Health (Nag Pediatrics), a pediatric practice in Pasadena, Texas. They are where everything we build is used first, and the bar it has to clear.</p>
             </div>
           </div>
           <div class="practice">
@@ -725,7 +827,7 @@
           <span class="sq"></span>
           <p class="statement">A physician should be able to stay independent, and still keep their attention on patients.</p>
           <div class="prose">
-            <p>Running a practice has become so heavy that many doctors hand their independence to larger systems just to manage it, and lose time with patients along the way. We think that operational weight is exactly the kind of thing software should carry. If we get this right, a practice can stay its own, run well, and put care back at the center.</p>
+            <p>Running a practice has become so heavy that many doctors give up their independence just to cope. That operational weight is exactly what software should carry, so a practice can stay its own and keep care at the center.</p>
           </div>
         </div>
       </div>
@@ -751,73 +853,143 @@
           <h2>Every part of a clinic, and what runs it.</h2>
         </div>
         <div class="cmap-wrap">
-          <svg class="cmap" viewBox="0 0 1040 714" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A map of a clinic and which products run each part">
-            <rect class="root" x="30" y="323" width="176" height="60" rx="12"></rect>
-            <text class="rname" x="118" y="349">Running</text>
-            <text class="rname" x="118" y="369">a clinic</text>
-            <path class="conn t" d="M206,353 H219 V86 H232"></path>
-            <rect class="grp t" x="232" y="63" width="210" height="46" rx="10"></rect>
-            <text class="gname" x="337" y="90">Foundation</text>
-            <path class="conn g" d="M206,353 H219 V254 H232"></path>
-            <rect class="grp g" x="232" y="231" width="210" height="46" rx="10"></rect>
-            <text class="gname" x="337" y="258">In the clinic</text>
-            <path class="conn b" d="M206,353 H219 V452 H232"></path>
-            <rect class="grp b" x="232" y="429" width="210" height="46" rx="10"></rect>
-            <text class="gname" x="337" y="456">Revenue and ops</text>
-            <path class="conn g" d="M206,353 H219 V620 H232"></path>
-            <rect class="grp g" x="232" y="597" width="210" height="46" rx="10"></rect>
-            <text class="gname" x="337" y="624">Beyond the clinic</text>
-            <path class="conn t" d="M442,86 H456 V56 H470"></path>
-            <rect class="leaf t" x="470" y="30" width="540" height="52" rx="9"></rect>
-            <rect class="lbar ft" x="470" y="40" width="3.5" height="32" rx="1.5"></rect>
-            <text class="lname" x="492" y="52">Foundry</text>
-            <text class="ldesc" x="492" y="70">the shared record under everything</text>
-            <path class="conn t" d="M442,86 H456 V116 H470"></path>
-            <rect class="leaf t" x="470" y="90" width="540" height="52" rx="9"></rect>
-            <rect class="lbar ft" x="470" y="100" width="3.5" height="32" rx="1.5"></rect>
-            <text class="lname" x="492" y="112">Models</text>
-            <text class="ldesc" x="492" y="130">our clinical and voice models</text>
-            <path class="conn g" d="M442,254 H456 V194 H470"></path>
-            <rect class="leaf g" x="470" y="168" width="540" height="52" rx="9"></rect>
-            <rect class="lbar fg" x="470" y="178" width="3.5" height="32" rx="1.5"></rect>
-            <text class="lname" x="492" y="190">Scribe</text>
-            <text class="ldesc" x="492" y="208">writes the note, assigns the codes</text>
-            <path class="conn g" d="M442,254 H456 V254 H470"></path>
-            <rect class="leaf g" x="470" y="228" width="540" height="52" rx="9"></rect>
-            <rect class="lbar fg" x="470" y="238" width="3.5" height="32" rx="1.5"></rect>
-            <text class="lname" x="492" y="250">Clinics</text>
-            <text class="ldesc" x="492" y="268">answers calls, books visits</text>
-            <path class="conn g" d="M442,254 H456 V314 H470"></path>
-            <rect class="leaf g" x="470" y="288" width="540" height="52" rx="9"></rect>
-            <rect class="lbar fg" x="470" y="298" width="3.5" height="32" rx="1.5"></rect>
-            <text class="lname" x="492" y="310">Guardian</text>
-            <text class="ldesc" x="492" y="328">tracks care, gaps, and adherence</text>
-            <path class="conn b" d="M442,452 H456 V392 H470"></path>
-            <rect class="leaf b" x="470" y="366" width="540" height="52" rx="9"></rect>
-            <rect class="lbar fb" x="470" y="376" width="3.5" height="32" rx="1.5"></rect>
-            <text class="lname" x="492" y="388">RCM</text>
-            <text class="ldesc" x="492" y="406">files claims, works denials</text>
-            <path class="conn b" d="M442,452 H456 V452 H470"></path>
-            <rect class="leaf b" x="470" y="426" width="540" height="52" rx="9"></rect>
-            <rect class="lbar fb" x="470" y="436" width="3.5" height="32" rx="1.5"></rect>
-            <text class="lname" x="492" y="448">Credentialing</text>
-            <text class="ldesc" x="492" y="466">verifies coverage and payers</text>
-            <path class="conn b" d="M442,452 H456 V512 H470"></path>
-            <rect class="leaf b" x="470" y="486" width="540" height="52" rx="9"></rect>
-            <rect class="lbar fb" x="470" y="496" width="3.5" height="32" rx="1.5"></rect>
-            <text class="lname" x="492" y="508">Supply chain</text>
-            <text class="ldesc" x="492" y="526">tracks and reorders inventory</text>
-            <path class="conn g" d="M442,620 H456 V590 H470"></path>
-            <rect class="leaf g" x="470" y="564" width="540" height="52" rx="9"></rect>
-            <rect class="lbar fg" x="470" y="574" width="3.5" height="32" rx="1.5"></rect>
-            <text class="lname" x="492" y="586">OpenDoor</text>
-            <text class="ldesc" x="492" y="604">how we buy and run practices</text>
-            <path class="conn g" d="M442,620 H456 V650 H470"></path>
-            <rect class="leaf g" x="470" y="624" width="540" height="52" rx="9"></rect>
-            <rect class="lbar fg" x="470" y="634" width="3.5" height="32" rx="1.5"></rect>
-            <text class="lname" x="492" y="646">Bishop</text>
-            <text class="ldesc" x="492" y="664">a health assistant for the patient</text>
-          </svg>
+          <svg class="cmap" viewBox="0 0 988 726" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A map of a clinic and which products run each part">
+            <defs><pattern id="cmapgrid" width="26" height="26" patternUnits="userSpaceOnUse"><circle class="cgd" cx="1" cy="1" r="1"></circle></pattern></defs>
+            <rect x="12" y="12" width="964" height="702" fill="url(#cmapgrid)"></rect>
+            <rect class="rim" x="12" y="12" width="964" height="702" rx="10"></rect>
+            <path class="ctick" d="M12,30 V12 H30"></path>
+            <path class="ctick" d="M958,12 H976 V30"></path>
+            <path class="ctick" d="M12,696 V714 H30"></path>
+            <path class="ctick" d="M958,714 H976 V696"></path>
+            <text class="ccap" x="28" y="702">PRACTICE MAP / 10 PRODUCTS</text>
+            <path class="conn t" pathLength="1" d="M218,353 H236 V86 H250"></path>
+            <path class="conn g" pathLength="1" d="M218,353 H236 V254 H250"></path>
+            <path class="conn b" pathLength="1" d="M218,353 H236 V452 H250"></path>
+            <path class="conn g" pathLength="1" d="M218,353 H236 V620 H250"></path>
+            <path class="conn t c2" pathLength="1" d="M446,86 H500 V56 H556"></path>
+            <path class="conn t c2" pathLength="1" d="M446,86 H500 V116 H556"></path>
+            <path class="conn g c2" pathLength="1" d="M446,254 H500 V220 H556"></path>
+            <path class="conn g c2" pathLength="1" d="M446,254 H500 V280 H556"></path>
+            <path class="conn g c2" pathLength="1" d="M446,254 H500 V340 H556"></path>
+            <path class="conn b c2" pathLength="1" d="M446,452 H500 V418 H556"></path>
+            <path class="conn b c2" pathLength="1" d="M446,452 H500 V478 H556"></path>
+            <path class="conn b c2" pathLength="1" d="M446,452 H500 V538 H556"></path>
+            <path class="conn g c2" pathLength="1" d="M446,620 H500 V616 H556"></path>
+            <path class="conn g c2" pathLength="1" d="M446,620 H500 V676 H556"></path>
+            <path class="flow t" d="M218,353 H236 V86 H250"></path>
+            <path class="flow g" d="M218,353 H236 V254 H250"></path>
+            <path class="flow b" d="M218,353 H236 V452 H250"></path>
+            <path class="flow g" d="M218,353 H236 V620 H250"></path>
+            <path class="flow t" d="M446,86 H500 V56 H556"></path>
+            <path class="flow t" d="M446,86 H500 V116 H556"></path>
+            <path class="flow g" d="M446,254 H500 V220 H556"></path>
+            <path class="flow g" d="M446,254 H500 V280 H556"></path>
+            <path class="flow g" d="M446,254 H500 V340 H556"></path>
+            <path class="flow b" d="M446,452 H500 V418 H556"></path>
+            <path class="flow b" d="M446,452 H500 V478 H556"></path>
+            <path class="flow b" d="M446,452 H500 V538 H556"></path>
+            <path class="flow g" d="M446,620 H500 V616 H556"></path>
+            <path class="flow g" d="M446,620 H500 V676 H556"></path>
+            <circle class="jct ft" cx="236" cy="353" r="2.4"></circle>
+            <circle class="jct ft" cx="236" cy="86" r="2"></circle>
+            <circle class="jct fg" cx="236" cy="254" r="2"></circle>
+            <circle class="jct fb" cx="236" cy="452" r="2"></circle>
+            <circle class="jct fg" cx="236" cy="620" r="2"></circle>
+            <rect class="root" x="28" y="293" width="190" height="120" rx="16"></rect>
+            <text class="rk" x="123" y="326">PRACTICE</text>
+            <text class="rname" x="123" y="357">Running</text>
+            <text class="rname" x="123" y="380">a clinic</text>
+            <path class="rline" d="M98,393 H148"></path>
+            <circle class="pt ft" cx="218" cy="353" r="4"></circle>
+            <rect class="grp t" x="250" y="60" width="196" height="52" rx="10"></rect>
+            <rect class="gtab ft" x="250" y="73" width="3" height="26" rx="1.5"></rect>
+            <text class="gix t" x="268" y="79">01</text>
+            <text class="gname" x="348" y="91">Foundation</text>
+            <rect class="grp g" x="250" y="228" width="196" height="52" rx="10"></rect>
+            <rect class="gtab fg" x="250" y="241" width="3" height="26" rx="1.5"></rect>
+            <text class="gix g" x="268" y="247">02</text>
+            <text class="gname" x="348" y="259">In the clinic</text>
+            <rect class="grp b" x="250" y="426" width="196" height="52" rx="10"></rect>
+            <rect class="gtab fb" x="250" y="439" width="3" height="26" rx="1.5"></rect>
+            <text class="gix b" x="268" y="445">03</text>
+            <text class="gname" x="348" y="457">Revenue and ops</text>
+            <rect class="grp g" x="250" y="594" width="196" height="52" rx="10"></rect>
+            <rect class="gtab fg" x="250" y="607" width="3" height="26" rx="1.5"></rect>
+            <text class="gix g" x="268" y="613">04</text>
+            <text class="gname" x="348" y="625">Beyond the clinic</text>
+            <rect class="leaf t" x="556" y="30" width="384" height="52" rx="10"></rect>
+            <rect class="lbar ft" x="556" y="40" width="3" height="32" rx="1.5"></rect>
+            <circle class="pt ft" cx="556" cy="56" r="3.5"></circle>
+            <text class="lname" x="582" y="52">Foundry</text>
+            <text class="ldesc" x="582" y="69">the shared record under everything</text>
+            <line class="ldiv" x1="886" y1="42" x2="886" y2="70"></line>
+            <text class="lix" x="918" y="60">01</text>
+            <rect class="leaf t" x="556" y="90" width="384" height="52" rx="10"></rect>
+            <rect class="lbar ft" x="556" y="100" width="3" height="32" rx="1.5"></rect>
+            <circle class="pt ft" cx="556" cy="116" r="3.5"></circle>
+            <text class="lname" x="582" y="112">Models</text>
+            <text class="ldesc" x="582" y="129">our clinical and voice models</text>
+            <line class="ldiv" x1="886" y1="102" x2="886" y2="130"></line>
+            <text class="lix" x="918" y="120">02</text>
+            <rect class="leaf g" x="556" y="194" width="384" height="52" rx="10"></rect>
+            <rect class="lbar fg" x="556" y="204" width="3" height="32" rx="1.5"></rect>
+            <circle class="pt fg" cx="556" cy="220" r="3.5"></circle>
+            <text class="lname" x="582" y="216">Scribe</text>
+            <text class="ldesc" x="582" y="233">writes the note, assigns the codes</text>
+            <line class="ldiv" x1="886" y1="206" x2="886" y2="234"></line>
+            <text class="lix" x="918" y="224">03</text>
+            <rect class="leaf g" x="556" y="254" width="384" height="52" rx="10"></rect>
+            <rect class="lbar fg" x="556" y="264" width="3" height="32" rx="1.5"></rect>
+            <circle class="pt fg" cx="556" cy="280" r="3.5"></circle>
+            <text class="lname" x="582" y="276">Clinics</text>
+            <text class="ldesc" x="582" y="293">answers calls, books visits</text>
+            <line class="ldiv" x1="886" y1="266" x2="886" y2="294"></line>
+            <text class="lix" x="918" y="284">04</text>
+            <rect class="leaf g" x="556" y="314" width="384" height="52" rx="10"></rect>
+            <rect class="lbar fg" x="556" y="324" width="3" height="32" rx="1.5"></rect>
+            <circle class="pt fg" cx="556" cy="340" r="3.5"></circle>
+            <text class="lname" x="582" y="336">Guardian</text>
+            <text class="ldesc" x="582" y="353">tracks care, gaps, and adherence</text>
+            <line class="ldiv" x1="886" y1="326" x2="886" y2="354"></line>
+            <text class="lix" x="918" y="344">05</text>
+            <rect class="leaf b" x="556" y="392" width="384" height="52" rx="10"></rect>
+            <rect class="lbar fb" x="556" y="402" width="3" height="32" rx="1.5"></rect>
+            <circle class="pt fb" cx="556" cy="418" r="3.5"></circle>
+            <text class="lname" x="582" y="414">RCM</text>
+            <text class="ldesc" x="582" y="431">files claims, works denials</text>
+            <line class="ldiv" x1="886" y1="404" x2="886" y2="432"></line>
+            <text class="lix" x="918" y="422">06</text>
+            <rect class="leaf b" x="556" y="452" width="384" height="52" rx="10"></rect>
+            <rect class="lbar fb" x="556" y="462" width="3" height="32" rx="1.5"></rect>
+            <circle class="pt fb" cx="556" cy="478" r="3.5"></circle>
+            <text class="lname" x="582" y="474">Credentialing</text>
+            <text class="ldesc" x="582" y="491">verifies coverage and payers</text>
+            <line class="ldiv" x1="886" y1="464" x2="886" y2="492"></line>
+            <text class="lix" x="918" y="482">07</text>
+            <rect class="leaf b" x="556" y="512" width="384" height="52" rx="10"></rect>
+            <rect class="lbar fb" x="556" y="522" width="3" height="32" rx="1.5"></rect>
+            <circle class="pt fb" cx="556" cy="538" r="3.5"></circle>
+            <text class="lname" x="582" y="534">Supply chain</text>
+            <text class="ldesc" x="582" y="551">tracks and reorders inventory</text>
+            <line class="ldiv" x1="886" y1="524" x2="886" y2="552"></line>
+            <text class="lix" x="918" y="542">08</text>
+            <rect class="leaf g" x="556" y="590" width="384" height="52" rx="10"></rect>
+            <rect class="lbar fg" x="556" y="600" width="3" height="32" rx="1.5"></rect>
+            <circle class="pt fg" cx="556" cy="616" r="3.5"></circle>
+            <text class="lname" x="582" y="612">OpenDoor</text>
+            <text class="ldesc" x="582" y="629">how we buy and run practices</text>
+            <line class="ldiv" x1="886" y1="602" x2="886" y2="630"></line>
+            <text class="lix" x="918" y="620">09</text>
+            <rect class="leaf g" x="556" y="650" width="384" height="52" rx="10"></rect>
+            <rect class="lbar fg" x="556" y="660" width="3" height="32" rx="1.5"></rect>
+            <circle class="pt fg" cx="556" cy="676" r="3.5"></circle>
+            <text class="lname" x="582" y="672">Bishop</text>
+            <text class="ldesc" x="582" y="689">a health assistant for the patient</text>
+            <line class="ldiv" x1="886" y1="662" x2="886" y2="690"></line>
+            <text class="lix" x="918" y="680">10</text>
+            <rect class="vtag" x="640" y="663" width="24" height="15" rx="4"></rect>
+            <text class="vtx" x="652" y="674">v2</text>
+            </svg>
         </div>
       </div>
     </section>
@@ -1316,56 +1488,56 @@
     </section>
 
     <section>
-      <div class="container reveal">
+      <div class="container reveal roster">
 
         <div class="row">
-          <div class="col-label"><span class="cl-name">Leadership</span></div>
+          <div class="col-label"><span class="cl-ix">01</span><span class="cl-name">Leadership</span><span class="cl-rule"></span><span class="cl-meta">3 people</span></div>
           <div class="people">
-            <div class="person"><div class="avatar a1">RS</div><div><p class="pname">Ravinder Syal</p><p class="prole">Founder and CEO. Multi-time founder with 30 years in healthcare operations; scaled ventures before Independence OS and now builds AI to keep physicians independent.</p><div class="pcred"><span class="pbadge">30y health ops</span><span class="pbadge">multi-time founder</span><span class="pbadge">HBS Exec Ed</span></div><a class="pli" href="https://www.linkedin.com/in/ravinder-syal/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a></div></div>
-            <div class="person"><div class="avatar a2">RB</div><div><p class="pname">Rahul Bhardwaj</p><p class="prole">Chief Financial Officer. Leads finance, acquisitions, clinic economics, and capital planning for the operator-plus-software model.</p><div class="pcred"><span class="pbadge">finance</span><span class="pbadge">M&amp;A</span><span class="pbadge">clinic economics</span></div></div></div>
-            <div class="person"><div class="avatar a3">PS</div><div><p class="pname">Pratham Singh</p><p class="prole">Chief of Staff. IIT Bombay operator coordinating CEO priorities, clinic operations, hiring, and product execution across the team.</p><div class="pcred"><span class="pbadge">IIT Bombay</span><span class="pbadge">ops</span><span class="pbadge">CEO office</span></div><a class="pli" href="https://www.linkedin.com/in/pratham-singh-27b4b2253/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a></div></div>
+            <article class="person"><a class="pli" href="https://www.linkedin.com/in/ravinder-syal/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a1">RS</span><span class="p-id"><span class="pname">Ravinder Syal</span><span class="prole-title">Founder and CEO</span></span></div><p class="prole">Multi-time founder with 30 years in healthcare operations; scaled ventures before Independence OS and now builds AI to keep physicians independent.</p><div class="pcred"><span class="pbadge">30y health ops</span><span class="pbadge">multi-time founder</span><span class="pbadge">HBS Exec Ed</span></div></article>
+            <article class="person"><div class="p-head"><span class="mtile a2">RB</span><span class="p-id"><span class="pname">Rahul Bhardwaj</span><span class="prole-title">Chief Financial Officer</span></span></div><p class="prole">Leads finance, acquisitions, clinic economics, and capital planning for the operator-plus-software model.</p><div class="pcred"><span class="pbadge">finance</span><span class="pbadge">M&amp;A</span><span class="pbadge">clinic economics</span></div></article>
+            <article class="person"><a class="pli" href="https://www.linkedin.com/in/pratham-singh-27b4b2253/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a3">PS</span><span class="p-id"><span class="pname">Pratham Singh</span><span class="prole-title">Chief of Staff</span></span></div><p class="prole">IIT Bombay operator coordinating CEO priorities, clinic operations, hiring, and product execution across the team.</p><div class="pcred"><span class="pbadge">IIT Bombay</span><span class="pbadge">ops</span><span class="pbadge">CEO office</span></div></article>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-label"><span class="cl-name">Models and research</span></div>
+          <div class="col-label"><span class="cl-ix">02</span><span class="cl-name">Models and research</span><span class="cl-rule"></span><span class="cl-meta">3 people</span></div>
           <div class="people">
-            <div class="person"><div class="avatar a4">AB</div><div><p class="pname">Ankan Biswas</p><p class="prole">Head of Models. IIT Kharagpur '23; ICLR/NeurIPS researcher; ex AI Research at Fractal and MIT; leads fine-tuning, distillation, and agentic frameworks.</p><div class="pcred"><span class="pbadge">IIT KGP</span><span class="pbadge">ICLR/NeurIPS</span><span class="pbadge">ex Fractal/MIT</span></div><a class="pli" href="https://www.linkedin.com/in/ankanbiswas7/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a></div></div>
-            <div class="person"><div class="avatar a5">RK</div><div><p class="pname">Rishabh Kumar</p><p class="prole">Models and voice. AI researcher with a PhD track at IIT Bombay, B.Tech from IIT Dhanbad, and BharatGen experience; bridges model research with Bishop and the patient-agent stack.</p><div class="pcred"><span class="pbadge">PhD AI, IITB</span><span class="pbadge">IIT Dhanbad</span><span class="pbadge">BharatGen</span></div><a class="pli" href="https://www.linkedin.com/in/rishabh-kumar-iit/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a></div></div>
-            <div class="person"><div class="avatar a1">TT</div><div><p class="pname">Tasmay Pankaj Tibrewal</p><p class="prole">Research and models. IIT Kharagpur AI researcher and incoming MARS Fellow with CAISH/Redwood Research; past work spans Fractal, Harvard, and SambaNova.</p><div class="pcred"><span class="pbadge">IIT KGP</span><span class="pbadge">Redwood/CAISH</span><span class="pbadge">Fractal/Harvard</span></div><a class="pli" href="https://www.linkedin.com/in/tasmay-tibrewal/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a></div></div>
+            <article class="person"><a class="pli" href="https://www.linkedin.com/in/ankanbiswas7/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a4">AB</span><span class="p-id"><span class="pname">Ankan Biswas</span><span class="prole-title">Head of Models</span></span></div><p class="prole">IIT Kharagpur '23; ICLR/NeurIPS researcher; ex AI Research at Fractal and MIT; leads fine-tuning, distillation, and agentic frameworks.</p><div class="pcred"><span class="pbadge">IIT KGP</span><span class="pbadge">ICLR/NeurIPS</span><span class="pbadge">ex Fractal/MIT</span></div></article>
+            <article class="person"><a class="pli" href="https://www.linkedin.com/in/rishabh-kumar-iit/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a5">RK</span><span class="p-id"><span class="pname">Rishabh Kumar</span><span class="prole-title">Models and voice</span></span></div><p class="prole">AI researcher with a PhD track at IIT Bombay, B.Tech from IIT Dhanbad, and BharatGen experience; bridges model research with Bishop and the patient-agent stack.</p><div class="pcred"><span class="pbadge">PhD AI, IITB</span><span class="pbadge">IIT Dhanbad</span><span class="pbadge">BharatGen</span></div></article>
+            <article class="person"><a class="pli" href="https://www.linkedin.com/in/tasmay-tibrewal/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a1">TT</span><span class="p-id"><span class="pname">Tasmay Pankaj Tibrewal</span><span class="prole-title">Research and models</span></span></div><p class="prole">IIT Kharagpur AI researcher and incoming MARS Fellow with CAISH/Redwood Research; past work spans Fractal, Harvard, and SambaNova.</p><div class="pcred"><span class="pbadge">IIT KGP</span><span class="pbadge">Redwood/CAISH</span><span class="pbadge">Fractal/Harvard</span></div></article>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-label"><span class="cl-name">Agents</span></div>
+          <div class="col-label"><span class="cl-ix">03</span><span class="cl-name">Agents</span><span class="cl-rule"></span><span class="cl-meta">4 people</span></div>
           <div class="people">
-            <div class="person"><div class="avatar a2">KB</div><div><p class="pname">Kirti Bagri</p><p class="prole">Head of Agents. Founding AI engineer and IIT Delhi CSE grad; Oracle SDE-2 / Analytics background; owns RCM from claims to denials and appeals.</p><div class="pcred"><span class="pbadge">IIT Delhi CSE</span><span class="pbadge">Oracle SDE-2</span><span class="pbadge">Founding AI</span></div><a class="pli" href="https://www.linkedin.com/in/kirti-bagri-600b33213/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a></div></div>
-            <div class="person"><div class="avatar a3">RP</div><div><p class="pname">Rashmitha Pittala</p><p class="prole">Scribe. IIT Delhi CS '23 engineer building the AI that converts physician-patient conversations into structured notes, summaries, and billing codes.</p><div class="pcred"><span class="pbadge">IITD CS '23</span><span class="pbadge">Scribe lead</span><span class="pbadge">clinical docs</span></div><a class="pli" href="https://www.linkedin.com/in/rashmitha-pittala-50b4711b3/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a></div></div>
-            <div class="person"><div class="avatar a4">RC</div><div><p class="pname">Rushi Chavda</p><p class="prole">Guardian. IIT Bombay AI researcher with Harvard Research / IBM, EY, Reliance Jio, and Birlasoft experience; tracks care, adherence, and quality measures over time.</p><div class="pcred"><span class="pbadge">IIT Bombay</span><span class="pbadge">Harvard/IBM</span><span class="pbadge">EY/Jio/Birlasoft</span></div><a class="pli" href="https://www.linkedin.com/in/rushi-chavda-123ryc/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a></div></div>
-            <div class="person"><div class="avatar a5">CP</div><div><p class="pname">Chappidi Preethi</p><p class="prole">Credentialing. IIT Bombay CSE '26; AI intern at SproutsAI, ex-CV intern at VISIST.AI, and AI Engineer at THP; works across LangChain, RAG, PyTorch, and computer vision.</p><div class="pcred"><span class="pbadge">IITB CSE '26</span><span class="pbadge">SproutsAI</span><span class="pbadge">ex VISIST.AI</span></div><a class="pli" href="https://www.linkedin.com/in/chappidi-preethi-03a50026b/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a></div></div>
+            <article class="person"><a class="pli" href="https://www.linkedin.com/in/kirti-bagri-600b33213/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a2">KB</span><span class="p-id"><span class="pname">Kirti Bagri</span><span class="prole-title">Head of Agents</span></span></div><p class="prole">Founding AI engineer and IIT Delhi CSE grad; Oracle SDE-2 / Analytics background; owns RCM from claims to denials and appeals.</p><div class="pcred"><span class="pbadge">IIT Delhi CSE</span><span class="pbadge">Oracle SDE-2</span><span class="pbadge">Founding AI</span></div></article>
+            <article class="person"><a class="pli" href="https://www.linkedin.com/in/rashmitha-pittala-50b4711b3/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a3">RP</span><span class="p-id"><span class="pname">Rashmitha Pittala</span><span class="prole-title">Scribe</span></span></div><p class="prole">IIT Delhi CS '23 engineer building the AI that converts physician-patient conversations into structured notes, summaries, and billing codes.</p><div class="pcred"><span class="pbadge">IITD CS '23</span><span class="pbadge">Scribe lead</span><span class="pbadge">clinical docs</span></div></article>
+            <article class="person"><a class="pli" href="https://www.linkedin.com/in/rushi-chavda-123ryc/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a4">RC</span><span class="p-id"><span class="pname">Rushi Chavda</span><span class="prole-title">Guardian</span></span></div><p class="prole">IIT Bombay AI researcher with Harvard Research / IBM, EY, Reliance Jio, and Birlasoft experience; tracks care, adherence, and quality measures over time.</p><div class="pcred"><span class="pbadge">IIT Bombay</span><span class="pbadge">Harvard/IBM</span><span class="pbadge">EY/Jio/Birlasoft</span></div></article>
+            <article class="person"><a class="pli" href="https://www.linkedin.com/in/chappidi-preethi-03a50026b/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a5">CP</span><span class="p-id"><span class="pname">Chappidi Preethi</span><span class="prole-title">Credentialing</span></span></div><p class="prole">IIT Bombay CSE '26; AI intern at SproutsAI, ex-CV intern at VISIST.AI, and AI Engineer at THP; works across LangChain, RAG, PyTorch, and computer vision.</p><div class="pcred"><span class="pbadge">IITB CSE '26</span><span class="pbadge">SproutsAI</span><span class="pbadge">ex VISIST.AI</span></div></article>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-label"><span class="cl-name">Data and infrastructure</span></div>
+          <div class="col-label"><span class="cl-ix">04</span><span class="cl-name">Data and infrastructure</span><span class="cl-rule"></span><span class="cl-meta">3 people</span></div>
           <div class="people">
-            <div class="person"><div class="avatar a1">AE</div><div><p class="pname">Ajay Edupuganti</p><p class="prole">Head of Data. IIT Madras builder with Lincecraft AI background; leads Foundry's shared data layer, knowledge graphs, ontologies, and pipelines.</p><div class="pcred"><span class="pbadge">IIT Madras</span><span class="pbadge">Lincecraft AI</span><span class="pbadge">Foundry</span></div><a class="pli" href="https://www.linkedin.com/in/ajayedupuganti/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a></div></div>
-            <div class="person"><div class="avatar a2">NG</div><div><p class="pname">Nadeesh Garg</p><p class="prole">Foundry. Prophecy data engineer and IIT Delhi alum building scalable data products and infrastructure for the shared record under every agent.</p><div class="pcred"><span class="pbadge">IIT Delhi</span><span class="pbadge">Prophecy</span><span class="pbadge">data infra</span></div><a class="pli" href="https://www.linkedin.com/in/nadeeshgarg/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a></div></div>
-            <div class="person"><div class="avatar a3">CK</div><div><p class="pname">Charan Kumar</p><p class="prole">Foundry. Amazon SDE II, ex-Flipkart, and IIT Bhubaneswar CS; builds backend and data infrastructure that keeps the shared record reliable.</p><div class="pcred"><span class="pbadge">Amazon SDE II</span><span class="pbadge">ex Flipkart</span><span class="pbadge">IIT Bhubaneswar</span></div><a class="pli" href="https://www.linkedin.com/in/rvs-charan-kumar/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a></div></div>
+            <article class="person"><a class="pli" href="https://www.linkedin.com/in/ajayedupuganti/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a1">AE</span><span class="p-id"><span class="pname">Ajay Edupuganti</span><span class="prole-title">Head of Data</span></span></div><p class="prole">IIT Madras builder with Lincecraft AI background; leads Foundry's shared data layer, knowledge graphs, ontologies, and pipelines.</p><div class="pcred"><span class="pbadge">IIT Madras</span><span class="pbadge">Lincecraft AI</span><span class="pbadge">Foundry</span></div></article>
+            <article class="person"><a class="pli" href="https://www.linkedin.com/in/nadeeshgarg/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a2">NG</span><span class="p-id"><span class="pname">Nadeesh Garg</span><span class="prole-title">Foundry</span></span></div><p class="prole">Prophecy data engineer and IIT Delhi alum building scalable data products and infrastructure for the shared record under every agent.</p><div class="pcred"><span class="pbadge">IIT Delhi</span><span class="pbadge">Prophecy</span><span class="pbadge">data infra</span></div></article>
+            <article class="person"><a class="pli" href="https://www.linkedin.com/in/rvs-charan-kumar/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a3">CK</span><span class="p-id"><span class="pname">Charan Kumar</span><span class="prole-title">Foundry</span></span></div><p class="prole">Amazon SDE II, ex-Flipkart, and IIT Bhubaneswar CS; builds backend and data infrastructure that keeps the shared record reliable.</p><div class="pcred"><span class="pbadge">Amazon SDE II</span><span class="pbadge">ex Flipkart</span><span class="pbadge">IIT Bhubaneswar</span></div></article>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-label"><span class="cl-name">Marketplace and operations</span></div>
+          <div class="col-label"><span class="cl-ix">05</span><span class="cl-name">Marketplace and operations</span><span class="cl-rule"></span><span class="cl-meta">2 people</span></div>
           <div class="people">
-            <div class="person"><div class="avatar a4">UM</div><div><p class="pname">Udita Mittal</p><p class="prole">OpenDoor. IIT Delhi data scientist with Microsoft experience, applying modeling, diligence, and marketplace execution to medical practice acquisitions.</p><div class="pcred"><span class="pbadge">Microsoft</span><span class="pbadge">IIT Delhi</span><span class="pbadge">OpenDoor</span></div><a class="pli" href="https://www.linkedin.com/in/udita-mittal-a90b79201/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a></div></div>
-            <div class="person"><div class="avatar a5">YC</div><div><p class="pname">Yash Choudhary</p><p class="prole">Supply chain. IIT Bombay economics undergrad working on clinic inventory, ordering, and demand prediction for the operating network.</p><div class="pcred"><span class="pbadge">IIT Bombay</span><span class="pbadge">Economics</span><span class="pbadge">Supply chain</span></div><a class="pli" href="https://www.linkedin.com/in/yash-choudhary-ab0544289/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a></div></div>
+            <article class="person"><a class="pli" href="https://www.linkedin.com/in/udita-mittal-a90b79201/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a4">UM</span><span class="p-id"><span class="pname">Udita Mittal</span><span class="prole-title">OpenDoor</span></span></div><p class="prole">IIT Delhi data scientist with Microsoft experience, applying modeling, diligence, and marketplace execution to medical practice acquisitions.</p><div class="pcred"><span class="pbadge">Microsoft</span><span class="pbadge">IIT Delhi</span><span class="pbadge">OpenDoor</span></div></article>
+            <article class="person"><a class="pli" href="https://www.linkedin.com/in/yash-choudhary-ab0544289/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a5">YC</span><span class="p-id"><span class="pname">Yash Choudhary</span><span class="prole-title">Supply chain</span></span></div><p class="prole">IIT Bombay economics undergrad working on clinic inventory, ordering, and demand prediction for the operating network.</p><div class="pcred"><span class="pbadge">IIT Bombay</span><span class="pbadge">Economics</span><span class="pbadge">Supply chain</span></div></article>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-label"><span class="cl-name">Join us</span></div>
-          <div><div class="prose"><p>We are hiring across research, engineering, and operations, in Houston and Bangalore. If this is the kind of problem you want to spend your time on, get in touch.</p></div></div>
+          <div class="col-label"><span class="cl-ix">06</span><span class="cl-name">Join us</span><span class="cl-rule"></span><span class="cl-meta">Open roles</span></div>
+          <div class="joinbox"><div class="prose"><p>We are hiring across research, engineering, and operations, in Houston and Bangalore. If this is the kind of problem you want to spend your time on, get in touch.</p></div></div>
         </div>
 
       </div>
@@ -1428,9 +1600,11 @@
   var c=document.querySelector('.hero-field'); if(!c) return;
   var ctx=c.getContext('2d');
   var reduce=false; try{ reduce=matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
-  var cols=['102,179,166','98,180,136','111,170,214']; // teal, green, blue
+  var colsDark=['102,179,166','98,180,136','111,170,214'], colsLight=['44,129,117','44,138,92','59,127,180']; // teal, green, blue
+  function isLight(){ try{ return document.documentElement.getAttribute('data-theme')==='light'; }catch(e){ return false; } }
+  var light=isLight(), cols=light?colsLight:colsDark;
   function sprite(rgb){ var z=64,o=document.createElement('canvas'); o.width=o.height=z; var x=o.getContext('2d'); var g=x.createRadialGradient(z/2,z/2,0,z/2,z/2,z/2); g.addColorStop(0,'rgba('+rgb+',1)'); g.addColorStop(0.32,'rgba('+rgb+',0.42)'); g.addColorStop(1,'rgba('+rgb+',0)'); x.fillStyle=g; x.fillRect(0,0,z,z); return o; }
-  var glows=[sprite(cols[0]),sprite(cols[1]),sprite(cols[2])];
+  var glows=[]; function buildGlows(){ glows=[sprite(cols[0]),sprite(cols[1]),sprite(cols[2])]; } buildGlows();
   var W=0,H=0,dpr=1,dots=[],mx=-9999,my=-9999,t=0;
   function build(){
     var n=Math.min(48,Math.max(12,Math.round(W*H/21000))); dots=[];
@@ -1442,8 +1616,9 @@
     if(reduce) draw(true);
   }
   function draw(stat){
-    ctx.clearRect(0,0,W,H); var R=175,R2=R*R,TR=22; if(!stat) t+=0.005;
-    ctx.globalCompositeOperation='lighter'; ctx.lineCap='round'; ctx.lineJoin='round';
+    ctx.clearRect(0,0,W,H); var R=175,R2=R*R,TR=22,lo=light; if(!stat) t+=0.005;
+    ctx.globalCompositeOperation=lo?'source-over':'lighter'; ctx.lineCap='round'; ctx.lineJoin='round';
+    var tCap=lo?0.6:0.85, tMul=lo?1.5:1.3, gA=lo?0.34:0.8, cCap=lo?0.85:1;
     for(var i=0;i<dots.length;i++){ var d=dots[i],bloom=1,a=d.a;
       if(!stat){
         var ang=Math.sin(d.x*0.0036+t+d.ph)+Math.cos(d.y*0.0042-t);
@@ -1458,18 +1633,20 @@
       } else if(d.hist.length===0){ d.hist.push(d.x,d.y); }
       var hs=d.hist, L=hs.length/2, col=d.col;
       for(var j=1;j<L;j++){ var fr2=j/(L-1||1);
-        ctx.globalAlpha=Math.min(0.85,a*fr2*1.3); ctx.lineWidth=Math.max(0.35,d.w*fr2*bloom);
+        ctx.globalAlpha=Math.min(tCap,a*fr2*tMul); ctx.lineWidth=Math.max(0.35,d.w*fr2*bloom);
         ctx.strokeStyle='rgb('+col+')';
         ctx.beginPath(); ctx.moveTo(hs[(j-1)*2],hs[(j-1)*2+1]); ctx.lineTo(hs[j*2],hs[j*2+1]); ctx.stroke();
       }
       var gr=d.w*4*bloom;
-      ctx.globalAlpha=Math.min(0.8,a*1.05); ctx.drawImage(glows[d.ci],d.x-gr,d.y-gr,gr*2,gr*2);
-      ctx.globalAlpha=Math.min(1,a*1.9); ctx.beginPath(); ctx.arc(d.x,d.y,Math.max(0.7,d.w*0.8),0,6.2832); ctx.fillStyle='rgb('+col+')'; ctx.fill();
+      ctx.globalAlpha=Math.min(gA,a*1.05); ctx.drawImage(glows[d.ci],d.x-gr,d.y-gr,gr*2,gr*2);
+      ctx.globalAlpha=Math.min(cCap,a*1.9); ctx.beginPath(); ctx.arc(d.x,d.y,Math.max(0.7,d.w*0.8),0,6.2832); ctx.fillStyle='rgb('+col+')'; ctx.fill();
     }
     ctx.globalAlpha=1; ctx.globalCompositeOperation='source-over';
   }
   function loop(){ if(c.offsetParent!==null && W>0) draw(false); requestAnimationFrame(loop); }
   function move(e){ var r=c.getBoundingClientRect(),p=e.touches?e.touches[0]:e; mx=p.clientX-r.left; my=p.clientY-r.top; }
+  function onTheme(){ var nl=isLight(); if(nl===light) return; light=nl; cols=light?colsLight:colsDark; buildGlows(); for(var i=0;i<dots.length;i++){ dots[i].col=cols[dots[i].ci]; dots[i].hist.length=0; } if(reduce) draw(true); }
+  window.addEventListener('iostheme',onTheme);
   size();
   if(window.ResizeObserver){ new ResizeObserver(size).observe(c); } else { window.addEventListener('resize',size); }
   if(reduce) return;
@@ -1477,6 +1654,17 @@
   window.addEventListener('touchmove',move,{passive:true});
   window.addEventListener('mouseleave',function(){mx=-9999;my=-9999;});
   requestAnimationFrame(loop);
+})();
+</script>
+<script>
+(function(){
+  var b=document.getElementById('themeToggle'); if(!b) return;
+  b.addEventListener('click',function(){
+    var on=document.documentElement.getAttribute('data-theme')==='light';
+    if(on) document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme','light');
+    b.setAttribute('aria-pressed', on?'false':'true');
+    try{ window.dispatchEvent(new Event('iostheme')); }catch(e){}
+  });
 })();
 </script>
 </body>
