@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +25,7 @@
   }
   *{box-sizing:border-box;}
   html{-webkit-text-size-adjust:100%;background:var(--ink);}
-  body{margin:0;background:var(--ink);color:var(--bone);font-family:var(--sans);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;}
+  body{margin:0;color:var(--bone);font-family:var(--sans);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;}
   body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(900px 540px at 12% -6%, rgba(102,179,166,.18), transparent 56%), radial-gradient(840px 600px at 90% 8%, rgba(96,168,210,.20), transparent 58%), radial-gradient(900px 760px at 55% 116%, rgba(96,168,210,.15), transparent 60%), radial-gradient(700px 560px at 82% 60%, rgba(96,168,210,.10), transparent 60%), radial-gradient(640px 540px at 20% 82%, rgba(222,176,140,.10), transparent 60%), linear-gradient(180deg,#100F0D 0%,#110F0D 46%,#0B0A08 100%);}
   .aurora{position:fixed;inset:-25%;z-index:-1;pointer-events:none;background:radial-gradient(38% 40% at 24% 28%, rgba(102,179,166,.12), transparent 70%), radial-gradient(36% 38% at 78% 42%, rgba(96,168,210,.16), transparent 70%), radial-gradient(30% 32% at 55% 88%, rgba(222,176,140,.08), transparent 70%);filter:blur(30px);animation:aurora 34s ease-in-out infinite alternate;}
   @keyframes aurora{0%{transform:translate3d(-2.5%,-2%,0) scale(1);}50%{transform:translate3d(2%,1.5%,0) scale(1.06);}100%{transform:translate3d(-1.5%,2.5%,0) scale(1.03);}}
@@ -175,7 +175,7 @@
   .a4{background:rgba(200,192,176,.10);color:#D4CCBA;border-color:rgba(200,192,176,.2);}
   .a5{background:rgba(188,178,200,.10);color:#C6BCCE;border-color:rgba(188,178,200,.2);}
 
-  footer{position:relative;border-top:1px solid var(--line);padding:54px 0 66px;margin-top:30px;}
+  footer{position:relative;border-top:1px solid var(--line);padding:54px 0 66px;margin-top:0;}
   footer::before{content:"";position:absolute;top:-1px;left:0;width:120px;height:1px;background:var(--green);}
   .foot{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start;}
   .fbrand{font-weight:600;font-size:15.5px;display:flex;align-items:center;gap:11px;color:var(--bone);}
@@ -198,7 +198,7 @@
   .ly-name{font-size:14px;font-weight:600;color:var(--bone);margin:0;}
   .ly-sub{font-size:12px;color:var(--bone-2);margin:2px 0 0;line-height:1.4;}
   .js .hero-visual{opacity:0;animation:rise .8s cubic-bezier(.2,.6,.2,1) .42s forwards;}
-  section.band-soft{background:linear-gradient(180deg,#191A12,#141509);}
+  section.band-soft{background:radial-gradient(680px 340px at 84% 0%, rgba(102,179,166,.16), transparent 72%), linear-gradient(180deg,#191A12,#141509);}
   section.band-green{background:radial-gradient(760px 380px at 50% 32%, rgba(98,180,136,.13), transparent 66%), #0F130E;border-top:1px solid var(--line);}
   @media (max-width:860px){ .hero-grid{grid-template-columns:1fr;gap:36px;} }
 
@@ -438,9 +438,9 @@
   .flow .nFound{fill:rgba(102,179,166,.09);stroke:#66B3A6;stroke-opacity:.55;}
   .flow .nname{fill:var(--bone);font-family:var(--sans);font-size:12.5px;font-weight:600;text-anchor:middle;}
   .flow .nsub{fill:var(--bone-3);font-family:var(--mono);font-size:8px;letter-spacing:.03em;text-anchor:middle;}
-  .flow .flowedge{fill:none;stroke:#62B488;stroke-width:1.4;stroke-opacity:.85;}
+  .flow .flowedge{fill:none;stroke:#62B488;stroke-width:1.9;stroke-opacity:.92;stroke-linecap:round;}
   .flow .dataedge{fill:none;stroke:#66B3A6;stroke-width:1.1;stroke-opacity:.3;}
-  .flow .elbl{fill:var(--bone-3);font-family:var(--mono);font-size:7.5px;letter-spacing:.02em;text-anchor:middle;}
+  .flow .elbl{fill:var(--bone-2);font-family:var(--mono);font-size:8.5px;letter-spacing:.02em;text-anchor:middle;paint-order:stroke;stroke:#0E0D0B;stroke-width:3.2px;stroke-linejoin:round;}html[data-theme="light"] .flow .elbl{stroke:#F6F8F2;}
   .flow .ahf{fill:#62B488;}
   @media(max-width:820px){.note-grid{grid-template-columns:1fr;gap:32px;}.sys-grid{grid-template-columns:1fr;gap:34px;}}
   .bldg{width:100%;max-width:300px;height:auto;display:block;margin:0 auto;}
@@ -492,8 +492,8 @@
   @keyframes cmapflow{to{stroke-dashoffset:-17;}}
   @media (prefers-reduced-motion:reduce){ .js .cmap .conn{stroke-dashoffset:0;transition:none;} .cmap .flow{display:none;} .js .cmap .pt,.js .cmap .jct{opacity:1;} }
   .vhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
-  .eco-wrap{margin:42px 0 2px;}
-  .eco-board{width:100%;max-width:880px;height:auto;display:block;margin:0 auto;}
+  .eco-wrap{margin:28px 0 2px;}
+  .eco-board{width:100%;max-width:1000px;height:auto;display:block;margin:0 auto;}
   .eco-board .gd{fill:var(--bone-3);fill-opacity:.16;}
   .eco-board .rim{fill:none;stroke:var(--bone-3);stroke-opacity:.16;stroke-width:1.2;stroke-dasharray:2 8;}
   .eco-board .tick{fill:none;stroke:var(--bone-3);stroke-opacity:.5;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
@@ -540,8 +540,8 @@
     --pos:#2C8A5C; --pos-2:#34A06D; --pos-soft:rgba(44,138,92,.11); --pos-line:rgba(44,138,92,.30);
   }
   html[data-theme="light"]{background:#EDEBE1;}
-  html[data-theme="light"] body::before{background:radial-gradient(900px 540px at 12% -6%, rgba(44,129,117,.11), transparent 56%), radial-gradient(840px 600px at 90% 8%, rgba(59,127,180,.12), transparent 58%), radial-gradient(900px 760px at 55% 116%, rgba(59,127,180,.08), transparent 60%), radial-gradient(700px 560px at 82% 60%, rgba(59,127,180,.05), transparent 60%), radial-gradient(640px 540px at 20% 82%, rgba(176,140,70,.07), transparent 60%), linear-gradient(180deg,#F0EEE5 0%,#EDEBE1 46%,#E8E5DB 100%);}
-  html[data-theme="light"] .aurora{background:radial-gradient(38% 40% at 24% 28%, rgba(44,129,117,.06), transparent 70%), radial-gradient(36% 38% at 78% 42%, rgba(59,127,180,.08), transparent 70%), radial-gradient(30% 32% at 55% 88%, rgba(176,140,70,.05), transparent 70%);}
+  html[data-theme="light"] body::before{background:radial-gradient(900px 560px at 12% -6%, rgba(44,129,117,.12), transparent 60%), radial-gradient(880px 620px at 90% 8%, rgba(64,116,178,.13), transparent 62%), radial-gradient(900px 760px at 55% 118%, rgba(64,116,178,.09), transparent 64%), radial-gradient(720px 580px at 82% 60%, rgba(64,116,178,.06), transparent 64%), radial-gradient(640px 540px at 20% 82%, rgba(176,140,70,.045), transparent 62%), linear-gradient(180deg,#FAFBF6 0%,#F7F9F2 50%,#F3F6EE 100%);}
+  html[data-theme="light"] .aurora{background:radial-gradient(40% 42% at 22% 26%, rgba(44,129,117,.10), transparent 72%), radial-gradient(38% 40% at 80% 40%, rgba(64,116,178,.11), transparent 72%), radial-gradient(34% 36% at 55% 90%, rgba(64,116,178,.07), transparent 72%), radial-gradient(28% 30% at 66% 62%, rgba(176,140,70,.035), transparent 72%);}
   html[data-theme="light"] header.nav.scrolled{background:rgba(246,244,236,.82);border-bottom:1px solid var(--line);}
   html[data-theme="light"] .nav-links a:hover{color:var(--bone);background:rgba(20,21,15,.05);}
   html[data-theme="light"] .nav-links a.current{color:var(--bone);background:rgba(20,21,15,.06);}
@@ -570,8 +570,11 @@
   html[data-theme="light"] .eco-board .port{fill:rgba(252,251,246,.84);}
   html[data-theme="light"] .eco-board .jx{stroke:#EAE7DD;}
   html[data-theme="light"] .eco-board .mod{fill:rgba(252,251,246,.72);}
-  html[data-theme="light"] section.band-soft{background:linear-gradient(180deg,#F4F2EA,#F0EEE4);}
-  html[data-theme="light"] section.band-green{background:radial-gradient(760px 380px at 50% 32%, rgba(44,138,92,.12), transparent 66%), #EFEEE5;border-top:1px solid var(--line);}
+  html[data-theme="light"] section.band-soft{background:radial-gradient(680px 340px at 84% 0%, rgba(44,129,117,.15), transparent 72%), linear-gradient(180deg,#F4F2EA,#F0EEE4);}
+  html[data-theme="light"] section.band-green{background:radial-gradient(820px 420px at 50% 30%, rgba(255,255,255,.62), transparent 60%), radial-gradient(900px 560px at 50% 124%, rgba(44,129,117,.22), transparent 72%), radial-gradient(640px 440px at 84% 6%, rgba(64,116,178,.13), transparent 70%), linear-gradient(180deg,#E7EFE1 0%,#DDE9D4 100%);border-top:1px solid var(--line);}
+  html[data-theme="light"] .why .statement{text-shadow:0 1px 0 rgba(255,255,255,.7);}
+  html[data-theme="light"] .tnode{border-color:rgba(44,129,117,.5);background:#FFFFFF;color:#2C8175;box-shadow:0 3px 10px -4px rgba(44,129,117,.35);}
+  html[data-theme="light"] .timeline::before{background:linear-gradient(90deg,rgba(44,129,117,.34),rgba(44,129,117,.1));}
   /* ===== team / roster ===== */
   .roster .col-label{padding-top:3px;}
   .roster .cl-ix{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--green);margin:0 0 10px;}
@@ -586,7 +589,6 @@
   .person:hover::before{opacity:.95;top:11px;bottom:11px;}
   .p-head{display:flex;align-items:center;gap:13px;}
   .mtile{flex:0 0 auto;position:relative;width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:14.5px;font-weight:700;letter-spacing:.02em;border:1px solid var(--line);}
-  .mtile::after{content:"";position:absolute;right:5px;bottom:5px;width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;opacity:.45;}
   .mtile img{width:100%;height:100%;object-fit:cover;display:block;border-radius:11px;}
   .p-id{min-width:0;padding-right:24px;}
   .pname{font-size:1rem;font-weight:600;color:var(--bone);margin:0;line-height:1.22;letter-spacing:-.01em;}
@@ -597,7 +599,271 @@
   .roster .joinbox{border:1px dashed var(--line);border-radius:14px;padding:19px 21px;background:linear-gradient(180deg, rgba(26,27,20,.4), rgba(18,19,14,.25));}
   html[data-theme="light"] .roster .joinbox{background:linear-gradient(180deg, rgba(255,255,255,.5), rgba(248,246,239,.3));}
   @media (max-width:520px){ .people{grid-template-columns:1fr;} }
-</style>
+  /* ===== product mock motion ===== */
+  @keyframes mrise{from{opacity:0;transform:translateY(7px);}to{opacity:1;transform:none;}}
+  @keyframes mpop{from{opacity:0;transform:scale(.86);}to{opacity:1;transform:none;}}
+  @keyframes mblink{0%,100%{opacity:1;}50%{opacity:.3;}}
+  @keyframes mcaret{0%,100%{opacity:1;}50%{opacity:0;}}
+  @keyframes mspin{to{transform:rotate(360deg);}}
+  @keyframes mscan{0%{transform:translateX(-130%);}100%{transform:translateX(320%);}}
+  @keyframes mshine{0%{transform:translateX(-110%);}55%,100%{transform:translateX(150%);}}
+  @keyframes mbounce{0%,100%{transform:translateY(0);opacity:.45;}50%{transform:translateY(-4px);opacity:1;}}
+  @keyframes mstep{0%,100%{opacity:.35;}4%,16%{opacity:1;}}
+  @keyframes mrestock{0%{transform:scaleX(.95);}20%{transform:scaleX(.16);}35%{transform:scaleX(.16);}55%{transform:scaleX(.95);}100%{transform:scaleX(.95);}}
+  @keyframes mreorder{0%,16%{opacity:0;}22%,38%{opacity:1;}44%,100%{opacity:0;}}
+  @keyframes mglow{0%,100%{box-shadow:0 0 0 0 rgba(0,0,0,0);}50%{box-shadow:0 0 0 3px var(--accent-soft,var(--green-soft));}}
+  @keyframes mbump{0%,100%{transform:scale(1);}40%{transform:scale(1.16);}}
+  @keyframes mclick{0%{opacity:.8;transform:scale(.4);}100%{opacity:0;transform:scale(1.9);}}
+  @keyframes cspeak{0%{transform:scaleY(.22);}100%{transform:scaleY(1);}}
+  .js .reveal .mock .bi,.js .reveal .mock .pop{opacity:0;}
+  .js .reveal.in .mock .bi{animation:mrise .5s ease both;}
+  .js .reveal.in .mock .pop{animation:mpop .5s cubic-bezier(.2,.8,.3,1.25) both;}
+  .mock .caret{display:inline-block;width:2px;height:1em;vertical-align:-2px;margin-left:1px;background:var(--accent,var(--green));}
+  .js .mock .caret{animation:mcaret 1s step-end infinite;}
+  .js .mock .chip.glow{animation:mglow 2.4s ease-in-out infinite;}
+  .mock .wave-sm{height:22px;margin:0 0 12px;}
+  .rec-rec{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:var(--pos-2);margin:-2px 0 8px;}
+  .feed{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;color:var(--bone-2);background:var(--ink-3);border:1px solid var(--line);border-radius:8px;padding:8px 11px;margin:12px 0 0;overflow:hidden;white-space:nowrap;}
+  .feed .fdot{width:6px;height:6px;border-radius:50%;background:var(--pos);flex:0 0 auto;}
+  .js .feed .fdot{animation:mblink 1.4s ease-in-out infinite;}
+  .synclist .frow{border-radius:7px;transition:background .35s ease;}
+  .synclist .frow.writing{background:var(--accent-soft,var(--green-soft));}
+  .pill.syncing::before{content:"";width:7px;height:7px;border-radius:50%;border:1.5px solid var(--bone-3);border-top-color:transparent;display:inline-block;}
+  .js .pill.syncing::before{animation:mspin .8s linear infinite;}
+  .dxtag{font-family:var(--mono);font-size:10px;color:var(--accent,var(--green));border:1px solid var(--accent-line,var(--green-line));background:var(--accent-soft,var(--green-soft));border-radius:5px;padding:1px 5px;margin-left:6px;white-space:nowrap;}
+  .js .pill.warn.blink{animation:mblink 1.8s ease-in-out infinite;}
+  .dot.pulsedot{position:relative;}
+  .dot.pulsedot::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--accent,var(--green));}
+  .js .dot.pulsedot::after{animation:pulse 2.2s ease-out infinite;}
+  .suggest{display:flex;gap:11px;align-items:flex-start;margin-top:15px;padding:12px 13px;border-radius:11px;border:1px solid var(--accent-line,var(--green-line));background:var(--accent-soft,var(--green-soft));}
+  .suggest .sg-ic{font-family:var(--mono);color:var(--accent,var(--green));font-weight:700;line-height:1.3;}
+  .suggest .sg-t{font-size:12.5px;font-weight:600;color:var(--bone);margin:0;}
+  .suggest .sg-d{font-size:12px;color:var(--bone-2);margin:2px 0 0;line-height:1.4;}
+  .pipe{display:flex;align-items:flex-start;margin:2px 0 13px;}
+  .pipe .pstep{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;font-size:9.5px;color:var(--bone-3);position:relative;text-align:center;}
+  .pipe .pstep::before{content:"";position:absolute;top:5px;left:-50%;width:100%;height:1.5px;background:var(--line);}
+  .pipe .pstep:first-child::before{display:none;}
+  .pipe .pdot{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--accent,var(--green));background:var(--ink-2);position:relative;z-index:1;}
+  .js .pipe .pstep{opacity:.4;animation:mstep 4.2s ease-in-out infinite;}
+  .denialcode{font-family:var(--mono);font-size:10px;color:var(--bone-3);border:1px solid var(--line);border-radius:4px;padding:0 4px;margin-left:6px;}
+  .qbar > span.riskbar{background:var(--pos);}
+  .scanbar{height:4px;border-radius:99px;background:var(--ink-3);overflow:hidden;margin:0 0 13px;position:relative;}
+  .scanbar > span{position:absolute;top:0;left:0;height:100%;width:38%;border-radius:99px;background:linear-gradient(90deg,transparent,var(--accent,var(--green)),transparent);}
+  .js .scanbar > span{animation:mscan 1.7s ease-in-out infinite;}
+  .listing-img{overflow:hidden;}
+  .listing-img .shine{position:absolute;inset:0;background:linear-gradient(115deg,transparent 32%,rgba(255,255,255,.18) 50%,transparent 68%);transform:translateX(-110%);}
+  .js .listing-img .shine{animation:mshine 3.6s ease-in-out infinite;}
+  .typing{display:inline-flex;gap:4px;align-self:flex-start;background:var(--ink-3);border:1px solid var(--line);border-radius:13px;border-bottom-left-radius:5px;padding:11px 13px;}
+  .typing span{width:6px;height:6px;border-radius:50%;background:var(--bone-3);}
+  .js .typing span{animation:mbounce 1.2s ease-in-out infinite;}
+  .js .typing span:nth-child(2){animation-delay:.16s;}
+  .js .typing span:nth-child(3){animation-delay:.32s;}
+  .js .restockpill{opacity:0;animation:mreorder 6s ease-in-out infinite;}
+  .qbar > span.restockbar{width:100%;}
+  .js .qrow .qbar > span.restockbar{transform-origin:left;transform:scaleX(.16);animation:mrestock 6s ease-in-out infinite;}
+  .bump{animation:mbump .45s ease;display:inline-block;}
+  .rec-avatar.gd{background:var(--accent-soft,var(--green-soft));border-color:var(--accent-line,var(--green-line));color:var(--accent,var(--green));}
+  .hpace{border:1px solid var(--accent-line,var(--green-line));background:var(--accent-soft,var(--green-soft));border-radius:11px;padding:12px 13px;margin:2px 0 4px;transition:box-shadow .4s ease;}
+  .hpace.remeasure{box-shadow:0 0 0 3px var(--accent-soft,var(--green-soft));}
+  .hp-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:7px;}
+  .hp-label{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--bone-2);}
+  .hp-trend{font-size:11px;font-weight:600;color:var(--pos-2);white-space:nowrap;}
+  .hp-main{display:flex;align-items:flex-end;gap:6px;}
+  .hp-big{font-size:1.9rem;font-weight:700;color:var(--bone);letter-spacing:-.02em;line-height:1;}
+  .hp-unit{font-size:12px;color:var(--bone-3);margin-bottom:3px;}
+  .hp-spark{display:flex;align-items:flex-end;gap:2px;height:30px;margin-left:auto;}
+  .hp-spark i{width:4px;border-radius:2px;background:var(--accent,var(--green));opacity:.7;transition:height .5s ease;}
+  .gstats{display:flex;gap:16px;font-size:12px;color:var(--bone-2);padding:5px 0 0;}
+  .gstat b{color:var(--bone);font-weight:700;display:inline-block;}
+  .hub{display:flex;flex-direction:column;gap:6px;}
+  .hub .hx{display:flex;align-items:center;gap:9px;font-size:11.5px;color:var(--bone);font-family:var(--mono);padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--ink-3);}
+  .hub .hto{font-size:9px;font-weight:700;letter-spacing:.04em;padding:2px 6px;border-radius:5px;flex:0 0 auto;text-transform:uppercase;}
+  .hto.bishop{color:var(--pos-2);background:var(--pos-soft);border:1px solid var(--pos-line);}
+  .hto.clinics{color:#6FA8DC;background:rgba(96,168,210,.12);border:1px solid rgba(96,168,210,.3);}
+  .hto.scribe{color:var(--green-2);background:var(--green-soft);border:1px solid var(--green-line);}
+  .hto.rcm{color:#D9B26A;background:rgba(217,178,106,.12);border:1px solid rgba(217,178,106,.3);}
+  .hto.hcc{color:var(--bone-2);background:var(--ink-2);border:1px solid var(--line);}
+  .hto.detect,.hto.close{color:var(--accent,var(--green));background:var(--accent-soft,var(--green-soft));border:1px solid var(--accent-line,var(--green-line));}
+  .hto.veto{color:#D98A6A;background:rgba(217,138,106,.12);border:1px solid rgba(217,138,106,.3);}
+  .js .hub .hx.new{animation:mrise .4s ease both;}
+  .claims{display:flex;flex-direction:column;}
+  .js .claims .claim.new{animation:mrise .4s ease both;}
+  .cred-form{display:flex;align-items:center;gap:10px;margin-bottom:11px;}
+  .cred-label{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--bone-3);flex:0 0 auto;}
+  .cred-input{flex:1;display:flex;align-items:center;font-size:13px;color:var(--bone);background:var(--ink-3);border:1px solid var(--line);border-radius:8px;padding:8px 11px;min-height:17px;}
+  .cred-name{white-space:nowrap;}
+  .chart{display:flex;align-items:flex-end;gap:4px;height:46px;margin:2px 0 6px;}
+  .chart i{flex:1;border-radius:3px 3px 0 0;background:var(--accent,var(--green));opacity:.55;transition:height .6s ease;}
+  .mkt{position:relative;}
+  .mkt-bar{display:flex;align-items:center;gap:8px;margin-bottom:11px;}
+  .mkt-search{flex:1;font-size:12px;color:var(--bone-3);background:var(--ink-3);border:1px solid var(--line);border-radius:8px;padding:8px 11px;}
+  .mkt-chip{font-size:11px;font-weight:600;color:var(--bone-2);border:1px solid var(--line);border-radius:99px;padding:4px 10px;white-space:nowrap;}
+  .mkt-list{display:flex;flex-direction:column;gap:9px;}
+  .mcard{border:1px solid var(--line);border-radius:11px;padding:12px 13px;background:var(--ink-3);transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;}
+  .mcard.hovered{transform:translateY(-2px);border-color:var(--accent-line,var(--green-line));box-shadow:0 8px 22px rgba(0,0,0,.18);}
+  .mc-top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .mc-name{font-size:14px;font-weight:600;color:var(--bone);margin:0;}
+  .mc-price{font-size:13px;font-weight:700;color:var(--accent,var(--green));white-space:nowrap;}
+  .mc-loc{font-size:12px;color:var(--bone-3);margin:2px 0 9px;}
+  .mc-stats{display:flex;gap:7px;flex-wrap:wrap;}
+  .mc-stat{font-size:10.5px;color:var(--bone-2);background:var(--ink-2);border:1px solid var(--line);border-radius:6px;padding:3px 7px;}
+  .cursor{position:absolute;top:0;left:0;width:18px;height:18px;pointer-events:none;z-index:6;transition:transform .65s cubic-bezier(.4,.1,.2,1);will-change:transform;}
+  .cursor svg{display:block;filter:drop-shadow(0 1px 2px rgba(0,0,0,.45));}
+  .cursor::after{content:"";position:absolute;top:0;left:0;width:18px;height:18px;border-radius:50%;border:2px solid var(--accent,var(--green));opacity:0;transform:scale(.4);}
+  .js .cursor.click::after{animation:mclick .5s ease;}
+  .labelrow{display:flex;align-items:center;justify-content:space-between;}
+  .frate{text-transform:none;letter-spacing:0;color:var(--bone-3);font-weight:600;font-family:var(--mono);}
+  .frate b{color:var(--bone-2);font-weight:700;}
+  .flog{display:flex;flex-direction:column;gap:5px;margin:0 0 4px;}
+  .flog .fx{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;padding:6px 9px;border:1px solid var(--line);border-radius:7px;background:var(--ink-3);}
+  .flog .fdot{width:5px;height:5px;border-radius:50%;background:var(--pos);flex:0 0 auto;}
+  .flog .fm{color:var(--accent,var(--green));font-weight:700;text-transform:uppercase;font-size:9px;letter-spacing:.04em;flex:0 0 auto;}
+  .flog .ft{color:var(--bone);}
+  .flog .fok{margin-left:auto;color:var(--pos-2);font-size:10px;white-space:nowrap;}
+  .js .flog .fx.new{animation:mrise .35s ease both;}
+  .callbar{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;color:var(--pos-2);margin:0 0 13px;}
+  .callbar .ctime{font-family:var(--mono);color:var(--bone-2);font-weight:600;}
+  .callbar .meta{text-transform:none;letter-spacing:0;font-weight:500;color:var(--bone-3);font-size:11.5px;}
+  .cends{display:flex;flex-direction:column;gap:8px;margin-bottom:4px;}
+  .cend{display:flex;align-items:center;gap:10px;padding:9px 11px;border:1px solid var(--line);border-radius:10px;background:var(--ink-3);transition:border-color .25s ease, background .25s ease;}
+  .cend.active{border-color:var(--accent-line,var(--green-line));background:var(--accent-soft,var(--green-soft));}
+  .cend .cav{width:26px;height:26px;border-radius:7px;background:var(--ink-2);border:1px solid var(--line);color:var(--bone-2);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .cend .cav-a{background:var(--accent-soft,var(--green-soft));border-color:var(--accent-line,var(--green-line));color:var(--accent,var(--green));}
+  .cend .clabel{font-size:11px;font-weight:600;color:var(--bone-2);width:42px;flex:0 0 auto;}
+  .cend .cwave{display:flex;align-items:center;gap:2px;height:22px;flex:1;}
+  .cend .cwave i{flex:1;max-width:4px;border-radius:2px;background:var(--bone-3);height:20px;opacity:.4;transform:scaleY(.16);transform-origin:center;}
+  .cend.active .cwave i{background:var(--accent,var(--green));opacity:.95;}
+  .js .cend.active .cwave i{animation:cspeak .9s ease-in-out infinite alternate;}
+  .tscript{display:flex;flex-direction:column;gap:8px;}
+  .tline{display:flex;align-items:baseline;gap:9px;font-size:13px;color:var(--bone);line-height:1.4;}
+  .tline .tsp{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:2px 6px;border-radius:5px;flex:0 0 auto;}
+  .tline .tsp.user{color:var(--bone-2);background:var(--ink-3);border:1px solid var(--line);}
+  .tline .tsp.agent{color:var(--accent,var(--green));background:var(--accent-soft,var(--green-soft));border:1px solid var(--accent-line,var(--green-line));}
+  .tline .ttext{color:var(--bone);}
+  .js .tscript .tline.new{animation:mrise .35s ease both;}
+  @media (prefers-reduced-motion:reduce){
+    .js .reveal .mock .bi,.js .reveal .mock .pop{opacity:1;animation:none;}
+    .js .mock .wave i,.js .pill.syncing::before,.js .pill.warn.blink,.js .dot.pulsedot::after,.js .pipe .pstep,.js .scanbar > span,.js .listing-img .shine,.js .typing span,.js .restockpill,.js .mock .chip.glow,.js .mock .caret,.js .feed .fdot,.js .cend.active .cwave i{animation:none;}
+    .js .pipe .pstep,.js .restockpill{opacity:1;}
+    .js .qrow .qbar > span.restockbar{transform:scaleX(.16);}
+    .cursor{display:none;}
+  }
+
+  /* ===== clinic matrix ===== */
+  .cmap-wrap{margin:34px 0 0;}
+  .mtx{overflow:hidden;}
+  .mtx-col{float:left;width:calc(50% - 9px);}
+  .mtx-col + .mtx-col{margin-left:18px;}
+  .mtx-cell{border:1px solid var(--line);border-radius:14px;background:var(--ink-2);padding:15px 20px 7px;margin-bottom:18px;}
+  .mtx-cell:last-child{margin-bottom:0;}
+  .mtx-glabel{font-size:11px;font-weight:600;color:var(--bone-2);font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;padding:0 0 2px;}
+  .mtx-gdot{display:inline-block;width:7px;height:7px;border-radius:2px;margin-right:9px;vertical-align:1px;}
+  .mtx-gdot.t{background:#66B3A6;} .mtx-gdot.g{background:#62B488;} .mtx-gdot.b{background:#6FAAD6;}
+  .mtx-row{padding:13px 0 12px;border-top:1px solid var(--line-2);overflow:hidden;}
+  .mtx-ix{float:left;width:24px;font-family:var(--mono);font-size:11px;color:var(--bone-3);padding-top:3px;}
+  .mtx-main{display:block;margin-left:34px;}
+  .mtx-name{display:block;font-size:14.5px;font-weight:600;color:var(--bone);letter-spacing:-.005em;}
+  .mtx-runs{display:block;font-size:12px;color:var(--bone-3);margin-top:3px;line-height:1.4;}
+  .js .reveal .mtx-cell{opacity:0;transform:translateY(10px);}
+  .js .reveal.in .mtx-cell{opacity:1;transform:none;transition:opacity .55s ease,transform .55s ease;}
+  .js .reveal.in .mtx-col:first-child .mtx-cell:nth-child(2){transition-delay:.09s;}
+  .js .reveal.in .mtx-col:last-child .mtx-cell:first-child{transition-delay:.05s;}
+  .js .reveal.in .mtx-col:last-child .mtx-cell:nth-child(2){transition-delay:.14s;}
+  @media (max-width:760px){ .mtx-col{float:none;width:100%;} .mtx-col + .mtx-col{margin-left:0;} }
+  @media (prefers-reduced-motion:reduce){ .js .reveal .mtx-cell{opacity:1;transform:none;transition:none;} }
+  /* ===== clinic matrix end ===== */
+  /* ===== overview product cards ===== */
+  .ovp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:30px;background:var(--ink-2);}
+  .ovp-card{padding:26px 28px 28px;display:block;text-decoration:none;color:inherit;transition:background .2s ease;}
+  .ovp-card:hover{background:var(--ink-3);}
+  .ovp-card:nth-child(even){border-left:1px solid var(--line);}
+  .ovp-card:nth-child(n+3){border-top:1px solid var(--line);}
+  .ovp-ix{font-family:var(--mono);font-size:11px;color:var(--bone-3);letter-spacing:.14em;margin:0 0 14px;}
+  .ovp-name{font-family:var(--sans);font-weight:600;font-size:1.18rem;letter-spacing:-.015em;color:var(--bone);margin:0 0 10px;display:flex;align-items:center;}
+  .ovp-name .tag{margin-left:9px;font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.08em;color:var(--bone-3);border:1px solid var(--line);border-radius:5px;padding:2px 6px;text-transform:uppercase;}
+  .ovp-tag{font-family:var(--serif);font-weight:500;font-size:1.22rem;line-height:1.32;color:var(--bone);margin:0 0 11px;}
+  .ovp-tag em{font-style:italic;}
+  .ovp-desc{font-size:13.5px;color:var(--bone-2);line-height:1.5;margin:0 0 18px;}
+  .ovp-mock{margin-top:auto;}
+  /* compact mock styling for the overview grid */
+  .mock.mini{padding:15px 16px;border-radius:13px;min-height:264px;box-sizing:border-box;}
+  .mock.mini .mock-head{font-size:10px;margin-bottom:12px;}
+  .mock.mini .mlabel{margin:11px 0 7px;}
+  .mock.mini .wave{height:26px;margin:2px 0 10px;}
+  .mock.mini .note-row{padding:4px 0;}
+  .mock.mini .qrow{padding:6px 0;}
+  .mock.mini .frow{padding:5px 0;}
+  .mock.mini .kpi .v{font-size:1rem;}
+  .mock.mini .hp-big{font-size:1.7rem;}
+  .mock.mini .flog{max-height:none;}
+  .js .reveal .ovp-card{opacity:0;transform:translateY(12px);}
+  .js .reveal.in .ovp-card{opacity:1;transform:none;transition:opacity .55s ease,transform .55s ease;}
+  .js .reveal.in .ovp-card:nth-child(2){transition-delay:0.045s;}
+  .js .reveal.in .ovp-card:nth-child(3){transition-delay:0.090s;}
+  .js .reveal.in .ovp-card:nth-child(4){transition-delay:0.135s;}
+  .js .reveal.in .ovp-card:nth-child(5){transition-delay:0.180s;}
+  .js .reveal.in .ovp-card:nth-child(6){transition-delay:0.225s;}
+  .js .reveal.in .ovp-card:nth-child(7){transition-delay:0.270s;}
+  .js .reveal.in .ovp-card:nth-child(8){transition-delay:0.315s;}
+  .js .reveal.in .ovp-card:nth-child(9){transition-delay:0.360s;}
+  .js .reveal.in .ovp-card:nth-child(10){transition-delay:0.405s;}
+  @media (max-width:820px){
+    .ovp{grid-template-columns:1fr;}
+    .ovp-card:nth-child(even){border-left:none;}
+    .ovp-card:nth-child(n+2){border-top:1px solid var(--line);}
+  }
+  @media (prefers-reduced-motion:reduce){ .js .reveal .ovp-card{opacity:1;transform:none;transition:none;} }
+  /* ===== overview product cards end ===== */
+
+
+  /* ===== hero rotator + live morning board ===== */
+  .herorot{display:flex;flex-direction:column;}
+  .hrwin{position:relative;height:clamp(440px,48vh,520px);}
+  .hrslide{position:absolute;inset:0;display:flex;flex-direction:column;gap:14px;opacity:0;transition:opacity .6s ease;pointer-events:none;}
+  .hrslide.show{opacity:1;pointer-events:auto;}
+  .hm-frame{position:relative;flex:1;min-height:0;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);padding:15px 16px;box-sizing:border-box;}
+  .hm-frame::after{content:"";position:absolute;left:1px;right:1px;bottom:1px;height:44px;background:linear-gradient(to top,var(--ink-2),transparent);border-radius:0 0 13px 13px;pointer-events:none;}
+  .herorot .mock{border:none!important;background:transparent!important;border-radius:0!important;padding:0!important;min-height:0!important;}
+  .board .srow,.board .stat-row{transition:opacity .32s ease;}
+  .board .bar span{transition:width .9s cubic-bezier(.4,0,.2,1);}
+  .board .chip{transition:opacity .3s ease;}
+  .board .dot{transition:box-shadow .4s ease;}
+  .board .dot.flash{box-shadow:0 0 0 3px var(--pos-soft);}
+  @media (prefers-reduced-motion:reduce){ .hrslide{transition:none;} .board .srow,.board .stat-row,.board .bar span,.board .chip,.board .dot{transition:none;} }
+  /* ===== hero rotator end ===== */
+      /* ===== ambient glows ===== */
+  .hm-frame,.board .tile,.practice,.aside,.pcard,.ovp-card,.person,.vcard,.prod .mock,.mtx-cell{transition:box-shadow .3s ease,transform .3s ease,border-color .3s ease,background .3s ease;}
+  .hm-frame,.board .tile,.practice,.aside,.pcard,.ovp-card,.person,.vcard,.prod .mock,.mtx-cell{box-shadow:0 18px 46px -20px rgba(0,0,0,.6), 0 8px 34px -6px rgba(102,179,166,.18);}
+  html[data-theme="light"] .hm-frame,html[data-theme="light"] .board .tile,html[data-theme="light"] .practice,html[data-theme="light"] .aside,html[data-theme="light"] .pcard,html[data-theme="light"] .ovp-card,html[data-theme="light"] .person,html[data-theme="light"] .vcard,html[data-theme="light"] .prod .mock,html[data-theme="light"] .mtx-cell{box-shadow:0 18px 40px -22px rgba(28,52,44,.34), 0 6px 30px -8px rgba(44,129,117,.18);}
+  .hm-frame:hover,.board .tile:hover,.practice:hover,.aside:hover,.pcard:hover,.ovp-card:hover,.person:hover,.vcard:hover,.prod .mock:hover,.mtx-cell:hover{box-shadow:0 26px 60px -22px rgba(0,0,0,.66), 0 12px 46px -4px rgba(102,179,166,.34);}
+  html[data-theme="light"] .hm-frame:hover,html[data-theme="light"] .board .tile:hover,html[data-theme="light"] .practice:hover,html[data-theme="light"] .aside:hover,html[data-theme="light"] .pcard:hover,html[data-theme="light"] .ovp-card:hover,html[data-theme="light"] .person:hover,html[data-theme="light"] .vcard:hover,html[data-theme="light"] .prod .mock:hover,html[data-theme="light"] .mtx-cell:hover{box-shadow:0 26px 54px -24px rgba(28,52,44,.4), 0 10px 42px -6px rgba(44,129,117,.32);}
+  .aside:hover,.practice:hover,.hm-frame:hover,.mtx-cell:hover{transform:translateY(-2px);}
+  h1.hero{text-shadow:0 0 36px rgba(102,179,166,.22);}
+  .statement{text-shadow:0 0 38px rgba(98,180,136,.17);}
+  html[data-theme="light"] h1.hero,html[data-theme="light"] .statement{text-shadow:none;}
+  /* ===== ambient glows end ===== */
+
+  /* ===== clinic marquee + roster ===== */
+  .clinic-marquee{position:relative;padding:30px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;}
+  .cmq-viewport{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);}
+  .cmq-track{display:flex;align-items:center;width:max-content;animation:cmqscroll 52s linear infinite;}
+  .clinic-marquee:hover .cmq-track{animation-play-state:paused;}
+  .cmq-item{flex:0 0 auto;display:inline-flex;align-items:center;margin-right:60px;font-family:var(--serif);font-size:19px;font-weight:500;letter-spacing:.005em;color:var(--bone-2);text-decoration:none;white-space:nowrap;transition:color .3s ease;}
+  .cmq-item:hover{color:var(--bone);}
+  @keyframes cmqscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (max-width:640px){.cmq-item{margin-right:40px;font-size:17px}}
+  @media (prefers-reduced-motion:reduce){.cmq-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto;padding:0 18px}.cmq-item{margin:0 23px 22px}.cmq-viewport{-webkit-mask-image:none;mask-image:none}}
+
+  .clinic-roster{margin-top:36px;padding-top:32px;border-top:1px solid var(--line);}
+  .croster-label{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-3);margin:0 0 16px;}
+  .croster-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(212px,1fr));gap:13px;}
+  .cl-card{padding:15px 17px;border:1px solid var(--line);border-radius:13px;background:var(--ink-2);display:flex;flex-direction:column;gap:7px;transition:border-color .25s ease,transform .25s ease;}
+  .cl-card:hover{border-color:var(--green-line);transform:translateY(-2px);}
+  .cl-nm{font-family:var(--sans);font-weight:600;font-size:14.5px;color:var(--bone);letter-spacing:-.01em;line-height:1.3;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+  .cl-loc{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--bone-3);}
+  .cl-flag{font-family:var(--mono);font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--green);border:1px solid var(--green-line);border-radius:5px;padding:2px 6px;font-weight:500;}
+  /* ===== clinic marquee + roster end ===== */
+  </style>
 </head>
 <body>
 
@@ -634,16 +900,43 @@
           <p class="eyebrow"><span class="sq"></span> We run our own clinics</p>
           <h1 class="hero">Building the AI ecosystem for American healthcare.</h1>
           <p class="lead">Independence OS is building <b>a suite of AI products</b> for the practice, across admin, diagnosis, insurance, and personalized care. We aim to bring better healthcare to far more people.</p>
-          <div class="facts"><span>Houston and Bangalore</span><span class="d"></span><span>Six clinics</span><span class="d"></span><span>Launching v1</span></div>
+          <div class="facts"><span>Houston and Bangalore</span><span class="d"></span><span>Clinics in Texas and California</span><span class="d"></span><span>Launching v1</span></div>
         </div>
         <div class="hero-visual">
-          <div class="stack">
+          <div class="herorot" data-herorot>
             <p class="stack-h">One operating system</p>
-            <div class="layer"><span class="ly-dot"></span><div><p class="ly-name">Bishop</p><p class="ly-sub">Patient assistant, v2</p></div></div>
-            <div class="layer"><span class="ly-dot"></span><div><p class="ly-name">Agents</p><p class="ly-sub">Scribe, Clinics, Guardian, RCM, and more</p></div></div>
-            <div class="layer"><span class="ly-dot"></span><div><p class="ly-name">Models</p><p class="ly-sub">Clinical and voice, built in house</p></div></div>
-            <div class="layer l-base"><span class="ly-dot"></span><div><p class="ly-name">Foundry</p><p class="ly-sub">One shared record under all of it</p></div></div>
+            <div class="hrwin"><div class="hrslide show"><div class="hm-frame"><div class="mock mini" data-sim="foundry"><p class="mock-head">Foundry <span class="meta">shared record</span></p><div class="mlabel labelrow">Live ingest <span class="frate"><b data-count="21" data-step="2" data-max="34">21</b> /s</span></div><div class="flog" data-flog data-rows="3"><div class="fx"><span class="fdot"></span><span class="fm">write</span><span class="ft">scribe.note</span><span class="fok">ok 24ms</span></div><div class="fx"><span class="fdot"></span><span class="fm">sync</span><span class="ft">clinics.appt</span><span class="fok">ok 12ms</span></div><div class="fx"><span class="fdot"></span><span class="fm">index</span><span class="ft">rcm.claim</span><span class="fok">ok 18ms</span></div></div><p class="mlabel">Sources</p><div class="synclist"><div class="frow"><span>Clinics</span><span class="pill ok">live</span></div><div class="frow"><span>Scribe</span><span class="pill ok">live</span></div><div class="frow"><span>RCM</span><span class="pill ok">live</span></div></div></div></div><div class="hm-frame"><div class="mock mini" data-sim="models"><p class="mock-head">Voice model <span class="meta">live</span></p><div class="rec-rec"><span class="rec-dot"></span>recording</div><div class="wave"><i style="height:8px;animation-delay:-0.00s"></i><i style="height:13px;animation-delay:-0.09s"></i><i style="height:20px;animation-delay:-0.18s"></i><i style="height:28px;animation-delay:-0.27s"></i><i style="height:18px;animation-delay:-0.36s"></i><i style="height:10px;animation-delay:-0.45s"></i><i style="height:23px;animation-delay:-0.54s"></i><i style="height:31px;animation-delay:-0.63s"></i><i style="height:16px;animation-delay:-0.72s"></i><i style="height:11px;animation-delay:-0.81s"></i><i style="height:25px;animation-delay:-0.90s"></i><i style="height:33px;animation-delay:-0.99s"></i><i style="height:21px;animation-delay:-1.08s"></i><i style="height:14px;animation-delay:-1.17s"></i><i style="height:9px;animation-delay:-1.26s"></i><i style="height:19px;animation-delay:-1.35s"></i><i style="height:27px;animation-delay:-1.44s"></i><i style="height:12px;animation-delay:-1.53s"></i><i style="height:8px;animation-delay:-1.62s"></i><i style="height:17px;animation-delay:-1.71s"></i></div><p class="transcript"><span class="muted">Transcribing </span><span class="live" data-type data-lines="patient reports a sore throat for three days, no fever.|no cough, started after the weekend.|temperature is 99.1, throat looks a little red.">patient reports a sore throat for three days, no fever.</span><span class="caret"></span></p><div class="chips" style="margin-top:12px"><span class="chip acc glow">drafting note</span></div></div></div></div><div class="hrslide"><div class="hm-frame"><div class="mock mini" data-sim="scribe"><div class="rec-head"><div><p class="rec-name">Visit note</p><p class="rec-sub">Maria Reyes &middot; today</p></div><span class="rec-live"><span class="rec-dot"></span>transcribing</span></div><div class="utt"><span class="who">Clinician</span><span class="said" data-type>How long has the throat been sore?</span></div><div class="utt"><span class="who">Patient</span><span class="said" data-type>About three days, no fever.</span></div><div class="note-div"></div><div class="note-row"><span class="nk">S</span><span class="nv"><span data-type>Sore throat, three days. No fever.</span></span></div><div class="note-row"><span class="nk">O</span><span class="nv"><span data-type>Throat erythematous. Lungs clear.</span></span></div><div class="note-row"><span class="nk">A</span><span class="nv"><span data-type>Acute pharyngitis.</span> <span class="dxtag">suggested Dx</span></span></div><div class="note-row"><span class="nk">P</span><span class="nv"><span data-type>Supportive care.</span></span></div><div class="note-foot"><div class="chips"><span class="chip">ICD-10 &middot; J06.9</span><span class="chip">CPT &middot; 99213</span><span class="chip acc">auto-coded</span></div></div></div></div><div class="hm-frame"><div class="mock mini" data-sim="clinics"><div class="callbar"><span class="rec-dot"></span><span>Live call</span><span class="ctime" data-ctime>00:00</span><span class="meta" style="margin-left:auto">Clinics</span></div><div class="cends"><div class="cend" data-end="user"><span class="cav">U</span><span class="clabel">Patient</span><div class="cwave"><i style="animation-delay:-0.00s"></i><i style="animation-delay:-0.08s"></i><i style="animation-delay:-0.16s"></i><i style="animation-delay:-0.24s"></i><i style="animation-delay:-0.32s"></i><i style="animation-delay:-0.40s"></i><i style="animation-delay:-0.48s"></i><i style="animation-delay:-0.56s"></i></div></div><div class="cend" data-end="agent"><span class="cav cav-a">A</span><span class="clabel">Agent</span><div class="cwave"><i style="animation-delay:-0.00s"></i><i style="animation-delay:-0.08s"></i><i style="animation-delay:-0.16s"></i><i style="animation-delay:-0.24s"></i><i style="animation-delay:-0.32s"></i><i style="animation-delay:-0.40s"></i><i style="animation-delay:-0.48s"></i><i style="animation-delay:-0.56s"></i></div></div></div><p class="mlabel">Transcript</p><div class="tscript" data-tscript><div class="tline"><span class="tsp agent">Agent</span><span class="ttext">How can I help?</span></div></div></div></div></div><div class="hrslide"><div class="hm-frame"><div class="mock mini" data-sim="guardian"><div class="rec-head"><span class="rec-avatar gd">G</span><div><p class="rec-name">Guardian</p><p class="rec-sub">deterministic brain</p></div><span class="rec-live"><span class="rec-dot"></span>processing</span></div><div class="qrow"><span>HEDIS W15</span><span class="qv">82%</span><div class="qbar"><span style="width:82%"></span></div></div><div class="gstats"><span class="gstat">Gaps open <b data-gaps>24</b></span><span class="gstat">HCC suspects <b>3</b></span></div><p class="mlabel">Directives</p><div class="hub" data-hub><div class="hx"><span class="hto bishop">Bishop</span>app reminder &middot; Maria Reyes</div><div class="hx"><span class="hto clinics">Clinics</span>call worklist &middot; 3 due</div><div class="hx"><span class="hto detect">gap</span>HEDIS W15 &middot; detected</div></div></div></div><div class="hm-frame"><div class="mock mini" data-sim="rcm"><p class="mock-head">Revenue cycle <span class="meta">live</span></p><div class="pipe"><div class="pstep" style="animation-delay:0s"><span class="pdot"></span>Coded</div><div class="pstep" style="animation-delay:.84s"><span class="pdot"></span>Scrubbed</div><div class="pstep" style="animation-delay:1.68s"><span class="pdot"></span>Submitted</div><div class="pstep" style="animation-delay:2.52s"><span class="pdot"></span>Adjudicated</div><div class="pstep" style="animation-delay:3.36s"><span class="pdot"></span>Paid</div></div><div class="kpis" style="margin-top:2px"><div class="kpi bi" style="animation-delay:.1s"><div class="v" data-collected>$48.2k</div><div class="l">Collected</div></div><div class="kpi bi" style="animation-delay:.2s"><div class="v" data-appeals>7</div><div class="l">Appeals won</div></div></div><p class="mlabel">Claims</p><div class="claims" data-claims><div class="frow claim"><span>Claim 8842</span><span class="pill ok">Paid</span></div><div class="frow claim"><span>Claim 8839 <span class="denialcode">CO-16</span></span><span class="pill warn">Appeal drafted</span></div><div class="frow claim"><span>Claim 8851</span><span class="pill mute">Submitted</span></div></div></div></div></div><div class="hrslide"><div class="hm-frame"><div class="mock mini" data-sim="credentialing"><p class="mock-head">Eligibility check <span class="meta">Credentialing</span></p><div class="cred-form"><span class="cred-label">Patient</span><div class="cred-input"><span class="cred-name"></span><span class="caret"></span></div></div><div class="scanbar"><span></span></div><div class="frow res"><span>Coverage</span><span class="pill ok">Active</span></div><div class="payer res"><span class="badge">Ae</span><div><p class="rec-name" style="font-size:13px">Aetna</p><p class="rec-sub">Open PPO</p></div></div><div class="frow res"><span>Copay</span><span>$25</span></div><div class="frow res"><span>Deductible</span><span>$500 / $1,500</span></div></div></div><div class="hm-frame"><div class="mock mini" data-sim="supply"><p class="mock-head">Inventory analytics <span class="meta">Supply chain</span></p><div class="kpis kpis-3"><div class="kpi"><div class="v" data-count="142" data-step="1" data-max="151">142</div><div class="l">Tracked</div></div><div class="kpi"><div class="v">3</div><div class="l">Alerts</div></div><div class="kpi"><div class="v" data-count="98" data-suf="%" data-step="0.5" data-max="99">98%</div><div class="l">On-time</div></div></div><p class="mlabel">Usage &middot; last 8h</p><div class="chart"><i style="height:18px"></i><i style="height:26px"></i><i style="height:14px"></i><i style="height:31px"></i><i style="height:22px"></i><i style="height:34px"></i><i style="height:20px"></i><i style="height:28px"></i></div><p class="mlabel">Par levels</p><div class="qrow bi" style="animation-delay:.1s"><span>Gloves, medium</span><span class="pill warn restockpill">reorder placed</span><div class="qbar"><span class="low restockbar"></span></div></div><div class="qrow bi" style="animation-delay:.25s"><span>Amoxicillin</span><span class="qv">ok</span><div class="qbar"><span style="width:64%"></span></div></div><div class="feed"><span class="fdot"></span><span data-feed data-feed-msgs="reorder placed &middot; gloves|received &middot; flu vaccine|par check &middot; ok|reorder &middot; rapid strep">reorder placed &middot; gloves</span></div></div></div></div><div class="hrslide"><div class="hm-frame"><div class="mock mini" data-sim="opendoor"><div class="mkt"><div class="mkt-bar"><span class="mkt-search">Browse practices</span><span class="mkt-chip">Pediatric</span><span class="mkt-chip">TX</span></div><div class="mkt-list"><div class="mcard" data-card><div class="mc-top"><p class="mc-name">Pediatric practice</p><span class="mc-price">$1.2M</span></div><p class="mc-loc">Pasadena, TX</p><div class="mc-stats"><span class="mc-stat">~5,000 patients</span><span class="mc-stat">2 providers</span><span class="mc-stat">1.8x</span></div></div><div class="mcard" data-card><div class="mc-top"><p class="mc-name">Family medicine</p><span class="mc-price">$2.1M</span></div><p class="mc-loc">Austin, TX</p><div class="mc-stats"><span class="mc-stat">7,200 patients</span><span class="mc-stat">3 providers</span><span class="mc-stat">2.1x</span></div></div></div><div class="cursor"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 3 L5 18 L9 14.5 L11.7 20.5 L14 19.5 L11.4 13.7 L16.5 13.5 Z" fill="#ffffff" stroke="rgba(0,0,0,.55)" stroke-width="1"></path></svg></div></div></div></div><div class="hm-frame"><div class="mock mini" data-sim="bishop"><div class="rec-head"><span class="rec-avatar">MR</span><div><p class="rec-name">Maria Reyes</p><p class="rec-sub">Age 52 &middot; MRN 04821</p></div><span class="rec-live"><span class="rec-dot"></span>voice-first</span></div><div class="hpace"><div class="hp-row"><span class="hp-label">Health Pace &middot; biological age</span><span class="hp-trend">&darr; 2.8 vs actual</span></div><div class="hp-main"><span class="hp-big" data-hp>49.2</span><span class="hp-unit">yrs</span><div class="hp-spark"><i style="height:12px"></i><i style="height:20px"></i><i style="height:11px"></i><i style="height:24px"></i><i style="height:16px"></i><i style="height:26px"></i><i style="height:14px"></i><i style="height:22px"></i></div></div></div><p class="mlabel">Patient World Model</p><div class="frow"><span>Trust level</span><span class="qv" data-trust>0.78</span></div><div class="frow"><span>Care plan</span><span>2 open &middot; 1 due</span></div><div class="feed"><span class="fdot"></span><span data-feed data-feed-msgs="SMS reminder &middot; opened|self-booked well-child|Health Pace re-measured|app voice &middot; medication question">SMS reminder &middot; opened</span></div></div></div></div></div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- clinic marquee (all clinics) -->
+    <section class="clinic-marquee" aria-label="Clinics we run">
+      <div class="cmq-viewport">
+        <div class="cmq-track">
+          <a class="cmq-item" href="https://www.nagpeds.com" target="_blank" rel="noopener">Nag Pediatrics</a>
+          <a class="cmq-item" href="https://www.silverlakepeds.com" target="_blank" rel="noopener">Silverlake Pediatrics</a>
+          <a class="cmq-item" href="https://www.pedimc.com" target="_blank" rel="noopener">Pediatric Medical Center</a>
+          <a class="cmq-item" href="https://www.pediatriccliniclaporte.com" target="_blank" rel="noopener">Pediatric Clinic of La Porte</a>
+          <a class="cmq-item" href="https://www.hmbabies.com" target="_blank" rel="noopener">Half Moon Bay Pediatrics</a>
+          <span class="cmq-item">Babies 2 Teens Pediatrics</span>
+          <a class="cmq-item" href="https://www.fairmontpeds.com" target="_blank" rel="noopener">Fairmont Pediatrics</a>
+          <a class="cmq-item" href="https://rootshealth.org/our-work/" target="_blank" rel="noopener">Fairmont Family Practice</a>
+          <a class="cmq-item" href="https://www.corpusfp.us" target="_blank" rel="noopener">Corpus Family Practice</a>
+          <a class="cmq-item" href="https://www.armandpeds.com" target="_blank" rel="noopener">Armand Pediatrics</a>
+          <a class="cmq-item" href="https://www.nagmindful.com" target="_blank" rel="noopener">Nag Mindful Therapy</a>
+          <a class="cmq-item" href="https://www.nagpeds.com" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">Nag Pediatrics</a>
+          <a class="cmq-item" href="https://www.silverlakepeds.com" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">Silverlake Pediatrics</a>
+          <a class="cmq-item" href="https://www.pedimc.com" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">Pediatric Medical Center</a>
+          <a class="cmq-item" href="https://www.pediatriccliniclaporte.com" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">Pediatric Clinic of La Porte</a>
+          <a class="cmq-item" href="https://www.hmbabies.com" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">Half Moon Bay Pediatrics</a>
+          <span class="cmq-item" aria-hidden="true" tabindex="-1">Babies 2 Teens Pediatrics</span>
+          <a class="cmq-item" href="https://www.fairmontpeds.com" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">Fairmont Pediatrics</a>
+          <a class="cmq-item" href="https://rootshealth.org/our-work/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">Fairmont Family Practice</a>
+          <a class="cmq-item" href="https://www.corpusfp.us" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">Corpus Family Practice</a>
+          <a class="cmq-item" href="https://www.armandpeds.com" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">Armand Pediatrics</a>
+          <a class="cmq-item" href="https://www.nagmindful.com" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">Nag Mindful Therapy</a>
         </div>
       </div>
     </section>
@@ -656,10 +949,10 @@
           <div class="prose"><p>One system across every surface of the clinic, on an ordinary morning.</p></div>
           <span class="live-pill"><span class="live-dot"></span>Live in our clinics</span>
         </div>
-        <div class="board">
+        <div class="board" data-board>
           <div class="tile t3">
             <p class="surface">Front desk <span class="app">Clinics</span></p>
-            <div class="sched">
+            <div class="sched" data-sched>
               <div class="srow"><span class="tm">8:30</span><span>Well-child visit</span><span class="st"><span class="dot on"></span>confirmed</span></div>
               <div class="srow"><span class="tm">9:00</span><span>New patient</span><span class="st"><span class="dot mid"></span>intake sent</span></div>
               <div class="srow"><span class="tm">9:30</span><span>Follow-up</span><span class="st"><span class="dot on"></span>rescheduled</span></div>
@@ -667,28 +960,27 @@
           </div>
           <div class="tile t3">
             <p class="surface">Notes <span class="app">Scribe</span></p>
-            <p class="line">Visit summary drafted from the conversation.</p>
-            <div class="chips"><span class="chip">ICD-10 &middot; J06.9</span><span class="chip">CPT &middot; 99213</span></div>
+            <p class="line" data-noteline>Visit summary drafted from the conversation.</p>
+            <div class="chips" data-chips><span class="chip">ICD-10 &middot; J06.9</span><span class="chip">CPT &middot; 99213</span></div>
           </div>
           <div class="tile t2">
             <p class="surface">Eligibility <span class="app">Credentialing</span></p>
-            <div class="stat-row"><span class="dot on"></span>Coverage verified</div>
-            <div class="stat-row"><span class="dot mid"></span>Aetna<span class="sub">active</span></div>
+            <div class="stat-row" data-elig><span class="dot on"></span><span class="elbl">Coverage verified</span></div>
+            <div class="stat-row"><span class="dot mid" data-flash></span>Aetna<span class="sub">active</span></div>
           </div>
           <div class="tile t2">
             <p class="surface">Claims <span class="app">RCM</span></p>
-            <div class="stat-row"><span class="dot on"></span>Claim 8842<span class="sub">paid</span></div>
-            <div class="stat-row"><span class="dot mid"></span>Claim 8839<span class="sub">appealed</span></div>
+            <div data-claims><div class="stat-row"><span class="dot on"></span>Claim 8842<span class="sub">paid</span></div><div class="stat-row"><span class="dot mid"></span>Claim 8839<span class="sub">appealed</span></div></div>
           </div>
           <div class="tile t2">
             <p class="surface">Supply <span class="app">Supply chain</span></p>
-            <div class="stat-row"><span class="dot on"></span>Reorder placed</div>
-            <div class="stat-row"><span class="dot mid"></span>Flu vaccine<span class="sub">200 doses</span></div>
+            <div class="stat-row" data-supply><span class="dot on"></span><span class="slbl">Reorder placed</span></div>
+            <div class="stat-row"><span class="dot mid" data-flash></span>Flu vaccine<span class="sub" data-doses>200 doses</span></div>
           </div>
           <div class="tile t6">
             <p class="surface">Quality <span class="app">Guardian</span></p>
-            <div class="measure-top"><span class="name">Well-child visits in the first 15 months (W15)</span><span class="pct">82%</span></div>
-            <div class="bar"><span style="width:82%"></span></div>
+            <div class="measure-top"><span class="name" data-qname>Well-child visits in the first 15 months (W15)</span><span class="pct" data-w15>82%</span></div>
+            <div class="bar"><span data-qbar style="width:82%"></span></div>
           </div>
           <div class="foundation">
             <span class="f"><span>Every surface reads and writes to <b>Foundry</b>, one shared record.</span></span>
@@ -698,15 +990,15 @@
       </div>
     </section>
 
-    <section>
+            <section>
       <div class="container reveal">
-        <p class="kicker"><span class="sq"></span> Approach</p>
+        <p class="kicker"><span class="sq"></span> Our clinics</p>
         <div class="split">
           <div>
             <h2>Built in real clinics, not in a demo.</h2>
             <div class="prose">
               <p>Most of a practice runs on work that has nothing to do with care: scheduling, coding, claims, follow-ups. We build the AI that takes it off the staff, proven on real patients and real billing in our own clinics before it goes anywhere else.</p>
-              
+              <p>We own and operate a growing network of clinics across Texas and California, starting with our first, a pediatric practice in Pasadena, Texas. They are where everything we build is used first, and the bar it has to clear.</p>
             </div>
           </div>
           <div class="aside">
@@ -719,575 +1011,61 @@
             </ul>
           </div>
         </div>
+        <div class="clinic-roster">
+          <p class="croster-label">Practices we operate</p>
+          <div class="croster-grid">
+            <div class="cl-card"><span class="cl-nm">Nag Pediatrics <span class="cl-flag">Flagship</span></span><span class="cl-loc">Pasadena, TX</span></div>
+            <div class="cl-card"><span class="cl-nm">Silverlake Pediatrics</span><span class="cl-loc">Pearland, TX</span></div>
+            <div class="cl-card"><span class="cl-nm">Pediatric Medical Center</span><span class="cl-loc">Pasadena, TX</span></div>
+            <div class="cl-card"><span class="cl-nm">Pediatric Clinic of La Porte</span><span class="cl-loc">La Porte, TX</span></div>
+            <div class="cl-card"><span class="cl-nm">Half Moon Bay Pediatrics</span><span class="cl-loc">Half Moon Bay, CA</span></div>
+            <div class="cl-card"><span class="cl-nm">Babies 2 Teens Pediatrics</span><span class="cl-loc">Gold River, CA</span></div>
+            <div class="cl-card"><span class="cl-nm">Fairmont Pediatrics</span><span class="cl-loc">Pediatrics</span></div>
+            <div class="cl-card"><span class="cl-nm">Fairmont Family Practice</span><span class="cl-loc">Family practice</span></div>
+            <div class="cl-card"><span class="cl-nm">Corpus Family Practice</span><span class="cl-loc">Family practice</span></div>
+            <div class="cl-card"><span class="cl-nm">Armand Pediatrics</span><span class="cl-loc">Pediatrics</span></div>
+            <div class="cl-card"><span class="cl-nm">Nag Mindful Therapy</span><span class="cl-loc">Behavioral health</span></div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section>
       <div class="container reveal">
         <div class="sec-head">
-          <p class="kicker"><span class="sq"></span> What we build</p>
-          <h2>One system, several products.</h2>
-          <div class="prose"><p>The same products, working together on one shared foundation.</p></div>
+          <p class="kicker"><span class="sq"></span> How it grows</p>
+          <h2>One system, growing outward.</h2>
         </div>
-
-        <div class="row">
-          <div class="col-label"><span class="cl-name">Foundation</span><span class="cl-desc">What everything else is built on.</span><ul class="cl-list"><li>Foundry</li><li>Models</li></ul><a class="cl-link" data-nav="products" href="#products">View details</a></div>
-          <div class="pcards">
-            <div class="pcard"><p class="pc-cat">Data layer</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.7" rx="6.7" ry="2.7"/><path d="M5.3 5.7v6.6c0 1.5 3 2.7 6.7 2.7s6.7-1.2 6.7-2.7V5.7"/><path d="M5.3 9c0 1.5 3 2.7 6.7 2.7s6.7-1.2 6.7-2.7"/></svg></span><h4>Foundry</h4><p>The data layer underneath everything. One shared record every product reads from and writes to.</p></div>
-            <div class="pcard"><p class="pc-cat">Models</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5.5" r="2.3"/><circle cx="5.5" cy="17.5" r="2.3"/><circle cx="18.5" cy="17.5" r="2.3"/><path d="M10.8 7.5 6.5 15.4M13.2 7.5 17.5 15.4M7.8 17.5h8.4"/></svg></span><h4>Models</h4><p>Our own clinical and voice models, with foundational healthcare models next.</p></div>
-          </div>
-        </div>
-
-        <div class="row ac-green">
-          <div class="col-label"><span class="cl-name">In the clinic</span><span class="cl-desc">The agents that run the visit and the front office.</span><ul class="cl-list"><li>Scribe</li><li>Clinics</li><li>Guardian</li></ul><a class="cl-link" data-nav="products" href="#products">View details</a></div>
-          <div class="pcards">
-            <div class="pcard"><p class="pc-cat">Documentation</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3.5" width="12" height="17" rx="2"/><path d="M9 8.5h6M9 12h6M9 15.5h3.5"/></svg></span><h4>Scribe</h4><p>Sits in the visit and writes the note, the summary, and the billing codes.</p></div>
-            <div class="pcard"><p class="pc-cat">Front desk</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h2.6l1.5 4-2.1 1.4a11.5 11.5 0 0 0 5.1 5.1l1.4-2.1 4 1.5V17a2.5 2.5 0 0 1-2.7 2.5A15.5 15.5 0 0 1 4.5 6.2 2.5 2.5 0 0 1 7 3.5Z"/></svg></span><h4>Clinics</h4><p>A voice agent for the front desk. It answers calls, books visits, and handles follow-ups.</p></div>
-            <div class="pcard"><p class="pc-cat">Care</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="4.5" width="13" height="15" rx="2"/><rect x="9" y="3" width="6" height="3.2" rx="1"/><path d="m9 12.2 2 2 3.4-4"/></svg></span><h4>Guardian</h4><p>Watches care over time: preventive measures, dosages, adherence, and gaps.</p></div>
-          </div>
-        </div>
-
-        <div class="row ac-blue">
-          <div class="col-label"><span class="cl-name">Revenue and operations</span><span class="cl-desc">Getting paid, and keeping the practice stocked.</span><ul class="cl-list"><li>RCM</li><li>Credentialing</li><li>Supply chain</li></ul><a class="cl-link" data-nav="products" href="#products">View details</a></div>
-          <div class="pcards">
-            <div class="pcard"><p class="pc-cat">Billing</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6.5" width="18" height="11" rx="2"/><circle cx="12" cy="12" r="2.4"/><path d="M6.4 12h.02M17.6 12h.02"/></svg></span><h4>RCM</h4><p>The money side of a practice. It files claims and works denials and appeals.</p></div>
-            <div class="pcard"><p class="pc-cat">Eligibility</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="m9.8 9 1.5 1.5L14.4 7.4"/><path d="M8.7 13.4 7.6 20l4.4-2.1 4.4 2.1-1.1-6.6"/></svg></span><h4>Credentialing</h4><p>Checks eligibility and payer coverage so claims go through.</p></div>
-            <div class="pcard"><p class="pc-cat">Inventory</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="7" height="8" rx="1"/><rect x="13" y="11" width="7" height="8" rx="1"/><rect x="8.5" y="3.5" width="7" height="7" rx="1"/></svg></span><h4>Supply chain</h4><p>Tracks inventory and reorders before the clinic runs low.</p></div>
-          </div>
-        </div>
-
-        <div class="row ac-green">
-          <div class="col-label"><span class="cl-name">Beyond the clinic</span><span class="cl-desc">Where the system goes next.</span><ul class="cl-list"><li>OpenDoor</li><li>Bishop</li></ul><a class="cl-link" data-nav="products" href="#products">View details</a></div>
-          <div class="pcards">
-            <div class="pcard"><p class="pc-cat">Marketplace</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5 5.3 5.2h13.4L20 9.5"/><path d="M5 9.5v9.3a.7.7 0 0 0 .7.7h12.6a.7.7 0 0 0 .7-.7V9.5"/><path d="M10 20v-4.5h4V20"/></svg></span><h4>OpenDoor</h4><p>A marketplace for buying and selling practices, and how we acquire clinics.</p></div>
-            <div class="pcard"><p class="pc-cat">Patient</p><span class="pc-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.3"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/></svg></span><h4>Bishop <span class="tag">v2</span></h4><p>A personal health assistant for patients, connected to their records, labs, and daily activity.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="band-soft ac-blue">
-      <div class="container reveal">
-        <div class="sec-head">
-          <p class="kicker"><span class="sq"></span> Where we are</p>
-          <h2>Launching v1 now.</h2>
-          <div class="prose"><p>v1 is going into our own clinics now. The data it produces trains the next generation of agents and models.</p></div>
-        </div>
-        <div class="timeline">
-          <div class="tphase">
-            <div class="tnode">01</div>
-            <p class="twhen">v1, now</p>
-            <h4>Live in our clinics</h4>
-            <p>Into our own practices, on real visits, claims, and data from day one.</p>
-          </div>
-          <div class="tphase">
-            <div class="tnode">02</div>
-            <p class="twhen">Next</p>
-            <h4>Data and models</h4>
-            <p>That data becomes harnesses, stronger agents, and our own foundational models.</p>
-          </div>
-          <div class="tphase">
-            <div class="tnode">03</div>
-            <p class="twhen">v2</p>
-            <h4>Bishop and beyond</h4>
-            <p>The next generation, including Bishop, and expansion beyond our own clinics.</p>
-          </div>
-        </div>
-        <p class="note">We are growing quickly.</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="container reveal">
-        <p class="kicker"><span class="sq"></span> Our clinics</p>
-        <div class="split">
-          <div>
-            <h2>Six practices of our own.</h2>
-            <div class="prose">
-              <p>We own and operate six clinics in the US, starting with Roots Health (Nag Pediatrics), a pediatric practice in Pasadena, Texas. They are where everything we build is used first, and the bar it has to clear.</p>
+        <div class="vgrid">
+          <div class="vcard">
+            <div class="vhead">
+              <span class="vmark"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="24" y1="20" x2="24" y2="13" opacity=".7"/><line x1="28" y1="24" x2="35" y2="24" opacity=".7"/><line x1="24" y1="28" x2="24" y2="35" opacity=".7"/><line x1="20" y1="24" x2="13" y2="24" opacity=".7"/><rect x="21" y="7" width="6" height="6" rx="1.2"/><rect x="35" y="21" width="6" height="6" rx="1.2"/><rect x="21" y="35" width="6" height="6" rx="1.2"/><rect x="7" y="21" width="6" height="6" rx="1.2"/><rect x="19.5" y="19.5" width="9" height="9" rx="1.6" fill="currentColor" stroke="none"/></svg></span>
+              <p class="vnum">01</p>
             </div>
+            <h3>It starts in the clinic</h3>
+            <p>We run our own practices. Every product is built and proven on real visits, real billing, and real patients before it goes anywhere else.</p>
           </div>
-          <div class="practice">
-            <div class="pr-top">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
-              <span class="pr-name">Roots Health, Nag Pediatrics</span>
+          <div class="vcard ac-green">
+            <div class="vhead">
+              <span class="vmark"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="38" height="38" rx="3" opacity=".28"/><rect x="12" y="12" width="24" height="24" rx="2.4" opacity=".55"/><rect x="18.5" y="18.5" width="11" height="11" rx="1.8" opacity=".9"/><rect x="21.5" y="21.5" width="5" height="5" rx="1" fill="currentColor" stroke="none"/></svg></span>
+              <p class="vnum">02</p>
             </div>
-            <div class="pr-field"><span class="pr-k">Specialty</span><span class="pr-v">Pediatrics</span></div>
-            <div class="pr-field"><span class="pr-k">Location</span><span class="pr-v">Pasadena, Texas</span></div>
-            <div class="pr-field"><span class="pr-k">In the network</span><span class="pr-v">First clinic</span></div>
-            <div class="pr-field"><span class="pr-k">Status</span><span class="pr-v"><span class="dot on"></span>Live on v1</span></div>
+            <h3>Everything compounds</h3>
+            <p>The agents share one record and one set of models. Each visit, claim, and follow-up makes the whole system a little better.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="band-green ac-green">
-      <div class="container reveal">
-        <div class="why">
-          <span class="sq"></span>
-          <p class="statement">A physician should be able to stay independent, and still keep their attention on patients.</p>
-          <div class="prose">
-            <p>Running a practice has become so heavy that many doctors give up their independence just to cope. That operational weight is exactly what software should carry, so a practice can stay its own and keep care at the center.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-  <!-- PRODUCTS -->
-  <div data-page="products">
-
-    <section class="hero-wrap">
-      <div class="container hero-content">
-        <p class="eyebrow"><span class="sq"></span> Products</p>
-        <h1 class="hero">Everything a practice runs on, in one system.</h1>
-        <p class="lead">Ten products on one shared foundation, grouped by where they work. Each goes to work in our own clinics first. Here is what each one does, and what it looks like.</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="container reveal">
-        <div class="sec-head">
-          <p class="kicker"><span class="sq"></span> The map</p>
-          <h2>Every part of a clinic, and what runs it.</h2>
-        </div>
-        <div class="cmap-wrap">
-          <svg class="cmap" viewBox="0 0 988 726" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A map of a clinic and which products run each part">
-            <defs><pattern id="cmapgrid" width="26" height="26" patternUnits="userSpaceOnUse"><circle class="cgd" cx="1" cy="1" r="1"></circle></pattern></defs>
-            <rect x="12" y="12" width="964" height="702" fill="url(#cmapgrid)"></rect>
-            <rect class="rim" x="12" y="12" width="964" height="702" rx="10"></rect>
-            <path class="ctick" d="M12,30 V12 H30"></path>
-            <path class="ctick" d="M958,12 H976 V30"></path>
-            <path class="ctick" d="M12,696 V714 H30"></path>
-            <path class="ctick" d="M958,714 H976 V696"></path>
-            <text class="ccap" x="28" y="702">PRACTICE MAP / 10 PRODUCTS</text>
-            <path class="conn t" pathLength="1" d="M218,353 H236 V86 H250"></path>
-            <path class="conn g" pathLength="1" d="M218,353 H236 V254 H250"></path>
-            <path class="conn b" pathLength="1" d="M218,353 H236 V452 H250"></path>
-            <path class="conn g" pathLength="1" d="M218,353 H236 V620 H250"></path>
-            <path class="conn t c2" pathLength="1" d="M446,86 H500 V56 H556"></path>
-            <path class="conn t c2" pathLength="1" d="M446,86 H500 V116 H556"></path>
-            <path class="conn g c2" pathLength="1" d="M446,254 H500 V220 H556"></path>
-            <path class="conn g c2" pathLength="1" d="M446,254 H500 V280 H556"></path>
-            <path class="conn g c2" pathLength="1" d="M446,254 H500 V340 H556"></path>
-            <path class="conn b c2" pathLength="1" d="M446,452 H500 V418 H556"></path>
-            <path class="conn b c2" pathLength="1" d="M446,452 H500 V478 H556"></path>
-            <path class="conn b c2" pathLength="1" d="M446,452 H500 V538 H556"></path>
-            <path class="conn g c2" pathLength="1" d="M446,620 H500 V616 H556"></path>
-            <path class="conn g c2" pathLength="1" d="M446,620 H500 V676 H556"></path>
-            <path class="flow t" d="M218,353 H236 V86 H250"></path>
-            <path class="flow g" d="M218,353 H236 V254 H250"></path>
-            <path class="flow b" d="M218,353 H236 V452 H250"></path>
-            <path class="flow g" d="M218,353 H236 V620 H250"></path>
-            <path class="flow t" d="M446,86 H500 V56 H556"></path>
-            <path class="flow t" d="M446,86 H500 V116 H556"></path>
-            <path class="flow g" d="M446,254 H500 V220 H556"></path>
-            <path class="flow g" d="M446,254 H500 V280 H556"></path>
-            <path class="flow g" d="M446,254 H500 V340 H556"></path>
-            <path class="flow b" d="M446,452 H500 V418 H556"></path>
-            <path class="flow b" d="M446,452 H500 V478 H556"></path>
-            <path class="flow b" d="M446,452 H500 V538 H556"></path>
-            <path class="flow g" d="M446,620 H500 V616 H556"></path>
-            <path class="flow g" d="M446,620 H500 V676 H556"></path>
-            <circle class="jct ft" cx="236" cy="353" r="2.4"></circle>
-            <circle class="jct ft" cx="236" cy="86" r="2"></circle>
-            <circle class="jct fg" cx="236" cy="254" r="2"></circle>
-            <circle class="jct fb" cx="236" cy="452" r="2"></circle>
-            <circle class="jct fg" cx="236" cy="620" r="2"></circle>
-            <rect class="root" x="28" y="293" width="190" height="120" rx="16"></rect>
-            <text class="rk" x="123" y="326">PRACTICE</text>
-            <text class="rname" x="123" y="357">Running</text>
-            <text class="rname" x="123" y="380">a clinic</text>
-            <path class="rline" d="M98,393 H148"></path>
-            <circle class="pt ft" cx="218" cy="353" r="4"></circle>
-            <rect class="grp t" x="250" y="60" width="196" height="52" rx="10"></rect>
-            <rect class="gtab ft" x="250" y="73" width="3" height="26" rx="1.5"></rect>
-            <text class="gix t" x="268" y="79">01</text>
-            <text class="gname" x="348" y="91">Foundation</text>
-            <rect class="grp g" x="250" y="228" width="196" height="52" rx="10"></rect>
-            <rect class="gtab fg" x="250" y="241" width="3" height="26" rx="1.5"></rect>
-            <text class="gix g" x="268" y="247">02</text>
-            <text class="gname" x="348" y="259">In the clinic</text>
-            <rect class="grp b" x="250" y="426" width="196" height="52" rx="10"></rect>
-            <rect class="gtab fb" x="250" y="439" width="3" height="26" rx="1.5"></rect>
-            <text class="gix b" x="268" y="445">03</text>
-            <text class="gname" x="348" y="457">Revenue and ops</text>
-            <rect class="grp g" x="250" y="594" width="196" height="52" rx="10"></rect>
-            <rect class="gtab fg" x="250" y="607" width="3" height="26" rx="1.5"></rect>
-            <text class="gix g" x="268" y="613">04</text>
-            <text class="gname" x="348" y="625">Beyond the clinic</text>
-            <rect class="leaf t" x="556" y="30" width="384" height="52" rx="10"></rect>
-            <rect class="lbar ft" x="556" y="40" width="3" height="32" rx="1.5"></rect>
-            <circle class="pt ft" cx="556" cy="56" r="3.5"></circle>
-            <text class="lname" x="582" y="52">Foundry</text>
-            <text class="ldesc" x="582" y="69">the shared record under everything</text>
-            <line class="ldiv" x1="886" y1="42" x2="886" y2="70"></line>
-            <text class="lix" x="918" y="60">01</text>
-            <rect class="leaf t" x="556" y="90" width="384" height="52" rx="10"></rect>
-            <rect class="lbar ft" x="556" y="100" width="3" height="32" rx="1.5"></rect>
-            <circle class="pt ft" cx="556" cy="116" r="3.5"></circle>
-            <text class="lname" x="582" y="112">Models</text>
-            <text class="ldesc" x="582" y="129">our clinical and voice models</text>
-            <line class="ldiv" x1="886" y1="102" x2="886" y2="130"></line>
-            <text class="lix" x="918" y="120">02</text>
-            <rect class="leaf g" x="556" y="194" width="384" height="52" rx="10"></rect>
-            <rect class="lbar fg" x="556" y="204" width="3" height="32" rx="1.5"></rect>
-            <circle class="pt fg" cx="556" cy="220" r="3.5"></circle>
-            <text class="lname" x="582" y="216">Scribe</text>
-            <text class="ldesc" x="582" y="233">writes the note, assigns the codes</text>
-            <line class="ldiv" x1="886" y1="206" x2="886" y2="234"></line>
-            <text class="lix" x="918" y="224">03</text>
-            <rect class="leaf g" x="556" y="254" width="384" height="52" rx="10"></rect>
-            <rect class="lbar fg" x="556" y="264" width="3" height="32" rx="1.5"></rect>
-            <circle class="pt fg" cx="556" cy="280" r="3.5"></circle>
-            <text class="lname" x="582" y="276">Clinics</text>
-            <text class="ldesc" x="582" y="293">answers calls, books visits</text>
-            <line class="ldiv" x1="886" y1="266" x2="886" y2="294"></line>
-            <text class="lix" x="918" y="284">04</text>
-            <rect class="leaf g" x="556" y="314" width="384" height="52" rx="10"></rect>
-            <rect class="lbar fg" x="556" y="324" width="3" height="32" rx="1.5"></rect>
-            <circle class="pt fg" cx="556" cy="340" r="3.5"></circle>
-            <text class="lname" x="582" y="336">Guardian</text>
-            <text class="ldesc" x="582" y="353">tracks care, gaps, and adherence</text>
-            <line class="ldiv" x1="886" y1="326" x2="886" y2="354"></line>
-            <text class="lix" x="918" y="344">05</text>
-            <rect class="leaf b" x="556" y="392" width="384" height="52" rx="10"></rect>
-            <rect class="lbar fb" x="556" y="402" width="3" height="32" rx="1.5"></rect>
-            <circle class="pt fb" cx="556" cy="418" r="3.5"></circle>
-            <text class="lname" x="582" y="414">RCM</text>
-            <text class="ldesc" x="582" y="431">files claims, works denials</text>
-            <line class="ldiv" x1="886" y1="404" x2="886" y2="432"></line>
-            <text class="lix" x="918" y="422">06</text>
-            <rect class="leaf b" x="556" y="452" width="384" height="52" rx="10"></rect>
-            <rect class="lbar fb" x="556" y="462" width="3" height="32" rx="1.5"></rect>
-            <circle class="pt fb" cx="556" cy="478" r="3.5"></circle>
-            <text class="lname" x="582" y="474">Credentialing</text>
-            <text class="ldesc" x="582" y="491">verifies coverage and payers</text>
-            <line class="ldiv" x1="886" y1="464" x2="886" y2="492"></line>
-            <text class="lix" x="918" y="482">07</text>
-            <rect class="leaf b" x="556" y="512" width="384" height="52" rx="10"></rect>
-            <rect class="lbar fb" x="556" y="522" width="3" height="32" rx="1.5"></rect>
-            <circle class="pt fb" cx="556" cy="538" r="3.5"></circle>
-            <text class="lname" x="582" y="534">Supply chain</text>
-            <text class="ldesc" x="582" y="551">tracks and reorders inventory</text>
-            <line class="ldiv" x1="886" y1="524" x2="886" y2="552"></line>
-            <text class="lix" x="918" y="542">08</text>
-            <rect class="leaf g" x="556" y="590" width="384" height="52" rx="10"></rect>
-            <rect class="lbar fg" x="556" y="600" width="3" height="32" rx="1.5"></rect>
-            <circle class="pt fg" cx="556" cy="616" r="3.5"></circle>
-            <text class="lname" x="582" y="612">OpenDoor</text>
-            <text class="ldesc" x="582" y="629">how we buy and run practices</text>
-            <line class="ldiv" x1="886" y1="602" x2="886" y2="630"></line>
-            <text class="lix" x="918" y="620">09</text>
-            <rect class="leaf g" x="556" y="650" width="384" height="52" rx="10"></rect>
-            <rect class="lbar fg" x="556" y="660" width="3" height="32" rx="1.5"></rect>
-            <circle class="pt fg" cx="556" cy="676" r="3.5"></circle>
-            <text class="lname" x="582" y="672">Bishop</text>
-            <text class="ldesc" x="582" y="689">a health assistant for the patient</text>
-            <line class="ldiv" x1="886" y1="662" x2="886" y2="690"></line>
-            <text class="lix" x="918" y="680">10</text>
-            <rect class="vtag" x="640" y="663" width="24" height="15" rx="4"></rect>
-            <text class="vtx" x="652" y="674">v2</text>
-            </svg>
-        </div>
-      </div>
-    </section>
-    <section class="prod">
-      <div class="container reveal">
-        <div class="product">
-          <div class="product-text">
-            <p class="prod-kicker">Foundation</p>
-            <h3 class="prod-name">Foundry</h3>
-            <p class="tagline">The shared record under everything.</p>
-            <div class="prose"><p>Foundry takes in everything the clinic and the agents produce, demographics, visit notes, claims, coverage, supplies, and structures it into one record. Every other product reads from it and writes back to it, so nothing lives in a silo and nothing is entered twice.</p></div>
-            <ul class="cap"><li>Unifies records across every product</li><li>One source of truth the agents share</li><li>Keeps clinical data clean and current</li></ul>
-          </div>
-          <div class="product-mock">
-            <div class="mock">
-              <p class="mock-head">Foundry <span class="meta">data layer</span></p>
-              <div class="kpis kpis-3"><div class="kpi"><div class="v">4,812</div><div class="l">Patients</div></div><div class="kpi"><div class="v">1.2M</div><div class="l">Records</div></div><div class="kpi"><div class="v">99.9%</div><div class="l">Synced</div></div></div>
-              <p class="mlabel">Sources</p>
-              <div class="frow"><span>Clinics</span><span class="pill ok">live</span></div>
-              <div class="frow"><span>Scribe</span><span class="pill ok">live</span></div>
-              <div class="frow"><span>RCM</span><span class="pill ok">live</span></div>
-              <div class="frow"><span>Credentialing</span><span class="pill ok">live</span></div>
-              <div class="frow"><span>Labs</span><span class="pill mute">syncing</span></div>
-              <p class="mlabel">Unified record</p>
-              <div class="rec-head" style="margin-bottom:0"><span class="rec-avatar">MR</span><div><p class="rec-name">Maria Reyes</p><p class="rec-sub">MRN 04821 &middot; merged from 5 sources</p></div></div>
+          <div class="vcard ac-blue">
+            <div class="vhead">
+              <span class="vmark"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="14" y1="24" x2="35" y2="13" opacity=".7"/><line x1="15" y1="24" x2="36" y2="24" opacity=".7"/><line x1="14" y1="24" x2="35" y2="35" opacity=".7"/><circle cx="11" cy="24" r="4" fill="currentColor" stroke="none"/><circle cx="37" cy="12" r="2.8" fill="currentColor" stroke="none"/><circle cx="38" cy="24" r="2.8" fill="currentColor" stroke="none"/><circle cx="37" cy="36" r="2.8" fill="currentColor" stroke="none"/></svg></span>
+              <p class="vnum">03</p>
             </div>
+            <h3>Then it grows outward</h3>
+            <p>From the front desk and the claim today, to patients and other practices next. One connected ecosystem, expanding from the clinic out.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="prod">
-      <div class="container reveal">
-        <div class="product rev">
-          <div class="product-text">
-            <p class="prod-kicker">Foundation</p>
-            <h3 class="prod-name">Models</h3>
-            <p class="tagline">Clinical and voice models, built in house.</p>
-            <div class="prose"><p>We train our own models for the tasks a practice runs on, speech, clinical language, and coding. They power Scribe and our voice agents today. Foundational healthcare models, trained on what we learn in our clinics, are next.</p></div>
-            <ul class="cap"><li>Speech to text tuned for the exam room</li><li>Clinical language for notes and coding</li><li>Foundational models on the roadmap</li></ul>
-          </div>
-          <div class="product-mock">
-            <div class="mock">
-              <p class="mock-head">Voice model <span class="meta">live</span></p>
-              <div class="wave"><i style="height:8px;animation-delay:-0.0s"></i><i style="height:13px;animation-delay:-0.09s"></i><i style="height:20px;animation-delay:-0.18s"></i><i style="height:28px;animation-delay:-0.27s"></i><i style="height:18px;animation-delay:-0.36s"></i><i style="height:10px;animation-delay:-0.45s"></i><i style="height:23px;animation-delay:-0.54s"></i><i style="height:31px;animation-delay:-0.63s"></i><i style="height:16px;animation-delay:-0.72s"></i><i style="height:11px;animation-delay:-0.81s"></i><i style="height:25px;animation-delay:-0.9s"></i><i style="height:33px;animation-delay:-0.99s"></i><i style="height:21px;animation-delay:-1.08s"></i><i style="height:14px;animation-delay:-1.17s"></i><i style="height:9px;animation-delay:-1.26s"></i><i style="height:19px;animation-delay:-1.35s"></i><i style="height:27px;animation-delay:-1.44s"></i><i style="height:12px;animation-delay:-1.53s"></i><i style="height:8px;animation-delay:-1.62s"></i><i style="height:17px;animation-delay:-1.71s"></i></div>
-              <p class="transcript"><span class="muted">Transcribing  </span>patient reports a sore throat for three days, no fever.</p>
-              <div class="chips" style="margin-top:14px"><span class="chip acc">drafting note</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="prod ac-green">
-      <div class="container reveal">
-        <div class="product">
-          <div class="product-text">
-            <p class="prod-kicker">In the clinic</p>
-            <h3 class="prod-name">Scribe</h3>
-            <p class="tagline">The visit, written for you.</p>
-            <div class="prose"><p>Scribe listens to the visit and does the documentation. Before the patient arrives it surfaces their history and the reason for the visit. During the visit it transcribes. After, it drafts the SOAP note and a plain summary, and assigns the ICD and CPT codes for billing.</p></div>
-            <ul class="cap"><li>Drafts the SOAP note and summary</li><li>Assigns ICD and CPT codes</li><li>Surfaces history before the visit</li></ul>
-          </div>
-          <div class="product-mock">
-            <div class="mock">
-              <div class="rec-head"><div><p class="rec-name">Visit note</p><p class="rec-sub">Maria Reyes &middot; today</p></div><span class="rec-live"><span class="rec-dot"></span>transcribing</span></div>
-              <div class="utt"><span class="who">Clinician</span><span class="said">How long has the throat been sore?</span></div>
-              <div class="utt"><span class="who">Patient</span><span class="said">About three days, no fever.</span></div>
-              <div class="note-div"></div>
-              <div class="note-row"><span class="nk">S</span><span class="nv">Sore throat, three days. No fever.</span></div>
-              <div class="note-row"><span class="nk">O</span><span class="nv">Throat erythematous. Lungs clear.</span></div>
-              <div class="note-row"><span class="nk">A</span><span class="nv">Acute pharyngitis.</span></div>
-              <div class="note-row"><span class="nk">P</span><span class="nv">Supportive care. Return if worse.</span></div>
-              <div class="note-foot"><div class="chips"><span class="chip">ICD-10 &middot; J06.9</span><span class="chip">CPT &middot; 99213</span></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="prod ac-green">
-      <div class="container reveal">
-        <div class="product rev">
-          <div class="product-text">
-            <p class="prod-kicker">In the clinic</p>
-            <h3 class="prod-name">Clinics</h3>
-            <p class="tagline">A front desk that answers every call.</p>
-            <div class="prose"><p>Clinics is a voice agent for the front office. It picks up the phone, books and reschedules appointments, answers routine questions, and follows up with patients, in natural conversation, without putting anyone on hold.</p></div>
-            <ul class="cap"><li>Answers and places calls</li><li>Books and moves appointments</li><li>Handles routine follow-ups</li></ul>
-          </div>
-          <div class="product-mock">
-            <div class="mock">
-              <p class="mock-head">Incoming call <span class="meta">Clinics</span></p>
-              <div class="chat">
-                <div class="bubble them">Hi, I need to move my Thursday appointment.</div>
-                <div class="bubble us">No problem. I have Thursday at 9:30 or Friday at 11. Which works better?</div>
-                <div class="bubble them">Thursday 9:30.</div>
-              </div>
-              <div class="stat-row" style="margin-top:14px"><span class="dot acc"></span>Booked<span class="sub">Thu 9:30 AM</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="prod ac-green">
-      <div class="container reveal">
-        <div class="product">
-          <div class="product-text">
-            <p class="prod-kicker">In the clinic</p>
-            <h3 class="prod-name">Guardian</h3>
-            <p class="tagline">Care that does not fall through the cracks.</p>
-            <div class="prose"><p>Guardian watches a patient's care over time. It reads from Clinics, Scribe, and RCM to track preventive care and HEDIS measures, check dosages and adherence, and flag when someone is due for a follow-up. It is the reasoning layer behind Bishop.</p></div>
-            <ul class="cap"><li>Tracks HEDIS and preventive care</li><li>Checks dosage and adherence</li><li>Flags overdue follow-ups</li></ul>
-          </div>
-          <div class="product-mock">
-            <div class="mock">
-              <div class="rec-head"><span class="rec-avatar">MR</span><div><p class="rec-name">Maria Reyes</p><p class="rec-sub">Care plan</p></div></div>
-              <div class="frow"><span>Well-child visit</span><span class="pill warn">Due</span></div>
-              <div class="frow"><span>Immunizations</span><span class="pill ok">Up to date</span></div>
-              <div class="qrow"><span>Medication adherence</span><span class="qv">92%</span><div class="qbar"><span style="width:92%"></span></div></div>
-              <div class="qrow"><span>HEDIS W15</span><span class="qv">82%</span><div class="qbar"><span style="width:82%"></span></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="prod ac-blue">
-      <div class="container reveal">
-        <div class="product rev">
-          <div class="product-text">
-            <p class="prod-kicker">Revenue and operations</p>
-            <h3 class="prod-name">RCM</h3>
-            <p class="tagline">Get paid for the work you do.</p>
-            <div class="prose"><p>RCM runs the revenue cycle. It prepares and submits claims, tracks them, and when a claim is denied it works the denial and files the appeal, so the practice collects what it is owed without the manual chase.</p></div>
-            <ul class="cap"><li>Submits and tracks claims</li><li>Works denials and appeals</li><li>Keeps the revenue cycle moving</li></ul>
-          </div>
-          <div class="product-mock">
-            <div class="mock">
-              <p class="mock-head">Claims <span class="meta">this week</span></p>
-              <div class="kpis"><div class="kpi"><div class="v">$48.2k</div><div class="l">Collected</div></div><div class="kpi"><div class="v">7</div><div class="l">Appeals won</div></div></div>
-              <div class="frow"><span>Claim 8842</span><span class="pill ok">Paid</span></div>
-              <div class="frow"><span>Claim 8839</span><span class="pill warn">Appealed</span></div>
-              <div class="frow"><span>Claim 8851</span><span class="pill mute">Submitted</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="prod ac-blue">
-      <div class="container reveal">
-        <div class="product">
-          <div class="product-text">
-            <p class="prod-kicker">Revenue and operations</p>
-            <h3 class="prod-name">Credentialing</h3>
-            <p class="tagline">Coverage checked before the visit.</p>
-            <div class="prose"><p>Credentialing verifies a patient's eligibility and benefits with their payer, so coverage is confirmed before the visit and claims do not bounce for the wrong plan or a lapsed policy.</p></div>
-            <ul class="cap"><li>Verifies eligibility and benefits</li><li>Confirms coverage before the visit</li><li>Cuts denials from bad plan data</li></ul>
-          </div>
-          <div class="product-mock">
-            <div class="mock">
-              <div class="rec-head"><div><p class="rec-name">Eligibility</p><p class="rec-sub">verified just now</p></div><span class="pill ok">Active</span></div>
-              <div class="payer"><span class="badge">Ae</span><div><p class="rec-name" style="font-size:13px">Aetna</p><p class="rec-sub">Open PPO</p></div></div>
-              <div class="frow"><span>Copay</span><span>$25</span></div>
-              <div class="frow"><span>Deductible</span><span>Met</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="prod ac-blue">
-      <div class="container reveal">
-        <div class="product rev">
-          <div class="product-text">
-            <p class="prod-kicker">Revenue and operations</p>
-            <h3 class="prod-name">Supply chain</h3>
-            <p class="tagline">The clinic never runs out.</p>
-            <div class="prose"><p>Supply chain tracks what a clinic has on hand and what it is using, places orders before things run low, and predicts demand so the shelves and the fridge are always stocked without overbuying.</p></div>
-            <ul class="cap"><li>Tracks inventory in real time</li><li>Reorders before stockouts</li><li>Predicts what a clinic will need</li></ul>
-          </div>
-          <div class="product-mock">
-            <div class="mock">
-              <p class="mock-head">Inventory <span class="meta">Supply chain</span></p>
-              <div class="qrow"><span>Flu vaccine</span><span class="qv">200</span><div class="qbar"><span style="width:90%"></span></div></div>
-              <div class="qrow"><span>Gloves, medium</span><span class="pill warn">low</span><div class="qbar"><span class="low" style="width:16%"></span></div></div>
-              <div class="qrow"><span>Amoxicillin</span><span class="qv">ok</span><div class="qbar"><span style="width:64%"></span></div></div>
-              <div class="qrow"><span>Rapid strep tests</span><span class="pill mute">reordering</span><div class="qbar"><span style="width:34%"></span></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="prod ac-green">
-      <div class="container reveal">
-        <div class="product">
-          <div class="product-text">
-            <p class="prod-kicker">Beyond the clinic</p>
-            <h3 class="prod-name">OpenDoor</h3>
-            <p class="tagline">A marketplace for medical practices.</p>
-            <div class="prose"><p>OpenDoor is where practices are bought and sold. It is how we find and acquire the clinics we operate, and how other buyers and sellers find each other. It brings listings, diligence, and deal flow into one place.</p></div>
-            <ul class="cap"><li>Lists practices for sale</li><li>How we acquire our clinics</li><li>Brings diligence into one place</li></ul>
-          </div>
-          <div class="product-mock">
-            <div class="mock">
-              <div class="listing-img"><span class="tag">For sale</span></div>
-              <p class="rec-name" style="margin-bottom:2px">Pediatric practice</p>
-              <p class="rec-sub" style="margin-bottom:13px">Pasadena, TX</p>
-              <div class="tiles"><div class="stile"><div class="v">~5,000</div><div class="l">Patients</div></div><div class="stile"><div class="v">2</div><div class="l">Providers</div></div><div class="stile"><div class="v">12k</div><div class="l">Visits / yr</div></div></div>
-              <span class="mock-btn">View listing</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="prod ac-green">
-      <div class="container reveal">
-        <div class="product rev">
-          <div class="product-text">
-            <p class="prod-kicker">Beyond the clinic</p>
-            <h3 class="prod-name">Bishop <span class="tag">v2</span></h3>
-            <p class="tagline">A health assistant in every patient's pocket.</p>
-            <div class="prose"><p>Bishop is a personalised assistant for patients. It connects to their records, labs, and day to day activity, keeps up with their care plan and follow-ups, answers questions in plain language, and nudges them at the right time. Guardian is the reasoning behind it. It arrives with v2.</p></div>
-            <ul class="cap"><li>Connects records, labs, and activity</li><li>Keeps up with care and follow-ups</li><li>Answers in plain language</li></ul>
-          </div>
-          <div class="product-mock">
-            <div class="mock">
-              <p class="mock-head">Bishop <span class="meta">v2</span></p>
-              <div class="chat">
-                <div class="bubble them">My throat still hurts. Should I be worried?</div>
-                <div class="bubble us">Your visit was two days ago, and a sore throat can take about a week. If you spike a fever or it is not better by Friday, I can book a follow-up.</div>
-              </div>
-              <div class="chips" style="margin-top:14px"><span class="chip acc">Reminder &middot; amoxicillin, 8 PM</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="band-green ac-green">
-      <div class="container reveal">
-        <div class="why">
-          <span class="sq"></span>
-          <p class="statement">One system, proven where it has to work first.</p>
-          <div class="prose"><p>Every product here runs in our own clinics before it goes anywhere else. If you are a practice or a builder who wants in, we would like to hear from you.</p></div>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-  <!-- VISION -->
-  <div data-page="vision">
-
-    <section class="hero-wrap">
-      <div class="container hero-content">
-        <p class="eyebrow"><span class="sq"></span> Vision</p>
-        <h1 class="hero">An ecosystem of AI, built from inside the clinic.</h1>
-        <p class="lead">Most healthcare software is sold from the outside in. We do the opposite. We run our own clinics, build the AI that runs them, and widen the circle from there, one product at a time.</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="container reveal">
-        <div class="sec-head">
-          <p class="kicker"><span class="sq"></span> What we are building</p>
-          <h2>One operating system for the practice, built from the inside.</h2>
-        </div>
-        <div class="note-grid">
-          <div class="note-prose">
-            <p class="lead-p">Most healthcare software is sold to clinics from the outside, by people who have never run one. We are doing it the other way around. We own and operate our own practices, and we build the AI that runs them, the software we would want if a clinic were the only thing we had.</p>
-            <p>A product earns its place by working on real visits, real claims, and real patients in our clinics first. Once it holds up, it joins the rest of the system on one shared record, and the circle widens, to more of our own clinics, then to practices we partner with, and in time to patients themselves.</p>
-            <p>The aim is not one more tool to bolt on. It is a single system that quietly runs the day to day of a practice, so the people there can spend their time on care instead of paperwork.</p>
-            <p class="aim-p">And the aim behind all of it is larger than any one practice. Software that can run a clinic well can run thousands, and reach the billions of people those clinics were never built to hold. We want healthcare that travels, to every practice that will have it and, in time, to a personal health companion in every pocket, so that a longer and healthier life is less a matter of where a person happens to be born.</p>
-          </div>
-          <div class="reach-wrap">
-            <svg class="reach" viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="From our own clinics outward to partner practices, every patient, and everyone, everywhere">
-              <rect class="f f4" x="10" y="30" width="400" height="300" rx="18"></rect>
-              <text class="lbl" x="28" y="50">everyone, everywhere</text>
-              <rect class="f f3" x="60" y="68" width="300" height="224" rx="16"></rect>
-              <text class="lbl" x="78" y="88">every patient</text>
-              <rect class="f f2" x="110" y="106" width="200" height="148" rx="14"></rect>
-              <text class="lbl" x="128" y="126">partner practices</text>
-              <rect class="f f1" x="158" y="144" width="104" height="72" rx="11"></rect>
-              <circle class="core" cx="210" cy="170" r="3.4"></circle>
-              <text class="l1" x="210" y="192">Our clinics</text>
-            </svg>
-            <p class="reach-cap">From our own clinics, outward to everyone.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
+<section>
       <div class="container reveal">
         <div class="sec-head">
           <p class="kicker"><span class="sq"></span> The ecosystem</p>
@@ -1360,6 +1138,76 @@
       </div>
     </section>
 
+<section>
+      <div class="container reveal">
+        <div class="sec-head">
+          <p class="kicker"><span class="sq"></span> What we build</p>
+          <h2>One system, several products.</h2>
+          <div class="prose"><p>The same products, working together on one shared foundation.</p></div>
+        </div>
+
+                <div class="ovp"><a class="ovp-card a-t" href="#products" data-prodlink="foundry"><div class="ovp-ix">01</div><h3 class="ovp-name">Foundry</h3><p class="ovp-tag">One record, <em>shared.</em></p><p class="ovp-desc">Every product reads from and writes to one patient record.</p><div class="ovp-mock"><div class="mock mini" data-sim="foundry"><p class="mock-head">Foundry <span class="meta">shared record</span></p><div class="mlabel labelrow">Live ingest <span class="frate"><b data-count="21" data-step="2" data-max="34">21</b> /s</span></div><div class="flog" data-flog data-rows="3"><div class="fx"><span class="fdot"></span><span class="fm">write</span><span class="ft">scribe.note</span><span class="fok">ok 24ms</span></div><div class="fx"><span class="fdot"></span><span class="fm">sync</span><span class="ft">clinics.appt</span><span class="fok">ok 12ms</span></div><div class="fx"><span class="fdot"></span><span class="fm">index</span><span class="ft">rcm.claim</span><span class="fok">ok 18ms</span></div></div><p class="mlabel">Sources</p><div class="synclist"><div class="frow"><span>Clinics</span><span class="pill ok">live</span></div><div class="frow"><span>Scribe</span><span class="pill ok">live</span></div><div class="frow"><span>RCM</span><span class="pill ok">live</span></div></div></div></div></a><a class="ovp-card a-t" href="#products" data-prodlink="models"><div class="ovp-ix">02</div><h3 class="ovp-name">Models</h3><p class="ovp-tag">Built for <em>medicine.</em></p><p class="ovp-desc">Our own speech and clinical models, tuned for the exam room.</p><div class="ovp-mock"><div class="mock mini" data-sim="models"><p class="mock-head">Voice model <span class="meta">live</span></p><div class="rec-rec"><span class="rec-dot"></span>recording</div><div class="wave"><i style="height:8px;animation-delay:-0.00s"></i><i style="height:13px;animation-delay:-0.09s"></i><i style="height:20px;animation-delay:-0.18s"></i><i style="height:28px;animation-delay:-0.27s"></i><i style="height:18px;animation-delay:-0.36s"></i><i style="height:10px;animation-delay:-0.45s"></i><i style="height:23px;animation-delay:-0.54s"></i><i style="height:31px;animation-delay:-0.63s"></i><i style="height:16px;animation-delay:-0.72s"></i><i style="height:11px;animation-delay:-0.81s"></i><i style="height:25px;animation-delay:-0.90s"></i><i style="height:33px;animation-delay:-0.99s"></i><i style="height:21px;animation-delay:-1.08s"></i><i style="height:14px;animation-delay:-1.17s"></i><i style="height:9px;animation-delay:-1.26s"></i><i style="height:19px;animation-delay:-1.35s"></i><i style="height:27px;animation-delay:-1.44s"></i><i style="height:12px;animation-delay:-1.53s"></i><i style="height:8px;animation-delay:-1.62s"></i><i style="height:17px;animation-delay:-1.71s"></i></div><p class="transcript"><span class="muted">Transcribing </span><span class="live" data-type data-lines="patient reports a sore throat for three days, no fever.|no cough, started after the weekend.|temperature is 99.1, throat looks a little red.">patient reports a sore throat for three days, no fever.</span><span class="caret"></span></p><div class="chips" style="margin-top:12px"><span class="chip acc glow">drafting note</span></div></div></div></a><a class="ovp-card a-g" href="#products" data-prodlink="scribe"><div class="ovp-ix">03</div><h3 class="ovp-name">Scribe</h3><p class="ovp-tag">The note <em>writes itself.</em></p><p class="ovp-desc">Record the visit. Finish the chart. Go home.</p><div class="ovp-mock"><div class="mock mini" data-sim="scribe"><div class="rec-head"><div><p class="rec-name">Visit note</p><p class="rec-sub">Maria Reyes &middot; today</p></div><span class="rec-live"><span class="rec-dot"></span>transcribing</span></div><div class="utt"><span class="who">Clinician</span><span class="said" data-type>How long has the throat been sore?</span></div><div class="utt"><span class="who">Patient</span><span class="said" data-type>About three days, no fever.</span></div><div class="note-div"></div><div class="note-row"><span class="nk">S</span><span class="nv"><span data-type>Sore throat, three days. No fever.</span></span></div><div class="note-row"><span class="nk">O</span><span class="nv"><span data-type>Throat erythematous. Lungs clear.</span></span></div><div class="note-row"><span class="nk">A</span><span class="nv"><span data-type>Acute pharyngitis.</span> <span class="dxtag">suggested Dx</span></span></div><div class="note-row"><span class="nk">P</span><span class="nv"><span data-type>Supportive care.</span></span></div><div class="note-foot"><div class="chips"><span class="chip">ICD-10 &middot; J06.9</span><span class="chip">CPT &middot; 99213</span><span class="chip acc">auto-coded</span></div></div></div></div></a><a class="ovp-card a-g" href="#products" data-prodlink="clinics"><div class="ovp-ix">04</div><h3 class="ovp-name">Clinics</h3><p class="ovp-tag">It always <em>picks up.</em></p><p class="ovp-desc">Calls answered, visits booked, no one left on hold.</p><div class="ovp-mock"><div class="mock mini" data-sim="clinics"><div class="callbar"><span class="rec-dot"></span><span>Live call</span><span class="ctime" data-ctime>00:00</span><span class="meta" style="margin-left:auto">Clinics</span></div><div class="cends"><div class="cend" data-end="user"><span class="cav">U</span><span class="clabel">Patient</span><div class="cwave"><i style="animation-delay:-0.00s"></i><i style="animation-delay:-0.08s"></i><i style="animation-delay:-0.16s"></i><i style="animation-delay:-0.24s"></i><i style="animation-delay:-0.32s"></i><i style="animation-delay:-0.40s"></i><i style="animation-delay:-0.48s"></i><i style="animation-delay:-0.56s"></i></div></div><div class="cend" data-end="agent"><span class="cav cav-a">A</span><span class="clabel">Agent</span><div class="cwave"><i style="animation-delay:-0.00s"></i><i style="animation-delay:-0.08s"></i><i style="animation-delay:-0.16s"></i><i style="animation-delay:-0.24s"></i><i style="animation-delay:-0.32s"></i><i style="animation-delay:-0.40s"></i><i style="animation-delay:-0.48s"></i><i style="animation-delay:-0.56s"></i></div></div></div><p class="mlabel">Transcript</p><div class="tscript" data-tscript><div class="tline"><span class="tsp agent">Agent</span><span class="ttext">How can I help?</span></div></div></div></div></a><a class="ovp-card a-g" href="#products" data-prodlink="guardian"><div class="ovp-ix">05</div><h3 class="ovp-name">Guardian</h3><p class="ovp-tag">Nothing <em>slips.</em></p><p class="ovp-desc">Every care gap surfaced, and closed on time.</p><div class="ovp-mock"><div class="mock mini" data-sim="guardian"><div class="rec-head"><span class="rec-avatar gd">G</span><div><p class="rec-name">Guardian</p><p class="rec-sub">deterministic brain</p></div><span class="rec-live"><span class="rec-dot"></span>processing</span></div><div class="qrow"><span>HEDIS W15</span><span class="qv">82%</span><div class="qbar"><span style="width:82%"></span></div></div><div class="gstats"><span class="gstat">Gaps open <b data-gaps>24</b></span><span class="gstat">HCC suspects <b>3</b></span></div><p class="mlabel">Directives</p><div class="hub" data-hub><div class="hx"><span class="hto bishop">Bishop</span>app reminder &middot; Maria Reyes</div><div class="hx"><span class="hto clinics">Clinics</span>call worklist &middot; 3 due</div><div class="hx"><span class="hto detect">gap</span>HEDIS W15 &middot; detected</div></div></div></div></a><a class="ovp-card a-b" href="#products" data-prodlink="rcm"><div class="ovp-ix">06</div><h3 class="ovp-name">RCM</h3><p class="ovp-tag">Every claim, <em>clean.</em></p><p class="ovp-desc">Scrubbed, coded, and submitted before a denial becomes a conversation.</p><div class="ovp-mock"><div class="mock mini" data-sim="rcm"><p class="mock-head">Revenue cycle <span class="meta">live</span></p><div class="pipe"><div class="pstep" style="animation-delay:0s"><span class="pdot"></span>Coded</div><div class="pstep" style="animation-delay:.84s"><span class="pdot"></span>Scrubbed</div><div class="pstep" style="animation-delay:1.68s"><span class="pdot"></span>Submitted</div><div class="pstep" style="animation-delay:2.52s"><span class="pdot"></span>Adjudicated</div><div class="pstep" style="animation-delay:3.36s"><span class="pdot"></span>Paid</div></div><div class="kpis" style="margin-top:2px"><div class="kpi bi" style="animation-delay:.1s"><div class="v" data-collected>$48.2k</div><div class="l">Collected</div></div><div class="kpi bi" style="animation-delay:.2s"><div class="v" data-appeals>7</div><div class="l">Appeals won</div></div></div><p class="mlabel">Claims</p><div class="claims" data-claims><div class="frow claim"><span>Claim 8842</span><span class="pill ok">Paid</span></div><div class="frow claim"><span>Claim 8839 <span class="denialcode">CO-16</span></span><span class="pill warn">Appeal drafted</span></div><div class="frow claim"><span>Claim 8851</span><span class="pill mute">Submitted</span></div></div></div></div></a><a class="ovp-card a-b" href="#products" data-prodlink="credentialing"><div class="ovp-ix">07</div><h3 class="ovp-name">Credentialing</h3><p class="ovp-tag">The paperwork <em>fills itself.</em></p><p class="ovp-desc">Eligibility and coverage, checked before the visit.</p><div class="ovp-mock"><div class="mock mini" data-sim="credentialing"><p class="mock-head">Eligibility check <span class="meta">Credentialing</span></p><div class="cred-form"><span class="cred-label">Patient</span><div class="cred-input"><span class="cred-name"></span><span class="caret"></span></div></div><div class="scanbar"><span></span></div><div class="frow res"><span>Coverage</span><span class="pill ok">Active</span></div><div class="payer res"><span class="badge">Ae</span><div><p class="rec-name" style="font-size:13px">Aetna</p><p class="rec-sub">Open PPO</p></div></div><div class="frow res"><span>Copay</span><span>$25</span></div><div class="frow res"><span>Deductible</span><span>$500 / $1,500</span></div></div></div></a><a class="ovp-card a-b" href="#products" data-prodlink="supply"><div class="ovp-ix">08</div><h3 class="ovp-name">Supply chain</h3><p class="ovp-tag">Never <em>runs out.</em></p><p class="ovp-desc">Inventory watched, reorders placed before the shelf is empty.</p><div class="ovp-mock"><div class="mock mini" data-sim="supply"><p class="mock-head">Inventory analytics <span class="meta">Supply chain</span></p><div class="kpis kpis-3"><div class="kpi"><div class="v" data-count="142" data-step="1" data-max="151">142</div><div class="l">Tracked</div></div><div class="kpi"><div class="v">3</div><div class="l">Alerts</div></div><div class="kpi"><div class="v" data-count="98" data-suf="%" data-step="0.5" data-max="99">98%</div><div class="l">On-time</div></div></div><p class="mlabel">Usage &middot; last 8h</p><div class="chart"><i style="height:18px"></i><i style="height:26px"></i><i style="height:14px"></i><i style="height:31px"></i><i style="height:22px"></i><i style="height:34px"></i><i style="height:20px"></i><i style="height:28px"></i></div><p class="mlabel">Par levels</p><div class="qrow bi" style="animation-delay:.1s"><span>Gloves, medium</span><span class="pill warn restockpill">reorder placed</span><div class="qbar"><span class="low restockbar"></span></div></div><div class="qrow bi" style="animation-delay:.25s"><span>Amoxicillin</span><span class="qv">ok</span><div class="qbar"><span style="width:64%"></span></div></div><div class="feed"><span class="fdot"></span><span data-feed data-feed-msgs="reorder placed &middot; gloves|received &middot; flu vaccine|par check &middot; ok|reorder &middot; rapid strep">reorder placed &middot; gloves</span></div></div></div></a><a class="ovp-card a-g" href="#products" data-prodlink="opendoor"><div class="ovp-ix">09</div><h3 class="ovp-name">OpenDoor</h3><p class="ovp-tag">Independence, at <em>scale.</em></p><p class="ovp-desc">We buy and run the practice, so you can keep practicing.</p><div class="ovp-mock"><div class="mock mini" data-sim="opendoor"><div class="mkt"><div class="mkt-bar"><span class="mkt-search">Browse practices</span><span class="mkt-chip">Pediatric</span><span class="mkt-chip">TX</span></div><div class="mkt-list"><div class="mcard" data-card><div class="mc-top"><p class="mc-name">Pediatric practice</p><span class="mc-price">$1.2M</span></div><p class="mc-loc">Pasadena, TX</p><div class="mc-stats"><span class="mc-stat">~5,000 patients</span><span class="mc-stat">2 providers</span><span class="mc-stat">1.8x</span></div></div><div class="mcard" data-card><div class="mc-top"><p class="mc-name">Family medicine</p><span class="mc-price">$2.1M</span></div><p class="mc-loc">Austin, TX</p><div class="mc-stats"><span class="mc-stat">7,200 patients</span><span class="mc-stat">3 providers</span><span class="mc-stat">2.1x</span></div></div></div><div class="cursor"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 3 L5 18 L9 14.5 L11.7 20.5 L14 19.5 L11.4 13.7 L16.5 13.5 Z" fill="#ffffff" stroke="rgba(0,0,0,.55)" stroke-width="1"></path></svg></div></div></div></div></a><a class="ovp-card a-g" href="#products" data-prodlink="bishop"><div class="ovp-ix">10</div><h3 class="ovp-name">Bishop <span class="tag">v2</span></h3><p class="ovp-tag">Care between <em>visits.</em></p><p class="ovp-desc">A health assistant in every patient's pocket.</p><div class="ovp-mock"><div class="mock mini" data-sim="bishop"><div class="rec-head"><span class="rec-avatar">MR</span><div><p class="rec-name">Maria Reyes</p><p class="rec-sub">Age 52 &middot; MRN 04821</p></div><span class="rec-live"><span class="rec-dot"></span>voice-first</span></div><div class="hpace"><div class="hp-row"><span class="hp-label">Health Pace &middot; biological age</span><span class="hp-trend">&darr; 2.8 vs actual</span></div><div class="hp-main"><span class="hp-big" data-hp>49.2</span><span class="hp-unit">yrs</span><div class="hp-spark"><i style="height:12px"></i><i style="height:20px"></i><i style="height:11px"></i><i style="height:24px"></i><i style="height:16px"></i><i style="height:26px"></i><i style="height:14px"></i><i style="height:22px"></i></div></div></div><p class="mlabel">Patient World Model</p><div class="frow"><span>Trust level</span><span class="qv" data-trust>0.78</span></div><div class="frow"><span>Care plan</span><span>2 open &middot; 1 due</span></div><div class="feed"><span class="fdot"></span><span data-feed data-feed-msgs="SMS reminder &middot; opened|self-booked well-child|Health Pace re-measured|app voice &middot; medication question">SMS reminder &middot; opened</span></div></div></div></a></div>
+      </div>
+    </section>
+
+    <section class="band-soft ac-blue">
+      <div class="container reveal">
+        <div class="sec-head">
+          <p class="kicker"><span class="sq"></span> Where we are</p>
+          <h2>Launching v1 now.</h2>
+          <div class="prose"><p>v1 is going into our own clinics now. The data it produces trains the next generation of agents and models.</p></div>
+        </div>
+        <div class="timeline">
+          <div class="tphase">
+            <div class="tnode">01</div>
+            <p class="twhen">v1, now</p>
+            <h4>Live in our clinics</h4>
+            <p>Into our own practices, on real visits, claims, and data from day one.</p>
+          </div>
+          <div class="tphase">
+            <div class="tnode">02</div>
+            <p class="twhen">Next</p>
+            <h4>Data and models</h4>
+            <p>That data becomes harnesses, stronger agents, and our own foundational models.</p>
+          </div>
+          <div class="tphase">
+            <div class="tnode">03</div>
+            <p class="twhen">v2</p>
+            <h4>Bishop and beyond</h4>
+            <p>The next generation, including Bishop, and expansion beyond our own clinics.</p>
+          </div>
+        </div>
+        <p class="note">We are growing quickly.</p>
+      </div>
+    </section>
+
+    
+
+    <section class="band-green ac-green">
+      <div class="container reveal">
+        <div class="why">
+          <span class="sq"></span>
+          <p class="statement">A physician should be able to stay independent, and still keep their attention on patients.</p>
+          <div class="prose">
+            <p>Running a practice has become so heavy that many doctors give up their independence just to cope. That operational weight is exactly what software should carry, so a practice can stay its own and keep care at the center.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- PRODUCTS -->
+  <div data-page="products">
+
+    <section class="hero-wrap">
+      <div class="container hero-content">
+        <p class="eyebrow"><span class="sq"></span> Products</p>
+        <h1 class="hero">Everything a practice runs on, in one system.</h1>
+        <p class="lead">Ten products on one shared foundation, grouped by where they work. Each goes to work in our own clinics first. Here is what each one does, and what it looks like.</p>
+      </div>
+    </section>
+
     <section>
       <div class="container reveal">
         <div class="sec-head">
@@ -1391,79 +1239,280 @@
           </div>
           <div class="sys-col">
             <p class="sys-ct">How they connect</p>
-            <svg class="flow" viewBox="0 0 600 548" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How the agents connect: Guardian sits between Scribe, RCM, Clinics and Bishop, all on one record and shared models">
-              <defs><marker id="ah" markerWidth="8.5" markerHeight="8.5" refX="5.6" refY="3" orient="auto-start-reverse"><path class="ahf" d="M0,0 L6,3 L0,6 Z"></path></marker></defs>
-              <line class="dataedge" x1="124" y1="438" x2="124" y2="472"></line>
-              <line class="dataedge" x1="300" y1="438" x2="300" y2="472"></line>
-              <line class="dataedge" x1="482" y1="438" x2="482" y2="472"></line>
-              <line class="dataedge" x1="124" y1="406" x2="124" y2="438"></line>
-              <line class="dataedge" x1="482" y1="406" x2="482" y2="438"></line>
-              <rect class="node nFound" x="120" y="24" width="360" height="44" rx="9"></rect><text class="nname" x="300" y="44">Foundry</text><text class="nsub" x="300" y="59">one shared record</text>
-              <rect class="node nModel" x="120" y="476" width="360" height="44" rx="9"></rect><text class="nname" x="300" y="496">Models</text><text class="nsub" x="300" y="511">clinical and voice</text>
-              <rect class="node nAgent" x="240" y="120" width="120" height="52" rx="9"></rect><text class="nname" x="300" y="144">Scribe</text><text class="nsub" x="300" y="159">at the visit</text>
-              <rect class="node nHub" x="232" y="244" width="136" height="70" rx="9"></rect><text class="nname" x="300" y="277">Guardian</text><text class="nsub" x="300" y="292">the brain</text>
-              <rect class="node nAgent" x="62" y="250" width="124" height="52" rx="9"></rect><text class="nname" x="124" y="274">RCM</text><text class="nsub" x="124" y="289">billing</text>
-              <rect class="node nAgent" x="414" y="250" width="132" height="52" rx="9"></rect><text class="nname" x="480" y="274">Clinics</text><text class="nsub" x="480" y="289">front desk</text>
-              <rect class="node nAgent" x="240" y="386" width="120" height="52" rx="9"></rect><text class="nname" x="300" y="410">Bishop</text><text class="nsub" x="300" y="425">the patient</text>
-              <rect class="node nAgent" x="62" y="360" width="124" height="46" rx="9"></rect><text class="nname" x="124" y="381">Credentialing</text><text class="nsub" x="124" y="396">eligibility</text>
-              <rect class="node nAgent" x="422" y="360" width="124" height="46" rx="9"></rect><text class="nname" x="484" y="381">Supply</text><text class="nsub" x="484" y="396">inventory</text>
-              <line class="flowedge" x1="300" y1="172" x2="300" y2="244" marker-start="url(#ah)" marker-end="url(#ah)"></line>
-              <line class="flowedge" x1="186" y1="278" x2="232" y2="278" marker-start="url(#ah)" marker-end="url(#ah)"></line>
-              <line class="flowedge" x1="414" y1="278" x2="368" y2="278" marker-start="url(#ah)" marker-end="url(#ah)"></line>
-              <line class="flowedge" x1="300" y1="386" x2="300" y2="314" marker-start="url(#ah)" marker-end="url(#ah)"></line>
-              <line class="flowedge" x1="300" y1="68" x2="300" y2="120" marker-end="url(#ah)"></line>
-              <line class="flowedge" x1="124" y1="360" x2="124" y2="302" marker-end="url(#ah)"></line>
-              <line class="flowedge" x1="482" y1="360" x2="482" y2="302" marker-end="url(#ah)"></line>
-              <line class="flowedge" x1="252" y1="168" x2="150" y2="250" marker-end="url(#ah)"></line>
-              <text class="elbl ta-s" x="346" y="212">gaps, notes</text>
-              <text class="elbl ta-m" x="209" y="270">audit, status</text>
-              <text class="elbl ta-m" x="391" y="270">worklist</text>
-              <text class="elbl ta-s" x="346" y="352">due, signals</text>
-              <text class="elbl ta-s" x="330" y="98">record</text>
-              <text class="elbl ta-s" x="150" y="334">eligibility</text>
-              <text class="elbl ta-e" x="456" y="334">inventory</text>
-              <text class="elbl ta-m" x="188" y="200">codes</text>
+            <svg class="flow" viewBox="0 0 580 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Guardian sits at the center as the deterministic brain. Scribe, Clinics, RCM, Bishop, Credentialing and Supply are spokes that connect only through Guardian. Foundry is the shared record and Models sit at the agent edges.">
+              <defs><marker id="ah" markerWidth="10" markerHeight="10" refX="6.6" refY="3.4" orient="auto-start-reverse"><path class="ahf" d="M0,0 L7.6,3.4 L0,6.8 Z"></path></marker></defs>
+              <line class="dataedge" x1="290" y1="68" x2="290" y2="250"></line>
+              <line class="dataedge" x1="290" y1="330" x2="290" y2="512"></line>
+              <line class="flowedge" x1="219" y1="167" x2="266" y2="250" marker-start="url(#ah)" marker-end="url(#ah)"></line>
+              <line class="flowedge" x1="361" y1="167" x2="314" y2="250" marker-start="url(#ah)" marker-end="url(#ah)"></line>
+              <line class="flowedge" x1="180" y1="290" x2="210" y2="290" marker-start="url(#ah)" marker-end="url(#ah)"></line>
+              <line class="flowedge" x1="400" y1="290" x2="370" y2="290" marker-start="url(#ah)" marker-end="url(#ah)"></line>
+              <line class="flowedge" x1="218" y1="413" x2="266" y2="330" marker-start="url(#ah)" marker-end="url(#ah)"></line>
+              <line class="flowedge" x1="362" y1="413" x2="314" y2="330" marker-start="url(#ah)" marker-end="url(#ah)"></line>
+              <rect class="node nFound" x="140" y="24" width="300" height="44" rx="9"></rect><text class="nname" x="290" y="44">Foundry</text><text class="nsub" x="290" y="59">one shared record</text>
+              <rect class="node nModel" x="140" y="512" width="300" height="44" rx="9"></rect><text class="nname" x="290" y="532">Models</text><text class="nsub" x="290" y="547">clinical and voice, at the edges</text>
+              <rect class="node nAgent" x="145" y="120" width="120" height="47" rx="9"></rect><text class="nname" x="205" y="140">Scribe</text><text class="nsub" x="205" y="155">at the visit</text>
+              <rect class="node nAgent" x="315" y="120" width="120" height="47" rx="9"></rect><text class="nname" x="375" y="140">Clinics</text><text class="nsub" x="375" y="155">front desk</text>
+              <rect class="node nAgent" x="60" y="267" width="120" height="47" rx="9"></rect><text class="nname" x="120" y="287">RCM</text><text class="nsub" x="120" y="302">billing</text>
+              <rect class="node nAgent" x="400" y="267" width="120" height="47" rx="9"></rect><text class="nname" x="460" y="287">Bishop</text><text class="nsub" x="460" y="302">the patient</text>
+              <rect class="node nAgent" x="145" y="413" width="120" height="47" rx="9"></rect><text class="nname" x="205" y="433">Credentialing</text><text class="nsub" x="205" y="448">eligibility</text>
+              <rect class="node nAgent" x="315" y="413" width="120" height="47" rx="9"></rect><text class="nname" x="375" y="433">Supply</text><text class="nsub" x="375" y="448">inventory</text>
+              <rect class="node nHub" x="210" y="250" width="160" height="80" rx="12"></rect><text class="nname" x="290" y="285" style="font-size:14.5px">Guardian</text><text class="nsub" x="290" y="301">deterministic brain</text>
+              <text class="elbl" x="243" y="205">gaps, notes</text>
+              <text class="elbl" x="337" y="205">worklist</text>
+              <text class="elbl" x="120" y="256">audit, status</text>
+              <text class="elbl" x="460" y="256">due, signals</text>
+              <text class="elbl" x="243" y="378">eligibility</text>
+              <text class="elbl" x="337" y="378">inventory</text>
+              <text class="elbl" x="290" y="100">record</text>
+              <text class="elbl" x="290" y="492">models</text>
             </svg>
           </div>
         </div>
-        <p class="eco-cap">One operating system, end to end. The layers share one record and one set of models, and the agents hand off to each other, from the front desk through to the claim.</p>
+        <p class="eco-cap">One operating system, end to end. Every agent connects through Guardian, the deterministic brain that holds the rules and can veto a step, so the parts stay in sync on one shared record without wiring into each other.</p>
+      </div>
+    </section>
+
+<section>
+      <div class="container reveal">
+        <div class="sec-head">
+          <p class="kicker"><span class="sq"></span> The map</p>
+          <h2>Every part of a clinic, and what runs it.</h2>
+        </div>
+        <div class="cmap-wrap">
+          <div class="mtx"><div class="mtx-col"><div class="mtx-cell"><div class="mtx-glabel"><span class="mtx-gdot t"></span>Foundation</div><div class="mtx-row"><span class="mtx-ix">01</span><span class="mtx-main"><span class="mtx-name">Foundry</span><span class="mtx-runs">the shared record under every product</span></span></div><div class="mtx-row"><span class="mtx-ix">02</span><span class="mtx-main"><span class="mtx-name">Models</span><span class="mtx-runs">clinical and voice intelligence</span></span></div></div><div class="mtx-cell"><div class="mtx-glabel"><span class="mtx-gdot g"></span>In the clinic</div><div class="mtx-row"><span class="mtx-ix">03</span><span class="mtx-main"><span class="mtx-name">Scribe</span><span class="mtx-runs">the visit, notes, and coding</span></span></div><div class="mtx-row"><span class="mtx-ix">04</span><span class="mtx-main"><span class="mtx-name">Clinics</span><span class="mtx-runs">the front desk, calls, and scheduling</span></span></div><div class="mtx-row"><span class="mtx-ix">05</span><span class="mtx-main"><span class="mtx-name">Guardian</span><span class="mtx-runs">care gaps, HEDIS, and quality</span></span></div></div></div><div class="mtx-col"><div class="mtx-cell"><div class="mtx-glabel"><span class="mtx-gdot b"></span>Revenue and operations</div><div class="mtx-row"><span class="mtx-ix">06</span><span class="mtx-main"><span class="mtx-name">RCM</span><span class="mtx-runs">claims, denials, and appeals</span></span></div><div class="mtx-row"><span class="mtx-ix">07</span><span class="mtx-main"><span class="mtx-name">Credentialing</span><span class="mtx-runs">eligibility and coverage</span></span></div><div class="mtx-row"><span class="mtx-ix">08</span><span class="mtx-main"><span class="mtx-name">Supply chain</span><span class="mtx-runs">supplies and inventory</span></span></div></div><div class="mtx-cell"><div class="mtx-glabel"><span class="mtx-gdot g"></span>Beyond the clinic</div><div class="mtx-row"><span class="mtx-ix">09</span><span class="mtx-main"><span class="mtx-name">OpenDoor</span><span class="mtx-runs">buying and running practices</span></span></div><div class="mtx-row"><span class="mtx-ix">10</span><span class="mtx-main"><span class="mtx-name">Bishop</span><span class="mtx-runs">the patient, between visits</span></span></div></div></div></div>
+        </div>
+      </div>
+    </section>
+    <section class="prod" id="foundry">
+      <div class="container reveal">
+        <div class="product">
+          <div class="product-text">
+            <p class="prod-kicker">Foundation</p>
+            <h3 class="prod-name">Foundry</h3>
+            <p class="tagline">The shared record under everything.</p>
+            <div class="prose"><p>Foundry takes in everything the clinic and the agents produce, demographics, visit notes, claims, coverage, supplies, and structures it into one record. Every other product reads from it and writes back to it, so nothing lives in a silo and nothing is entered twice.</p></div>
+            <ul class="cap"><li>Unifies records across every product</li><li>One source of truth the agents share</li><li>Keeps clinical data clean and current</li></ul>
+          </div>
+          <div class="product-mock">
+            <div class="mock" data-sim="foundry"><p class="mock-head">Foundry <span class="meta">data layer</span></p><div class="kpis kpis-3"><div class="kpi bi" style="animation-delay:.04s"><div class="v">4,812</div><div class="l">Patients</div></div><div class="kpi bi" style="animation-delay:.10s"><div class="v">1.2M</div><div class="l">Records</div></div><div class="kpi bi" style="animation-delay:.16s"><div class="v">99.9%</div><div class="l">Synced</div></div></div><div class="mlabel labelrow">Live ingest <span class="frate"><b data-count="21" data-step="2" data-max="34">21</b> /s</span></div><div class="flog" data-flog><div class="fx"><span class="fdot"></span><span class="fm">write</span><span class="ft">scribe.note</span><span class="fok">ok 24ms</span></div><div class="fx"><span class="fdot"></span><span class="fm">sync</span><span class="ft">clinics.appt</span><span class="fok">ok 12ms</span></div><div class="fx"><span class="fdot"></span><span class="fm">index</span><span class="ft">rcm.claim</span><span class="fok">ok 18ms</span></div></div><p class="mlabel">Sources</p><div class="synclist"><div class="frow"><span>Clinics</span><span class="pill ok">live</span></div><div class="frow"><span>Scribe</span><span class="pill ok">live</span></div><div class="frow"><span>RCM</span><span class="pill ok">live</span></div><div class="frow"><span>Credentialing</span><span class="pill ok">live</span></div><div class="frow"><span>Labs</span><span class="pill mute syncing">syncing</span></div></div><p class="mlabel">Unified record</p><div class="rec-head" style="margin-bottom:0"><span class="rec-avatar">MR</span><div><p class="rec-name">Maria Reyes</p><p class="rec-sub">MRN 04821 &middot; merged from 5 sources</p></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="prod" id="models">
+      <div class="container reveal">
+        <div class="product rev">
+          <div class="product-text">
+            <p class="prod-kicker">Foundation</p>
+            <h3 class="prod-name">Models</h3>
+            <p class="tagline">Clinical and voice models, built in house.</p>
+            <div class="prose"><p>We train our own models for the tasks a practice runs on, speech, clinical language, and coding. They power Scribe and our voice agents today. Foundational healthcare models, trained on what we learn in our clinics, are next.</p></div>
+            <ul class="cap"><li>Speech to text tuned for the exam room</li><li>Clinical language for notes and coding</li><li>Foundational models on the roadmap</li></ul>
+          </div>
+          <div class="product-mock">
+            <div class="mock" data-sim="models"><p class="mock-head">Voice model <span class="meta">live</span></p><div class="rec-rec"><span class="rec-dot"></span>recording</div><div class="wave"><i style="height:8px;animation-delay:-0.00s"></i><i style="height:13px;animation-delay:-0.09s"></i><i style="height:20px;animation-delay:-0.18s"></i><i style="height:28px;animation-delay:-0.27s"></i><i style="height:18px;animation-delay:-0.36s"></i><i style="height:10px;animation-delay:-0.45s"></i><i style="height:23px;animation-delay:-0.54s"></i><i style="height:31px;animation-delay:-0.63s"></i><i style="height:16px;animation-delay:-0.72s"></i><i style="height:11px;animation-delay:-0.81s"></i><i style="height:25px;animation-delay:-0.90s"></i><i style="height:33px;animation-delay:-0.99s"></i><i style="height:21px;animation-delay:-1.08s"></i><i style="height:14px;animation-delay:-1.17s"></i><i style="height:9px;animation-delay:-1.26s"></i><i style="height:19px;animation-delay:-1.35s"></i><i style="height:27px;animation-delay:-1.44s"></i><i style="height:12px;animation-delay:-1.53s"></i><i style="height:8px;animation-delay:-1.62s"></i><i style="height:17px;animation-delay:-1.71s"></i></div><p class="transcript"><span class="muted">Transcribing </span><span class="live" data-type data-lines="patient reports a sore throat for three days, no fever.|no cough and no shortness of breath, started after the weekend.|temperature is 99.1, throat looks a little red.">patient reports a sore throat for three days, no fever.</span><span class="caret"></span></p><div class="chips" style="margin-top:14px"><span class="chip acc glow">drafting note</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="prod ac-green" id="scribe">
+      <div class="container reveal">
+        <div class="product">
+          <div class="product-text">
+            <p class="prod-kicker">In the clinic</p>
+            <h3 class="prod-name">Scribe</h3>
+            <p class="tagline">The visit, written for you.</p>
+            <div class="prose"><p>Scribe listens to the visit and does the documentation. Before the patient arrives it surfaces their history and the reason for the visit. During the visit it transcribes. After, it drafts the SOAP note and a plain summary, and assigns the ICD and CPT codes for billing.</p></div>
+            <ul class="cap"><li>Drafts the SOAP note and summary</li><li>Assigns ICD and CPT codes</li><li>Surfaces history before the visit</li></ul>
+          </div>
+          <div class="product-mock">
+            <div class="mock" data-sim="scribe"><div class="rec-head"><div><p class="rec-name">Visit note</p><p class="rec-sub">Maria Reyes &middot; today</p></div><span class="rec-live"><span class="rec-dot"></span>transcribing</span></div><div class="wave wave-sm"><i style="height:8px;animation-delay:-0.00s"></i><i style="height:13px;animation-delay:-0.09s"></i><i style="height:20px;animation-delay:-0.18s"></i><i style="height:28px;animation-delay:-0.27s"></i><i style="height:18px;animation-delay:-0.36s"></i><i style="height:10px;animation-delay:-0.45s"></i><i style="height:23px;animation-delay:-0.54s"></i><i style="height:31px;animation-delay:-0.63s"></i><i style="height:16px;animation-delay:-0.72s"></i><i style="height:11px;animation-delay:-0.81s"></i><i style="height:25px;animation-delay:-0.90s"></i><i style="height:33px;animation-delay:-0.99s"></i><i style="height:21px;animation-delay:-1.08s"></i><i style="height:14px;animation-delay:-1.17s"></i><i style="height:9px;animation-delay:-1.26s"></i><i style="height:19px;animation-delay:-1.35s"></i><i style="height:27px;animation-delay:-1.44s"></i><i style="height:12px;animation-delay:-1.53s"></i><i style="height:8px;animation-delay:-1.62s"></i><i style="height:17px;animation-delay:-1.71s"></i></div><div class="utt"><span class="who">Clinician</span><span class="said" data-type>How long has the throat been sore?</span></div><div class="utt"><span class="who">Patient</span><span class="said" data-type>About three days, no fever.</span></div><div class="note-div"></div><div class="note-row"><span class="nk">S</span><span class="nv"><span data-type>Sore throat, three days. No fever.</span></span></div><div class="note-row"><span class="nk">O</span><span class="nv"><span data-type>Throat erythematous. Lungs clear.</span></span></div><div class="note-row"><span class="nk">A</span><span class="nv"><span data-type>Acute pharyngitis.</span> <span class="dxtag">suggested Dx</span></span></div><div class="note-row"><span class="nk">P</span><span class="nv"><span data-type>Supportive care. Return if worse.</span></span></div><div class="note-foot"><div class="chips"><span class="chip">ICD-10 &middot; J06.9</span><span class="chip">CPT &middot; 99213</span><span class="chip acc">auto-coded</span></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="prod ac-green" id="clinics">
+      <div class="container reveal">
+        <div class="product rev">
+          <div class="product-text">
+            <p class="prod-kicker">In the clinic</p>
+            <h3 class="prod-name">Clinics</h3>
+            <p class="tagline">A front desk that answers every call.</p>
+            <div class="prose"><p>Clinics is a voice agent for the front office. It picks up the phone, books and reschedules appointments, answers routine questions, and follows up with patients, in natural conversation, without putting anyone on hold.</p></div>
+            <ul class="cap"><li>Answers and places calls</li><li>Books and moves appointments</li><li>Handles routine follow-ups</li></ul>
+          </div>
+          <div class="product-mock">
+            <div class="mock" data-sim="clinics"><div class="callbar"><span class="rec-dot"></span><span>Live call</span><span class="ctime" data-ctime>00:00</span><span class="meta" style="margin-left:auto">Clinics</span></div><div class="cends"><div class="cend" data-end="user"><span class="cav">U</span><span class="clabel">User</span><div class="cwave"><i style="animation-delay:-0.00s"></i><i style="animation-delay:-0.08s"></i><i style="animation-delay:-0.16s"></i><i style="animation-delay:-0.24s"></i><i style="animation-delay:-0.32s"></i><i style="animation-delay:-0.40s"></i><i style="animation-delay:-0.48s"></i><i style="animation-delay:-0.56s"></i></div></div><div class="cend" data-end="agent"><span class="cav cav-a">A</span><span class="clabel">Agent</span><div class="cwave"><i style="animation-delay:-0.00s"></i><i style="animation-delay:-0.08s"></i><i style="animation-delay:-0.16s"></i><i style="animation-delay:-0.24s"></i><i style="animation-delay:-0.32s"></i><i style="animation-delay:-0.40s"></i><i style="animation-delay:-0.48s"></i><i style="animation-delay:-0.56s"></i></div></div></div><p class="mlabel">Transcript</p><div class="tscript" data-tscript><div class="tline"><span class="tsp agent">Agent</span><span class="ttext">I have Thursday at 9:30 or Friday at 11.</span></div><div class="tline"><span class="tsp user">User</span><span class="ttext">Thursday 9:30 works.</span></div><div class="tline"><span class="tsp agent">Agent</span><span class="ttext">Booked for Thursday at 9:30.</span></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="prod ac-green" id="guardian">
+      <div class="container reveal">
+        <div class="product">
+          <div class="product-text">
+            <p class="prod-kicker">In the clinic</p>
+            <h3 class="prod-name">Guardian</h3>
+            <p class="tagline">Care that does not fall through the cracks.</p>
+            <div class="prose"><p>Guardian watches a patient's care over time. It reads from Clinics, Scribe, and RCM to track preventive care and HEDIS measures, check dosages and adherence, and flag when someone is due for a follow-up. It is the reasoning layer behind Bishop.</p></div>
+            <ul class="cap"><li>Tracks HEDIS and preventive care</li><li>Checks dosage and adherence</li><li>Flags overdue follow-ups</li></ul>
+          </div>
+          <div class="product-mock">
+            <div class="mock" data-sim="guardian"><div class="rec-head"><span class="rec-avatar gd">G</span><div><p class="rec-name">Guardian</p><p class="rec-sub">deterministic brain</p></div><span class="rec-live"><span class="rec-dot"></span>processing</span></div><div class="qrow"><span>HEDIS W15</span><span class="qv">82%</span><div class="qbar"><span style="width:82%"></span></div></div><div class="gstats"><span class="gstat">Gaps open <b data-gaps>24</b></span><span class="gstat">HCC suspects <b>3</b></span></div><p class="mlabel">Directives</p><div class="hub" data-hub><div class="hx"><span class="hto bishop">Bishop</span>app reminder &middot; Maria Reyes</div><div class="hx"><span class="hto clinics">Clinics</span>call worklist &middot; 3 due</div><div class="hx"><span class="hto detect">gap</span>HEDIS W15 &middot; detected</div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="prod ac-blue" id="rcm">
+      <div class="container reveal">
+        <div class="product rev">
+          <div class="product-text">
+            <p class="prod-kicker">Revenue and operations</p>
+            <h3 class="prod-name">RCM</h3>
+            <p class="tagline">Get paid for the work you do.</p>
+            <div class="prose"><p>RCM runs the revenue cycle. It prepares and submits claims, tracks them, and when a claim is denied it works the denial and files the appeal, so the practice collects what it is owed without the manual chase.</p></div>
+            <ul class="cap"><li>Submits and tracks claims</li><li>Works denials and appeals</li><li>Keeps the revenue cycle moving</li></ul>
+          </div>
+          <div class="product-mock">
+            <div class="mock" data-sim="rcm"><p class="mock-head">Revenue cycle <span class="meta">live</span></p><div class="pipe"><div class="pstep" style="animation-delay:0s"><span class="pdot"></span>Coded</div><div class="pstep" style="animation-delay:.84s"><span class="pdot"></span>Scrubbed</div><div class="pstep" style="animation-delay:1.68s"><span class="pdot"></span>Submitted</div><div class="pstep" style="animation-delay:2.52s"><span class="pdot"></span>Adjudicated</div><div class="pstep" style="animation-delay:3.36s"><span class="pdot"></span>Paid</div></div><div class="kpis" style="margin-top:2px"><div class="kpi bi" style="animation-delay:.1s"><div class="v" data-collected>$48.2k</div><div class="l">Collected</div></div><div class="kpi bi" style="animation-delay:.2s"><div class="v" data-appeals>7</div><div class="l">Appeals won</div></div></div><p class="mlabel">Claims</p><div class="claims" data-claims><div class="frow claim"><span>Claim 8842</span><span class="pill ok">Paid</span></div><div class="frow claim"><span>Claim 8839 <span class="denialcode">CO-16</span></span><span class="pill warn">Appeal drafted</span></div><div class="frow claim"><span>Claim 8851</span><span class="pill mute">Submitted</span></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="prod ac-blue" id="credentialing">
+      <div class="container reveal">
+        <div class="product">
+          <div class="product-text">
+            <p class="prod-kicker">Revenue and operations</p>
+            <h3 class="prod-name">Credentialing</h3>
+            <p class="tagline">Coverage checked before the visit.</p>
+            <div class="prose"><p>Credentialing verifies a patient's eligibility and benefits with their payer, so coverage is confirmed before the visit and claims do not bounce for the wrong plan or a lapsed policy.</p></div>
+            <ul class="cap"><li>Verifies eligibility and benefits</li><li>Confirms coverage before the visit</li><li>Cuts denials from bad plan data</li></ul>
+          </div>
+          <div class="product-mock">
+            <div class="mock" data-sim="credentialing"><p class="mock-head">Eligibility check <span class="meta">Credentialing</span></p><div class="cred-form"><span class="cred-label">Patient</span><div class="cred-input"><span class="cred-name"></span><span class="caret"></span></div></div><div class="scanbar"><span></span></div><div class="frow res"><span>Coverage</span><span class="pill ok">Active</span></div><div class="payer res"><span class="badge">Ae</span><div><p class="rec-name" style="font-size:13px">Aetna</p><p class="rec-sub">Open PPO</p></div></div><div class="frow res"><span>Member ID</span><span>W2049 8841</span></div><div class="frow res"><span>Copay</span><span>$25</span></div><div class="frow res"><span>Deductible</span><span>$500 / $1,500</span></div><div class="frow res"><span>Coinsurance</span><span>20%</span></div><div class="frow res"><span>Effective</span><span>Jan 1, 2026</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="prod ac-blue" id="supply">
+      <div class="container reveal">
+        <div class="product rev">
+          <div class="product-text">
+            <p class="prod-kicker">Revenue and operations</p>
+            <h3 class="prod-name">Supply chain</h3>
+            <p class="tagline">The clinic never runs out.</p>
+            <div class="prose"><p>Supply chain tracks what a clinic has on hand and what it is using, places orders before things run low, and predicts demand so the shelves and the fridge are always stocked without overbuying.</p></div>
+            <ul class="cap"><li>Tracks inventory in real time</li><li>Reorders before stockouts</li><li>Predicts what a clinic will need</li></ul>
+          </div>
+          <div class="product-mock">
+            <div class="mock" data-sim="supply"><p class="mock-head">Inventory analytics <span class="meta">Supply chain</span></p><div class="kpis kpis-3"><div class="kpi"><div class="v" data-count="142" data-step="1" data-max="151">142</div><div class="l">Items tracked</div></div><div class="kpi"><div class="v">3</div><div class="l">Reorder alerts</div></div><div class="kpi"><div class="v" data-count="98" data-suf="%" data-step="0.5" data-max="99">98%</div><div class="l">On-time</div></div></div><p class="mlabel">Usage &middot; last 8h</p><div class="chart"><i style="height:18px"></i><i style="height:26px"></i><i style="height:14px"></i><i style="height:31px"></i><i style="height:22px"></i><i style="height:34px"></i><i style="height:20px"></i><i style="height:28px"></i></div><p class="mlabel">Par levels</p><div class="qrow bi" style="animation-delay:.1s"><span>Flu vaccine</span><span class="qv">200</span><div class="qbar"><span style="width:90%"></span></div></div><div class="qrow bi" style="animation-delay:.25s"><span>Gloves, medium</span><span class="pill warn restockpill">reorder placed</span><div class="qbar"><span class="low restockbar"></span></div></div><div class="qrow bi" style="animation-delay:.4s"><span>Amoxicillin</span><span class="qv">ok</span><div class="qbar"><span style="width:64%"></span></div></div><div class="feed"><span class="fdot"></span><span data-feed data-feed-msgs="reorder placed &middot; gloves|received &middot; flu vaccine|par check &middot; ok|reorder &middot; rapid strep|received &middot; amoxicillin">reorder placed &middot; gloves</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="prod ac-green" id="opendoor">
+      <div class="container reveal">
+        <div class="product">
+          <div class="product-text">
+            <p class="prod-kicker">Beyond the clinic</p>
+            <h3 class="prod-name">OpenDoor</h3>
+            <p class="tagline">A marketplace for medical practices.</p>
+            <div class="prose"><p>OpenDoor is where practices are bought and sold. It is how we find and acquire the clinics we operate, and how other buyers and sellers find each other. It brings listings, diligence, and deal flow into one place.</p></div>
+            <ul class="cap"><li>Lists practices for sale</li><li>How we acquire our clinics</li><li>Brings diligence into one place</li></ul>
+          </div>
+          <div class="product-mock">
+            <div class="mock" data-sim="opendoor"><div class="mkt"><div class="mkt-bar"><span class="mkt-search">Browse practices</span><span class="mkt-chip">Pediatric</span><span class="mkt-chip">TX</span></div><div class="mkt-list"><div class="mcard" data-card><div class="mc-top"><p class="mc-name">Pediatric practice</p><span class="mc-price">$1.2M</span></div><p class="mc-loc">Pasadena, TX</p><div class="mc-stats"><span class="mc-stat">~5,000 patients</span><span class="mc-stat">2 providers</span><span class="mc-stat">1.8x</span></div></div><div class="mcard" data-card><div class="mc-top"><p class="mc-name">Family medicine</p><span class="mc-price">$2.1M</span></div><p class="mc-loc">Austin, TX</p><div class="mc-stats"><span class="mc-stat">7,200 patients</span><span class="mc-stat">3 providers</span><span class="mc-stat">2.1x</span></div></div><div class="mcard" data-card><div class="mc-top"><p class="mc-name">Pediatrics</p><span class="mc-price">$0.9M</span></div><p class="mc-loc">Katy, TX</p><div class="mc-stats"><span class="mc-stat">3,400 patients</span><span class="mc-stat">2 providers</span><span class="mc-stat">1.6x</span></div></div></div><div class="cursor"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 3 L5 18 L9 14.5 L11.7 20.5 L14 19.5 L11.4 13.7 L16.5 13.5 Z" fill="#ffffff" stroke="rgba(0,0,0,.55)" stroke-width="1"></path></svg></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="prod ac-green" id="bishop">
+      <div class="container reveal">
+        <div class="product rev">
+          <div class="product-text">
+            <p class="prod-kicker">Beyond the clinic</p>
+            <h3 class="prod-name">Bishop <span class="tag">v2</span></h3>
+            <p class="tagline">A health assistant in every patient's pocket.</p>
+            <div class="prose"><p>Bishop is a personalised assistant for patients. It connects to their records, labs, and day to day activity, keeps up with their care plan and follow-ups, answers questions in plain language, and nudges them at the right time. Guardian is the reasoning behind it. It arrives with v2.</p></div>
+            <ul class="cap"><li>Connects records, labs, and activity</li><li>Keeps up with care and follow-ups</li><li>Answers in plain language</li></ul>
+          </div>
+          <div class="product-mock">
+            <div class="mock" data-sim="bishop"><div class="rec-head"><span class="rec-avatar">MR</span><div><p class="rec-name">Maria Reyes</p><p class="rec-sub">Age 52 &middot; MRN 04821</p></div><span class="rec-live"><span class="rec-dot"></span>voice-first</span></div><div class="hpace"><div class="hp-row"><span class="hp-label">Health Pace &middot; biological age</span><span class="hp-trend">&darr; 2.8 vs actual</span></div><div class="hp-main"><span class="hp-big" data-hp>49.2</span><span class="hp-unit">yrs</span><div class="hp-spark"><i style="height:12px"></i><i style="height:20px"></i><i style="height:11px"></i><i style="height:24px"></i><i style="height:16px"></i><i style="height:26px"></i><i style="height:14px"></i><i style="height:22px"></i></div></div></div><p class="mlabel">Patient World Model</p><div class="frow"><span>Trust level</span><span class="qv" data-trust>0.78</span></div><div class="frow"><span>Care plan</span><span>2 open &middot; 1 due</span></div><div class="frow"><span>Medications</span><span>3 active</span></div><div class="frow"><span>Channels</span><span>app &middot; SMS &middot; voice</span></div><div class="feed"><span class="fdot"></span><span data-feed data-feed-msgs="SMS reminder &middot; opened|self-booked well-child|Health Pace re-measured|app voice &middot; medication question|nudge &middot; gap acted on">SMS reminder &middot; opened</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band-green ac-green">
+      <div class="container reveal">
+        <div class="why">
+          <span class="sq"></span>
+          <p class="statement">One system, proven where it has to work first.</p>
+          <div class="prose"><p>Every product here runs in our own clinics before it goes anywhere else. If you are a practice or a builder who wants in, we would like to hear from you.</p></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- VISION -->
+  <div data-page="vision">
+
+    <section class="hero-wrap">
+      <div class="container hero-content">
+        <p class="eyebrow"><span class="sq"></span> Vision</p>
+        <h1 class="hero">An ecosystem of AI, built from inside the clinic.</h1>
+        <p class="lead">Most healthcare software is sold from the outside in. We do the opposite. We run our own clinics, build the AI that runs them, and widen the circle from there, one product at a time.</p>
       </div>
     </section>
 
     <section>
       <div class="container reveal">
         <div class="sec-head">
-          <p class="kicker"><span class="sq"></span> How it grows</p>
-          <h2>One system, growing outward.</h2>
+          <p class="kicker"><span class="sq"></span> What we are building</p>
+          <h2>One operating system for the practice, built from the inside.</h2>
         </div>
-        <div class="vgrid">
-          <div class="vcard">
-            <div class="vhead">
-              <span class="vmark"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="24" y1="20" x2="24" y2="13" opacity=".7"/><line x1="28" y1="24" x2="35" y2="24" opacity=".7"/><line x1="24" y1="28" x2="24" y2="35" opacity=".7"/><line x1="20" y1="24" x2="13" y2="24" opacity=".7"/><rect x="21" y="7" width="6" height="6" rx="1.2"/><rect x="35" y="21" width="6" height="6" rx="1.2"/><rect x="21" y="35" width="6" height="6" rx="1.2"/><rect x="7" y="21" width="6" height="6" rx="1.2"/><rect x="19.5" y="19.5" width="9" height="9" rx="1.6" fill="currentColor" stroke="none"/></svg></span>
-              <p class="vnum">01</p>
-            </div>
-            <h3>It starts in the clinic</h3>
-            <p>We run our own practices. Every product is built and proven on real visits, real billing, and real patients before it goes anywhere else.</p>
+        <div class="note-grid">
+          <div class="note-prose">
+            <p class="lead-p">Most healthcare software is sold to clinics from the outside, by people who have never run one. We are doing it the other way around. We own and operate our own practices, and we build the AI that runs them, the software we would want if a clinic were the only thing we had.</p>
+            <p>A product earns its place by working on real visits, real claims, and real patients in our clinics first. Once it holds up, it joins the rest of the system on one shared record, and the circle widens, to more of our own clinics, then to practices we partner with, and in time to patients themselves.</p>
+            <p>The aim is not one more tool to bolt on. It is a single system that quietly runs the day to day of a practice, so the people there can spend their time on care instead of paperwork.</p>
+            <p class="aim-p">And the aim behind all of it is larger than any one practice. Software that can run a clinic well can run thousands, and reach the billions of people those clinics were never built to hold. We want healthcare that travels, to every practice that will have it and, in time, to a personal health companion in every pocket, so that a longer and healthier life is less a matter of where a person happens to be born.</p>
           </div>
-          <div class="vcard ac-green">
-            <div class="vhead">
-              <span class="vmark"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="38" height="38" rx="3" opacity=".28"/><rect x="12" y="12" width="24" height="24" rx="2.4" opacity=".55"/><rect x="18.5" y="18.5" width="11" height="11" rx="1.8" opacity=".9"/><rect x="21.5" y="21.5" width="5" height="5" rx="1" fill="currentColor" stroke="none"/></svg></span>
-              <p class="vnum">02</p>
-            </div>
-            <h3>Everything compounds</h3>
-            <p>The agents share one record and one set of models. Each visit, claim, and follow-up makes the whole system a little better.</p>
-          </div>
-          <div class="vcard ac-blue">
-            <div class="vhead">
-              <span class="vmark"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="14" y1="24" x2="35" y2="13" opacity=".7"/><line x1="15" y1="24" x2="36" y2="24" opacity=".7"/><line x1="14" y1="24" x2="35" y2="35" opacity=".7"/><circle cx="11" cy="24" r="4" fill="currentColor" stroke="none"/><circle cx="37" cy="12" r="2.8" fill="currentColor" stroke="none"/><circle cx="38" cy="24" r="2.8" fill="currentColor" stroke="none"/><circle cx="37" cy="36" r="2.8" fill="currentColor" stroke="none"/></svg></span>
-              <p class="vnum">03</p>
-            </div>
-            <h3>Then it grows outward</h3>
-            <p>From the front desk and the claim today, to patients and other practices next. One connected ecosystem, expanding from the clinic out.</p>
+          <div class="reach-wrap">
+            <svg class="reach" viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="From our own clinics outward to partner practices, every patient, and everyone, everywhere">
+              <rect class="f f4" x="10" y="30" width="400" height="300" rx="18"></rect>
+              <text class="lbl" x="28" y="50">everyone, everywhere</text>
+              <rect class="f f3" x="60" y="68" width="300" height="224" rx="16"></rect>
+              <text class="lbl" x="78" y="88">every patient</text>
+              <rect class="f f2" x="110" y="106" width="200" height="148" rx="14"></rect>
+              <text class="lbl" x="128" y="126">partner practices</text>
+              <rect class="f f1" x="158" y="144" width="104" height="72" rx="11"></rect>
+              <circle class="core" cx="210" cy="170" r="3.4"></circle>
+              <text class="l1" x="210" y="192">Our clinics</text>
+            </svg>
+            <p class="reach-cap">From our own clinics, outward to everyone.</p>
           </div>
         </div>
       </div>
     </section>
+
+    
+
+    
+
+    
 
     <section class="band-green ac-green">
       <div class="container reveal">
@@ -1586,6 +1635,11 @@
       ev.preventDefault(); var p=l.getAttribute('data-nav'); show(p);
       try{ history.pushState(null,'','#'+p); }catch(err){}
     }); });
+    doc.querySelectorAll('[data-prodlink]').forEach(function(a){ a.addEventListener('click', function(ev){
+      ev.preventDefault(); var anc=a.getAttribute('data-prodlink'); show('products');
+      try{ history.pushState(null,'','#products'); }catch(err){}
+      var el=doc.getElementById(anc); if(el){ setTimeout(function(){ el.scrollIntoView({behavior:'smooth',block:'start'}); }, 90); }
+    }); });
     window.addEventListener('popstate', function(){ var h=''; try{ h=(location.hash||'').replace('#',''); }catch(err){} show(h); });
     function onScroll(){ nav.classList.toggle('scrolled', window.scrollY>10); }
     window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
@@ -1665,6 +1719,277 @@
     b.setAttribute('aria-pressed', on?'false':'true');
     try{ window.dispatchEvent(new Event('iostheme')); }catch(e){}
   });
+})();
+</script>
+
+
+<script>
+/* MOCKLIVE */
+function initMockLive(){
+  if (typeof document === 'undefined') return function(){};
+  var reduce = false;
+  try { reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  var nodes = Array.prototype.slice.call(document.querySelectorAll('.mock[data-sim]'));
+  if (!nodes.length || reduce) return function(){};
+  var sims = [];
+
+  function controller(el){
+    var kind = el.getAttribute('data-sim');
+    var timers = [];
+    var running = false;
+    function T(ms, fn){ var t = setTimeout(function(){ if (running) fn(); }, ms); timers.push(t); return t; }
+    function clearAll(){ for (var i = 0; i < timers.length; i++) clearTimeout(timers[i]); timers = []; }
+    function q(s){ return el.querySelector(s); }
+    function qa(s){ return Array.prototype.slice.call(el.querySelectorAll(s)); }
+    function type(node, text, sp, done){
+      var w = String(text).split(' '); node.textContent = ''; var i = 0;
+      (function s(){ if (!running) return; node.textContent += (i ? ' ' : '') + w[i]; i++;
+        if (i < w.length) T(sp, s); else if (done) T(0, done); })();
+    }
+    function typeChars(node, text, sp, done){
+      node.textContent = ''; var i = 0;
+      (function s(){ if (!running) return; node.textContent += text.charAt(i); i++;
+        if (i < text.length) T(sp, s); else if (done) T(0, done); })();
+    }
+    function show(node, dy){ node.style.transition = 'none'; node.style.opacity = '0'; node.style.transform = 'translateY(' + (dy || 6) + 'px)';
+      node.getBoundingClientRect(); node.style.transition = 'opacity .4s ease, transform .4s ease'; node.style.opacity = '1'; node.style.transform = 'none'; }
+    function hide(node){ node.style.transition = 'none'; node.style.opacity = '0'; node.style.transform = 'translateY(6px)'; }
+    function bump(node){ if (!node) return; node.classList.remove('bump'); void node.offsetWidth; node.classList.add('bump'); }
+    function rotate(node, gap){
+      if (!node) return;
+      var msgs = (node.getAttribute('data-feed-msgs') || node.textContent).split('|'); var fi = 0;
+      (function r(){ if (!running) return; node.style.transition = 'none'; node.style.opacity = '0';
+        T(170, function(){ if (!running) return; node.textContent = msgs[fi % msgs.length]; fi++; node.style.transition = 'opacity .3s ease'; node.style.opacity = '1'; T(gap || 1600, r); }); })();
+    }
+    function ticker(node){
+      var val = parseFloat(node.getAttribute('data-count')); if (isNaN(val)) return;
+      var pre = node.getAttribute('data-pre') || '', suf = node.getAttribute('data-suf') || '';
+      var dec = parseInt(node.getAttribute('data-dec') || '0', 10);
+      var step = parseFloat(node.getAttribute('data-step') || '1');
+      var max = parseFloat(node.getAttribute('data-max')); if (isNaN(max)) max = val + 10;
+      var min = val, dir = 1;
+      function fmt(v){ return pre + (dec ? v.toFixed(dec) : String(Math.round(v))) + suf; }
+      (function tick(){ if (!running) return; val += dir * step * (0.6 + Math.random() * 0.8);
+        if (val >= max) { val = max; dir = -1; } else if (val <= min) { val = min; dir = 1; }
+        node.textContent = fmt(val); T(1300 + Math.random() * 500, tick); })();
+    }
+
+    var start = function(){};
+    if (kind === 'models') {
+      var live = q('.live');
+      start = function(){ if (!live) return; var lines = (live.getAttribute('data-lines') || live.textContent).split('|'); var li = 0;
+        (function cyc(){ if (!running) return; type(live, lines[li % lines.length].replace(/^\s+|\s+$/g, ''), 70, function(){
+          T(1500, function(){ if (!running) return; live.textContent = ''; li++; T(380, cyc); }); }); })(); };
+    } else if (kind === 'scribe') {
+      var spans = qa('[data-type]'); spans.forEach(function(n){ if (n.getAttribute('data-full') === null) n.setAttribute('data-full', n.textContent); });
+      var dx = q('.dxtag'); var codes = qa('.note-foot .chip');
+      start = function(){
+        spans.forEach(function(n){ n.textContent = ''; }); if (dx) hide(dx);
+        codes.forEach(function(c){ c.style.transition = 'none'; c.style.opacity = '0'; c.style.transform = 'scale(.85)'; });
+        var k = 0;
+        (function next(){ if (!running) return; if (k >= spans.length) { reveal(); return; }
+          type(spans[k], spans[k].getAttribute('data-full'), 52, function(){ if (k === 4 && dx) show(dx, 0); k++; T(300, next); }); })();
+        function reveal(){ var ci = 0; (function sc(){ if (!running) return; if (ci >= codes.length) { T(2400, start); return; }
+          var c = codes[ci]; c.style.transition = 'opacity .4s ease, transform .4s ease'; c.style.opacity = '1'; c.style.transform = 'none'; ci++; T(230, sc); })(); }
+      };
+    } else if (kind === 'clinics') {
+      var ends = { user: q('[data-end="user"]'), agent: q('[data-end="agent"]') };
+      var ts = q('[data-tscript]'); var ctime = q('[data-ctime]');
+      var convoArr = [{ who: 'agent', t: 'Thanks for calling. How can I help?' }, { who: 'user', t: 'I need to move my Thursday appointment.' }, { who: 'agent', t: 'I have Thursday at 9:30 or Friday at 11.' }, { who: 'user', t: 'Thursday 9:30 works.' }, { who: 'agent', t: 'Booked for Thursday at 9:30.' }];
+      start = function(){
+        var sec = 0;
+        function fmtTime(s){ var m = Math.floor(s / 60), r = s % 60; return (m < 10 ? '0' : '') + m + ':' + (r < 10 ? '0' : '') + r; }
+        (function tk(){ if (!running) return; if (ctime) ctime.textContent = fmtTime(sec); sec++; T(1000, tk); })();
+        function clearActive(){ if (ends.user) ends.user.classList.remove('active'); if (ends.agent) ends.agent.classList.remove('active'); }
+        function setActive(who){ clearActive(); if (ends[who]) ends[who].classList.add('active'); }
+        function addLine(who){ var d = document.createElement('div'); d.className = 'tline new';
+          d.innerHTML = '<span class="tsp ' + who + '">' + (who === 'user' ? 'User' : 'Agent') + '</span><span class="ttext"></span>';
+          if (ts) { ts.appendChild(d); while (ts.children.length > 3) ts.removeChild(ts.firstChild); } T(40, function(){ d.classList.remove('new'); }); return d.querySelector('.ttext'); }
+        (function convo(){ if (!running) return; sec = 0; if (ts) ts.innerHTML = ''; var i = 0;
+          (function turn(){ if (!running) return; if (i >= convoArr.length) { clearActive(); T(2200, convo); return; }
+            var c = convoArr[i]; setActive(c.who); var node = addLine(c.who);
+            type(node, c.t, 58, function(){ clearActive(); i++; T(520, turn); }); })(); })();
+      };
+    } else if (kind === 'bishop') {
+      var hp = q('.hp-big'); var hpace = q('.hpace'); var spark = qa('.hp-spark i'); var trust = q('[data-trust]'); var feed = q('[data-feed]');
+      start = function(){
+        if (hp) { var hbase = 49.2; (function hpt(){ if (!running) return; var v = hbase + (Math.random() * 0.8 - 0.4); hp.textContent = v.toFixed(1);
+          if (hpace) { hpace.classList.add('remeasure'); T(520, function(){ hpace.classList.remove('remeasure'); }); } T(2700, hpt); })(); }
+        if (spark.length) { (function sj(){ if (!running) return; for (var i = 0; i < spark.length; i++) spark[i].style.height = (9 + Math.floor(Math.random() * 22)) + 'px'; T(1400, sj); })(); }
+        if (trust) { var tv = 0.78; (function tt(){ if (!running) return; tv += (Math.random() * 0.06 - 0.02); if (tv > 0.92) tv = 0.92; if (tv < 0.74) tv = 0.74; trust.textContent = tv.toFixed(2); T(2500, tt); })(); }
+        rotate(feed, 1700);
+      };
+    } else if (kind === 'guardian') {
+      var hub = q('[data-hub]'); var rl = q('.rec-live'); var gaps = q('[data-gaps]');
+      start = function(){
+        var seq = [['detect', 'HEDIS W15 &middot; detected'], ['bishop', 'app reminder &middot; Maria Reyes'], ['clinics', 'call worklist &middot; 3 due'], ['scribe', 'surface gap in-chart'], ['hcc', 'HCC suspect &middot; E11.9'], ['veto', 'blocked &middot; quiet hours'], ['rcm', 'audit proof &middot; signed'], ['close', 'closure proof &middot; signed']];
+        var labelMap = { detect: 'gap', bishop: 'Bishop', clinics: 'Clinics', scribe: 'Scribe', hcc: 'HCC', veto: 'veto', rcm: 'RCM', close: 'closed' };
+        var gv = 24, si = 0;
+        function add(to, t){ if (!hub) return; var d = document.createElement('div'); d.className = 'hx new'; d.innerHTML = '<span class="hto ' + to + '">' + labelMap[to] + '</span>' + t;
+          hub.insertBefore(d, hub.firstChild); while (hub.children.length > 5) hub.removeChild(hub.lastChild); T(60, function(){ d.classList.remove('new'); }); }
+        (function loop(){ if (!running) return; var item = seq[si % seq.length]; si++; add(item[0], item[1]);
+          if (item[0] === 'close') { if (rl) rl.innerHTML = '<span class="rec-dot"></span>proof signed'; if (gaps) { gv = Math.max(12, gv - 1); gaps.textContent = String(gv); bump(gaps); } }
+          else if (item[0] === 'detect') { if (gaps) { gv = gv + 1; gaps.textContent = String(gv); bump(gaps); } if (rl) rl.innerHTML = '<span class="rec-dot"></span>processing'; }
+          else { if (rl) rl.innerHTML = '<span class="rec-dot"></span>processing'; }
+          T(1500 + Math.random() * 500, loop); })();
+      };
+    } else if (kind === 'rcm') {
+      var claimsEl = q('[data-claims]'); var collEl = q('[data-collected]'); var appEl = q('[data-appeals]');
+      start = function(){
+        var claims = [{ id: 8842, st: 'Paid', c: 'ok' }, { id: 8839, st: 'Appeal drafted', c: 'warn', code: 'CO-16' }, { id: 8851, st: 'Submitted', c: 'mute' }];
+        var nextId = 8852, coll = 48.2, app = 7, newId = null;
+        var codes = ['CO-16', 'CO-97', 'CO-50', 'PR-204'];
+        function render(){ if (!claimsEl) return; var h = '';
+          for (var i = 0; i < claims.length; i++) { var cl = claims[i]; var extra = cl.code ? ' <span class="denialcode">' + cl.code + '</span>' : '';
+            var isnew = cl.id === newId ? ' new' : '';
+            h += '<div class="frow claim' + isnew + '"><span>Claim ' + cl.id + extra + '</span><span class="pill ' + cl.c + '">' + cl.st + '</span></div>'; }
+          claimsEl.innerHTML = h; newId = null; }
+        render();
+        (function loop(){ if (!running) return;
+          if (Math.random() < 0.4 || claims.length < 2) { claims.unshift({ id: nextId++, st: 'Submitted', c: 'mute' }); newId = claims[0].id; if (claims.length > 4) claims.pop(); }
+          else { var adv = claims.filter(function(c){ return c.st === 'Submitted' || c.st === 'Denied' || c.st === 'Appeal drafted'; });
+            if (adv.length) { var c = adv[Math.floor(Math.random() * adv.length)];
+              if (c.st === 'Submitted') { var r = Math.random(); if (r < 0.6) { c.st = 'Paid'; c.c = 'ok'; coll += 0.2 + Math.random() * 0.4; if (collEl) { collEl.textContent = '$' + coll.toFixed(1) + 'k'; bump(collEl); } }
+                else if (r < 0.85) { c.st = 'Denied'; c.c = 'warn'; c.code = codes[Math.floor(Math.random() * codes.length)]; } }
+              else if (c.st === 'Denied') { c.st = 'Appeal drafted'; c.c = 'warn'; }
+              else if (c.st === 'Appeal drafted') { c.st = 'Appeal won'; c.c = 'ok'; c.code = null; app += 1; coll += 0.3 + Math.random() * 0.4;
+                if (appEl) { appEl.textContent = String(app); bump(appEl); } if (collEl) { collEl.textContent = '$' + coll.toFixed(1) + 'k'; bump(collEl); } } } }
+          render(); T(1500 + Math.random() * 700, loop); })();
+      };
+    } else if (kind === 'credentialing') {
+      var nameEl = q('.cred-name'); var scan = q('.scanbar'); var rows = qa('.res');
+      start = function(){
+        if (nameEl) nameEl.textContent = ''; if (scan) { scan.style.transition = 'none'; scan.style.opacity = '0'; }
+        rows.forEach(function(r){ r.style.transition = 'none'; r.style.opacity = '0'; r.style.transform = 'translateY(6px)'; });
+        typeChars(nameEl, 'Maria Reyes', 75, function(){ if (!running) return;
+          if (scan) { scan.style.transition = 'opacity .3s ease'; scan.style.opacity = '1'; }
+          T(1400, function(){ if (!running) return; if (scan) { scan.style.transition = 'opacity .4s ease'; scan.style.opacity = '0'; }
+            var i = 0; (function rev(){ if (!running) return; if (i >= rows.length) { T(2800, start); return; }
+              var r = rows[i]; r.style.transition = 'opacity .4s ease, transform .4s ease'; r.style.opacity = '1'; r.style.transform = 'none'; i++; T(240, rev); })(); }); });
+      };
+    } else if (kind === 'supply') {
+      var cnts = qa('[data-count]'); var bars = qa('.chart i'); var feed = q('[data-feed]');
+      start = function(){
+        cnts.forEach(ticker);
+        if (bars.length) { (function bj(){ if (!running) return; for (var i = 0; i < bars.length; i++) bars[i].style.height = (12 + Math.floor(Math.random() * 30)) + 'px'; T(1300, bj); })(); }
+        rotate(feed, 1700);
+      };
+    } else if (kind === 'opendoor') {
+      var mkt = q('.mkt'); var cur = q('.cursor'); var cards = qa('[data-card]');
+      start = function(){ if (!mkt || !cur || !cards.length) return;
+        cur.style.transform = 'translate(18px,6px)'; var ci = 0;
+        (function step(){ if (!running) return;
+          for (var i = 0; i < cards.length; i++) cards[i].classList.remove('hovered');
+          var card = cards[ci % cards.length]; var x = card.offsetLeft + 26, y = card.offsetTop + 18;
+          cur.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+          T(620, function(){ if (!running) return; card.classList.add('hovered');
+            T(760, function(){ if (!running) return; cur.classList.add('click'); T(180, function(){ cur.classList.remove('click'); }); });
+            ci++; T(1900, step); }); })();
+      };
+    } else if (kind === 'foundry') {
+      var flog = q('[data-flog]'); var rows = qa('.synclist .frow'); var rate = q('[data-count]');
+      start = function(){
+        if (rate) ticker(rate);
+        var ops = [['write', 'scribe.note', 'Scribe'], ['sync', 'clinics.appt', 'Clinics'], ['index', 'rcm.claim', 'RCM'], ['fetch', 'coverage.04821', 'Credentialing'], ['merge', 'labs.result', 'Labs'], ['write', 'guardian.gap', null], ['sync', 'clinics.call', 'Clinics'], ['index', 'rcm.era', 'RCM'], ['write', 'scribe.vitals', 'Scribe']];
+        function rowByName(nm){ for (var i = 0; i < rows.length; i++) { var sp = rows[i].querySelector('span'); if (sp && sp.textContent === nm) return rows[i]; } return null; }
+        var oi = 0;
+        (function add(){ if (!running || !flog) return;
+          var op = ops[oi % ops.length]; oi++; var lat = 10 + Math.floor(Math.random() * 40);
+          var d = document.createElement('div'); d.className = 'fx new';
+          d.innerHTML = '<span class="fdot"></span><span class="fm">' + op[0] + '</span><span class="ft">' + op[1] + '</span><span class="fok">ok ' + lat + 'ms</span>';
+          var fcap=parseInt(flog.getAttribute('data-rows')||'4',10); flog.insertBefore(d, flog.firstChild); while (flog.children.length > fcap) flog.removeChild(flog.lastChild);
+          T(50, function(){ d.classList.remove('new'); });
+          if (op[2]) { var r = rowByName(op[2]); if (r) { r.classList.add('writing'); T(620, function(){ r.classList.remove('writing'); }); } }
+          T(820 + Math.random() * 460, add); })();
+      };
+    }
+
+    return { el: el, play: function(){ if (running) return; running = true; start(); }, pause: function(){ running = false; clearAll(); } };
+  }
+
+  for (var n = 0; n < nodes.length; n++) sims.push(controller(nodes[n]));
+  function byEl(t){ for (var j = 0; j < sims.length; j++) if (sims[j].el === t) return sims[j]; return null; }
+  var io = null;
+  if ('IntersectionObserver' in window) {
+    io = new IntersectionObserver(function(entries){ entries.forEach(function(en){ var s = byEl(en.target); if (!s) return; if (en.isIntersecting) s.play(); else s.pause(); }); }, { threshold: 0.2 });
+    sims.forEach(function(s){ io.observe(s.el); });
+  } else { sims.forEach(function(s){ s.play(); }); }
+  return function(){ if (io) io.disconnect(); sims.forEach(function(s){ s.pause(); }); };
+}
+if(document.readyState!=='loading'){initMockLive();}else{document.addEventListener('DOMContentLoaded',function(){initMockLive();});}
+</script>
+<script>
+(function(){
+
+function initHeroRotator(){
+  if (typeof document === 'undefined') return function(){};
+  var root = document.querySelector('[data-herorot]'); if (!root) return function(){};
+  var slides = Array.prototype.slice.call(root.querySelectorAll('.hrslide'));
+  if (slides.length < 2) return function(){};
+  var reduce = false; try { reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch(e){}
+  if (reduce) return function(){};
+  var cur = 0;
+  var timer = setInterval(function(){
+    var nx = (cur + 1) % slides.length;
+    slides[cur].classList.remove('show');
+    slides[nx].classList.add('show');
+    cur = nx;
+  }, 2800);
+  return function(){ clearInterval(timer); };
+}
+function initMorningBoard(){
+  if (typeof document === 'undefined') return function(){};
+  var board = document.querySelector('.board'); if (!board) return function(){};
+  var reduce = false; try { reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch(e){}
+  if (reduce) return function(){};
+  var timers = [], micro = [], running = false;
+  function iv(ms, fn){ var t = setInterval(function(){ if (running) fn(); }, ms); timers.push(t); return t; }
+  function mt(t){ micro.push(t); return t; }
+  function clearMicro(){ for (var i=0;i<micro.length;i++){ clearTimeout(micro[i]); clearInterval(micro[i]); } micro = []; }
+  function countTo(el, from, to, suf, ms){ if (!el) return; var steps = 14, i = 0; var t = setInterval(function(){ i++; var v = from + (to - from) * i / steps; el.textContent = Math.round(v) + suf; if (i >= steps){ clearInterval(t); el.textContent = to + suf; } }, Math.max(20, ms/steps)); mt(t); }
+  function roll(rows, apply){ for (var i=0;i<rows.length;i++){ (function(r, k){ r.style.transition = 'transform .26s ease, opacity .26s ease'; r.style.transform = 'translateY(-9px)'; r.style.opacity = '0'; mt(setTimeout(function(){ apply(r, k); r.style.transition = 'none'; r.style.transform = 'translateY(9px)'; void r.offsetHeight; r.style.transition = 'transform .32s ease, opacity .32s ease'; r.style.transform = 'translateY(0)'; r.style.opacity = '1'; }, 140 + k*55)); })(rows[i], i); } }
+  function resetVisuals(){ var rs = board.querySelectorAll('.srow,.stat-row'); for (var i=0;i<rs.length;i++){ rs[i].style.transition = 'none'; rs[i].style.transform = 'none'; rs[i].style.opacity = '1'; } var qn = board.querySelector('[data-qname]'); if (qn) qn.style.opacity = '1'; var el = board.querySelector('[data-elig] .elbl'); if (el) el.style.opacity = '1'; var sl = board.querySelector('[data-supply] .slbl'); if (sl) sl.style.opacity = '1'; }
+
+  var qname = board.querySelector('[data-qname]'), pct = board.querySelector('[data-w15]'), qbar = board.querySelector('[data-qbar]');
+  var qpool = [['Well-child visits in the first 15 months (W15)',82],['Controlling high blood pressure',88],['Childhood immunization status',91],['Breast cancer screening',76],['Diabetes A1c control',79]];
+  var qi = 0, qw = 82;
+  function qstep(){ qi = (qi + 1) % qpool.length; var m = qpool[qi]; if (qname){ qname.style.opacity = '0'; mt(setTimeout(function(){ qname.textContent = m[0]; qname.style.transition = 'opacity .3s ease'; qname.style.opacity = '1'; }, 200)); } if (qbar) qbar.style.width = m[1] + '%'; countTo(pct, qw, m[1], '%', 700); qw = m[1]; }
+
+  var sched = board.querySelector('[data-sched]');
+  var spool = [['8:30','Well-child visit','on','confirmed'],['9:00','New patient','mid','intake sent'],['9:30','Follow-up','on','rescheduled'],['10:00','Sick visit','on','checked in'],['10:30','Vaccine visit','mid','reminder sent'],['11:00','Well-child visit','on','confirmed'],['11:30','Lab review','on','booked'],['1:30','Sports physical','mid','intake sent'],['2:00','Follow-up','on','confirmed']];
+  var scur = [0,1,2], sp = 3;
+  function schedStep(){ if (!sched) return; var rows = sched.querySelectorAll('.srow'); if (rows.length < 3) return; scur.shift(); scur.push(sp % spool.length); sp++; roll(rows, function(r, k){ var a = spool[scur[k]]; var tm = r.querySelector('.tm'), nm = r.children[1], st = r.querySelector('.st'); if (tm) tm.textContent = a[0]; if (nm) nm.textContent = a[1]; if (st) st.innerHTML = '<span class="dot ' + a[2] + '"></span>' + a[3]; }); }
+
+  var claims = board.querySelector('[data-claims]');
+  var cq = [{n:8842,d:'on',s:'paid'},{n:8839,d:'mid',s:'appealed'}]; var spool2 = [['on','paid'],['mid','submitted'],['on','paid'],['mid','in review'],['on','paid'],['mid','appealed']]; var spi = 0, cnext = 8843;
+  function claimStep(){ if (!claims) return; var rows = claims.querySelectorAll('.stat-row'); if (rows.length < 2) return; cq.shift(); var st = spool2[spi % spool2.length]; spi++; cq.push({n:cnext++, d:st[0], s:st[1]}); roll(rows, function(r, k){ var c = cq[k]; r.innerHTML = '<span class="dot ' + c.d + '"></span>Claim ' + c.n + '<span class="sub">' + c.s + '</span>'; }); }
+
+  var nline = board.querySelector('[data-noteline]'), chips = board.querySelector('[data-chips]');
+  var npool = [['Visit summary drafted from the conversation.', ['ICD-10 \u00b7 J06.9','CPT \u00b7 99213']],['Care plan updated and shared with the patient.', ['ICD-10 \u00b7 Z00.129','CPT \u00b7 99213']],['Refill approved and routed to the pharmacy.', ['RxNorm \u00b7 313782','CPT \u00b7 99214']]];
+  var ni = 0;
+  function setChips(arr, show){ if (!chips) return; chips.innerHTML = ''; for (var j=0;j<arr.length;j++){ var c = document.createElement('span'); c.className = 'chip'; c.innerHTML = arr[j]; c.style.opacity = '0'; chips.appendChild(c); } if (show){ var cs = chips.querySelectorAll('.chip'); for (var k=0;k<cs.length;k++){ (function(el, kk){ mt(setTimeout(function(){ el.style.opacity = '1'; }, 120 + kk*150)); })(cs[k], k); } } }
+  function noteStep(){ if (!nline) return; var v = npool[ni % npool.length]; ni++; setChips(v[1], false); nline.textContent = ''; var txt = v[0], i = 0; var t = setInterval(function(){ i += 2; nline.textContent = txt.slice(0, i); if (i >= txt.length){ clearInterval(t); nline.textContent = txt; setChips(v[1], true); } }, 30); mt(t); }
+
+  var elig = board.querySelector('[data-elig]'); var ev = 1;
+  function eligStep(){ if (!elig) return; var dot = elig.querySelector('.dot'), lbl = elig.querySelector('.elbl'); if (!dot || !lbl) return; ev ^= 1; lbl.style.opacity = '0'; mt(setTimeout(function(){ if (ev){ dot.className = 'dot on'; lbl.textContent = 'Coverage verified'; } else { dot.className = 'dot mid'; lbl.textContent = 'Checking coverage'; } lbl.style.transition = 'opacity .3s ease'; lbl.style.opacity = '1'; }, 180)); }
+
+  var supply = board.querySelector('[data-supply]'), doses = board.querySelector('[data-doses]');
+  var supl = [['on','Reorder placed'],['mid','Awaiting delivery'],['on','Stock received']]; var si = 0;
+  var dvals = [200,180,150,250,220]; var di = 0, dprev = 200;
+  function supplyStep(){ if (supply){ var dot = supply.querySelector('.dot'), lbl = supply.querySelector('.slbl'); si = (si + 1) % supl.length; var s = supl[si]; if (dot) dot.className = 'dot ' + s[0]; if (lbl){ lbl.style.opacity = '0'; mt(setTimeout(function(){ lbl.textContent = s[1]; lbl.style.transition = 'opacity .3s ease'; lbl.style.opacity = '1'; }, 180)); } } if (doses){ di = (di + 1) % dvals.length; countTo(doses, dprev, dvals[di], ' doses', 600); dprev = dvals[di]; } }
+
+  var flashers = board.querySelectorAll('[data-flash]'); var fi = 0;
+  function flashStep(){ if (!flashers.length) return; var d = flashers[fi % flashers.length]; fi++; d.classList.add('flash'); mt(setTimeout(function(){ d.classList.remove('flash'); }, 850)); }
+
+  function startAll(){ if (running) return; resetVisuals(); running = true; iv(2800, qstep); iv(3200, schedStep); iv(3600, claimStep); iv(6500, noteStep); iv(5000, eligStep); iv(4200, supplyStep); iv(2200, flashStep); }
+  function stopAll(){ running = false; for (var i=0;i<timers.length;i++) clearInterval(timers[i]); timers = []; clearMicro(); }
+  var io = null;
+  if ('IntersectionObserver' in window){ io = new IntersectionObserver(function(es){ for (var i=0;i<es.length;i++){ if (es[i].isIntersecting) startAll(); else stopAll(); } }, { threshold: 0.15 }); io.observe(board); } else { startAll(); }
+  return function(){ if (io) io.disconnect(); stopAll(); };
+}
+
+function boot(){ initHeroRotator(); initMorningBoard(); }
+if (document.readyState==='loading') document.addEventListener('DOMContentLoaded', boot); else boot();
 })();
 </script>
 </body>
