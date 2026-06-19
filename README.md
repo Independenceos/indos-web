@@ -4,17 +4,19 @@ Marketing site for **Independence OS**, which runs its own clinics and builds th
 
 It's a single, self-contained page with client-side (hash) routing across four views: **Overview**, **Products**, **Vision**, and **Team**. No framework, no build step, no dependencies.
 
+**Live:** <https://tasmay-tibrewal.github.io/indos-web/>
+
 ## Run locally
 
 It's a static site, so any of these work:
 
 ```bash
 # Simplest: open the file directly
-open index_new.html
+open index.html
 
 # Or serve it (recommended — closer to production)
 python3 -m http.server 8000
-# then visit http://localhost:8000/index_new.html
+# then visit http://localhost:8000/
 ```
 
 The only external request is to Google Fonts (Spectral + Hanken Grotesk); everything else — images, logo, styles, scripts — is local, so the page works offline aside from font fallbacks.
@@ -23,9 +25,11 @@ The only external request is to Google Fonts (Spectral + Hanken Grotesk); everyt
 
 ```
 .
-├── index_new.html     # the entire site: markup, CSS, and JS in one file
+├── index.html         # the entire site: markup, CSS, and JS in one file
 ├── indoslogo.png      # brand logo (used in the nav, footer, and as the favicon)
-└── images/            # 14 team photos, referenced as images/<name>.jpg
+├── images/            # 14 team photos, referenced as images/<name>.jpg
+├── .nojekyll          # tells GitHub Pages to serve files as-is (no Jekyll)
+└── README.md
 ```
 
 ## What's on the page
@@ -39,19 +43,29 @@ Interactive bits: a light/dark theme toggle, animated product mockups, the ecosy
 
 ## Editing
 
-Everything lives in `index_new.html`:
+Everything lives in `index.html`:
 
 - **Team** — search for `<article class="person">` in the Team section. Each entry has a LinkedIn link, a photo tile (`images/<name>.jpg`) or initials, a name, a role, a short bio, and badge pills.
 - **Products** — each product appears in three places that should stay in sync: the Overview product grid (`.ovp-card`, keyed by `data-prodlink`), the ecosystem diagram and products map, and the detail section (`<section class="prod" id="...">`). Animated mockups are driven by `data-sim` in the script at the bottom of the file.
 - **Theme colors / layout** — CSS variables live in the `:root` block at the top of the `<style>` tag (e.g. `--maxw` controls the max content width).
 
-## Deploy
+## Deploy (GitHub Pages)
 
-Push to any static host (GitHub Pages, Netlify, Vercel, S3, …). Keep `index_new.html`, `indoslogo.png`, and `images/` together. For hosts that serve `index.html` at the root, copy or rename the entry file:
+This repo is published with GitHub Pages from the default branch at:
 
-```bash
-cp index_new.html index.html
-```
+> <https://tasmay-tibrewal.github.io/indos-web/>
+
+Requirements for it to serve the site (rather than the README):
+
+- The entry file must be named **`index.html`** and sit at the repo root. GitHub Pages serves `index.html` as the homepage; if it's missing, Pages falls back to rendering `README.md` as the page.
+- **`.nojekyll`** is committed so Pages skips Jekyll and serves the static files exactly as they are.
+- Keep `index.html`, `indoslogo.png`, `images/`, and `.nojekyll` together; asset paths are relative.
+
+After pushing, give Pages a minute to rebuild and hard-refresh (Cmd/Ctrl+Shift+R) to clear any cached page.
+
+**Note on URLs:** `https://tasmay-tibrewal.github.io/indos-web/` is the *project* site for this repo. `https://tasmay-tibrewal.github.io/` is a separate *user* site served from a repo named `tasmay-tibrewal.github.io` — it is unrelated to this project. To serve this site at the root instead, move it into that repo or point a custom domain at this one.
+
+Any other static host (Netlify, Vercel, S3, …) works too — just publish the repo root.
 
 ---
 
