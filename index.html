@@ -1697,9 +1697,16 @@
     window.addEventListener('popstate', function(){ var h=''; try{ h=(location.hash||'').replace('#',''); }catch(err){} show(h); });
     function onScroll(){ nav.classList.toggle('scrolled', window.scrollY>10); }
     window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
-    arm(doc);
     var initial=''; try{ initial=(location.hash||'').replace('#',''); }catch(err){}
     show(initial); firstLoad=false;
+    arm(doc);
+    // first load: reveal whatever is already in view so nothing sits blank before a scroll
+    (function revealInView(){
+      var vh=window.innerHeight||800;
+      doc.querySelectorAll('[data-page].active .reveal, [data-page].active .board').forEach(function(el){
+        if(el.getBoundingClientRect().top < vh){ el.classList.add('in'); if(io){ io.unobserve(el); } }
+      });
+    })();
   })();
 </script>
 
