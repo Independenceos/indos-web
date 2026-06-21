@@ -4,7 +4,7 @@ Marketing site for **Independence OS**, which runs its own clinics and builds th
 
 It's a single, self-contained page with client-side (hash) routing across four views: **Overview**, **Products**, **Vision**, and **Team**. No framework, no build step, no dependencies.
 
-**Live:** <https://tasmay-tibrewal.github.io/indos-web/>
+**Live:** independenceos.ai
 
 ## Run locally
 
@@ -62,8 +62,6 @@ Requirements for it to serve the site (rather than the README):
 - Keep `index.html`, `indoslogo.png`, `images/`, and `.nojekyll` together; asset paths are relative.
 
 After pushing, give Pages a minute to rebuild and hard-refresh (Cmd/Ctrl+Shift+R) to clear any cached page.
-
-**Note on URLs:** `https://tasmay-tibrewal.github.io/indos-web/` is the *project* site for this repo. `https://tasmay-tibrewal.github.io/` is a separate *user* site served from a repo named `tasmay-tibrewal.github.io` — it is unrelated to this project. To serve this site at the root instead, move it into that repo or point a custom domain at this one.
 
 Any other static host (Netlify, Vercel, S3, …) works too — just publish the repo root.
 
