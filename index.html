@@ -410,7 +410,7 @@
   .note-prose p:last-child{margin:0;}
   .note-prose .lead-p{font-size:19px;line-height:1.6;color:var(--bone);margin-bottom:22px;}
   @media(max-width:760px){.note-prose .lead-p{font-size:17px;}.eco-board .pdesc{font-size:12.5px;}}
-  .note-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start;}
+  .note-grid{display:grid;grid-template-columns:1fr .96fr;gap:56px;align-items:stretch;}
   .note-prose .aim-p{color:var(--bone);}
   .reach{width:100%;max-width:420px;height:auto;display:block;margin:0 auto;}
   .reach .f{fill:none;stroke-width:1.3;}
@@ -601,6 +601,7 @@
   .pli{position:absolute;top:14px;right:14px;color:var(--bone-3);opacity:.6;transition:color .2s ease,opacity .2s ease;}
   .pli:hover{color:var(--green-2);opacity:1;} .pli svg{display:block;}
   .roster .joinbox{border:1px dashed var(--line);border-radius:14px;padding:19px 21px;background:linear-gradient(180deg, rgba(26,27,20,.4), rgba(18,19,14,.25));}
+  .roster .joinbox .prose{max-width:none;}
   html[data-theme="light"] .roster .joinbox{background:linear-gradient(180deg, rgba(255,255,255,.5), rgba(248,246,239,.3));}
   @media (max-width:520px){ .people{grid-template-columns:1fr;} }
 
@@ -897,6 +898,26 @@
   .mtx-row.mtx-link:hover .mtx-name{color:var(--green-2);}
   .ovp-card.ov-flash{animation:ovflash 1.4s ease-out;}
   @keyframes ovflash{0%{outline:2px solid rgba(102,179,166,.85);outline-offset:-2px;}100%{outline:2px solid rgba(102,179,166,0);outline-offset:-2px;}}
+
+
+  /* vision thesis chain */
+  .reach-wrap{display:flex;flex-direction:column;justify-content:center;}
+  .tchain-head{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-2);margin:0 0 4px;display:flex;align-items:center;gap:9px;}
+  .tchain-head::before{content:"";width:6px;height:6px;border-radius:1.5px;background:var(--green);}
+  .tchain{list-style:none;margin:0;padding:0;flex:0 0 85%;display:flex;flex-direction:column;justify-content:space-between;position:relative;}
+  .tchain::before{content:"";position:absolute;left:23px;top:23px;bottom:23px;width:1.6px;background:var(--green-line);}
+  .tchain li{position:relative;display:grid;grid-template-columns:46px 184px 1fr;gap:24px;align-items:center;}
+  .tc-i{position:relative;z-index:1;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--green-line);background:#0F100C;color:var(--green-2);font-family:var(--mono);font-size:14.5px;display:flex;align-items:center;justify-content:center;}
+  .tc-t{font-size:17.5px;font-weight:600;color:var(--bone);margin:0;letter-spacing:-.012em;line-height:1.25;}
+  .tc-d{font-size:14px;color:var(--bone-2);margin:0;line-height:1.55;}
+  html[data-theme="light"] .tc-i{color:#2C8175;border-color:rgba(44,129,117,.45);background:#F4F6EF;}
+  html[data-theme="light"] .tchain::before{background:rgba(44,129,117,.28);}
+  @media(max-width:600px){
+    .tchain{justify-content:flex-start;gap:26px;}
+    .tchain li{grid-template-columns:42px 1fr;gap:6px 18px;}
+    .tc-t{grid-column:2;} .tc-d{grid-column:2;}
+    .tchain::before{left:21px;}
+  }
   </style>
 </head>
 <body>
@@ -1510,31 +1531,29 @@
 
     <section>
       <div class="container reveal">
-        <div class="sec-head">
-          <p class="kicker"><span class="sq"></span> Thesis</p>
-          <h2>A machine for human flourishing: making easy things easy and hard things possible, with limitless human agency as both the means and the end.</h2>
-        </div>
         <div class="note-grid">
-          <div class="note-prose">
+          <div class="note-left">
+            <div class="sec-head">
+              <p class="kicker"><span class="sq"></span> Thesis</p>
+              <h2>A machine for human flourishing: making easy things easy and hard things possible, with limitless human agency as both the means and the end.</h2>
+            </div>
+            <div class="note-prose">
             <p class="lead-p">We are building a machine for human flourishing, and we are building it on a single inversion that the rest of healthcare has backwards. A hospital survives on sickness: its fixed capital has to be fed, so its economics pull toward the bed, the procedure, the costliest 5% who consume half the spend. The clinic is the one unit whose survival depends on the opposite: keeping people well and out of the hospital.</p>
             <p>So we put a recursive learning loop at its core, one that gets smarter with every patient it sees. It gives the patient agency over their own health, the provider a 360&deg; view, the payer accountability, and it compresses the cost of care until the right care becomes the cheapest care. That is the whole thesis.</p>
             <p>When doing right by the patient is also the rational economic act, prevention stops being charity and becomes inevitable. We carry it upstream to the start of a life, the mother and the child, and outward to the home, until healthcare is no longer a place you are taken but a system that comes to you. Build it or fund it, it is the same bet: that human flourishing, made economically inevitable, is the largest opportunity in medicine.</p>
             <p class="aim-p">Put as a sequence: it starts with the one aligned unit, the clinic, and installs the recursive learning loop. That loop gives patients agency, providers visibility, and payers accountability, and it compresses cost, so the unit economics close and the right care becomes the cheapest care. From there the unit replicates, moves upstream, and distributes into the home, until the centralized hospital is displaced by distributed prevention. The result is human flourishing, reached by economics, not idealism.</p>
           </div>
-          <div class="reach-wrap">
-            <svg class="reach" viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="From our own clinics outward to partner practices, every patient, and everyone, everywhere">
-              <rect class="f f4" x="10" y="30" width="400" height="300" rx="18"></rect>
-              <text class="lbl" x="28" y="50">everyone, everywhere</text>
-              <rect class="f f3" x="60" y="68" width="300" height="224" rx="16"></rect>
-              <text class="lbl" x="78" y="88">every patient</text>
-              <rect class="f f2" x="110" y="106" width="200" height="148" rx="14"></rect>
-              <text class="lbl" x="128" y="126">partner practices</text>
-              <rect class="f f1" x="158" y="144" width="104" height="72" rx="11"></rect>
-              <circle class="core" cx="210" cy="170" r="3.4"></circle>
-              <text class="l1" x="210" y="192">Our clinics</text>
-            </svg>
-            <p class="reach-cap">From our own clinics, outward to everyone.</p>
           </div>
+          <div class="reach-wrap">
+              <ol class="tchain">
+                <li><span class="tc-i">01</span><p class="tc-t">The inversion</p><p class="tc-d">A hospital lives on sickness; the clinic lives on health, the one aligned unit.</p></li>
+                <li><span class="tc-i">02</span><p class="tc-t">A recursive loop</p><p class="tc-d">At its core, getting smarter with every patient it sees.</p></li>
+                <li><span class="tc-i">03</span><p class="tc-t">It compounds</p><p class="tc-d">Patient agency, a 360&deg; view, payer accountability, and lower cost.</p></li>
+                <li><span class="tc-i">04</span><p class="tc-t">Economics close</p><p class="tc-d">The right care becomes the cheapest care.</p></li>
+                <li><span class="tc-i">05</span><p class="tc-t">It carries outward</p><p class="tc-d">Replicate the unit, go upstream to mother &amp; child, and into the home.</p></li>
+                <li><span class="tc-i">06</span><p class="tc-t">Human flourishing</p><p class="tc-d">Distributed prevention displaces the hospital, by economics not idealism.</p></li>
+              </ol>
+            </div>
         </div>
       </div>
     </section>
@@ -1575,7 +1594,7 @@
           <div class="people">
             <article class="person"><a class="pli" href="https://www.linkedin.com/in/ravinder-syal/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a1"><img src="images/ravinder-syal.jpg" alt="" aria-hidden="true" loading="eager" decoding="async"></span><span class="p-id"><span class="pname">Ravinder Syal</span><span class="prole-title">Founder and CEO</span></span></div><p class="prole">Multi-time founder with 30 years in healthcare operations; scaled ventures before Independence OS and now builds AI to keep physicians independent.</p><div class="pcred"><span class="pbadge">30y health ops</span><span class="pbadge">multi-time founder</span><span class="pbadge">HBS Exec Ed</span></div></article>
             <article class="person"><a class="pli" href="https://www.linkedin.com/in/ashu-syal-66743b41/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a4">AS</span><span class="p-id"><span class="pname">Dr. Ashu Syal</span><span class="prole-title">Physician and Medical Director</span></span></div><p class="prole">Pediatrician and the clinical anchor of our practices; Medical Director at Nag Clinics and Clinical Assistant Professor at Baylor College of Medicine and UTMB, with training in pediatric hematology and nephrology. The physician who chose independence.</p><div class="pcred"><span class="pbadge">Pediatric Nephrology</span><span class="pbadge">Baylor &amp; UTMB</span><span class="pbadge">Medical Director</span></div></article>
-            <article class="person"><div class="p-head"><span class="mtile a2"><img src="images/rahul-bhardwaj.jpg" alt="" aria-hidden="true" loading="eager" decoding="async"></span><span class="p-id"><span class="pname">Rahul Bhardwaj</span><span class="prole-title">Chief Financial Officer</span></span></div><p class="prole">Leads finance, acquisitions, clinic economics, and capital planning for the operator-plus-software model.</p><div class="pcred"><span class="pbadge">finance</span><span class="pbadge">M&amp;A</span><span class="pbadge">clinic economics</span></div></article>
+            <article class="person"><div class="p-head"><span class="mtile a2"><img src="images/rahul-bhardwaj.jpg" alt="" aria-hidden="true" loading="eager" decoding="async"></span><span class="p-id"><span class="pname">Rahul Bhardwaj</span><span class="prole-title">Chief Financial Officer</span></span></div><p class="prole">IIM Calcutta alumnus leading finance, acquisitions, clinic economics, and capital planning for the operator-plus-software model.</p><div class="pcred"><span class="pbadge">IIM Calcutta</span><span class="pbadge">M&amp;A</span><span class="pbadge">clinic economics</span></div></article>
             <article class="person"><a class="pli" href="https://www.linkedin.com/in/pratham-singh-27b4b2253/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a3"><img src="images/pratham-singh.jpg" alt="" aria-hidden="true" loading="eager" decoding="async"></span><span class="p-id"><span class="pname">Pratham Singh</span><span class="prole-title">Chief of Staff</span></span></div><p class="prole">IIT Bombay operator coordinating CEO priorities, clinic operations, hiring, and product execution across the team.</p><div class="pcred"><span class="pbadge">IIT Bombay</span><span class="pbadge">ops</span><span class="pbadge">CEO office</span></div></article>
           </div>
         </div>
@@ -1584,7 +1603,7 @@
           <div class="col-label"><span class="cl-ix">02</span><span class="cl-name">Models and research</span><span class="cl-rule"></span><span class="cl-meta">3 people</span></div>
           <div class="people">
             <article class="person"><a class="pli" href="https://www.linkedin.com/in/ankanbiswas7/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a4"><img src="images/ankan-biswas.jpg" alt="" aria-hidden="true" loading="eager" decoding="async"></span><span class="p-id"><span class="pname">Ankan Biswas</span><span class="prole-title">Head of Models</span></span></div><p class="prole">IIT Kharagpur '23; ICLR/NeurIPS researcher; ex AI Research at Fractal and MIT; leads fine-tuning, distillation, and agentic frameworks.</p><div class="pcred"><span class="pbadge">IIT KGP</span><span class="pbadge">ICLR/NeurIPS</span><span class="pbadge">ex Fractal/MIT</span></div></article>
-            <article class="person"><a class="pli" href="https://www.linkedin.com/in/rishabh-kumar-iit/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a5"><img src="images/rishabh-kumar.jpg" alt="" aria-hidden="true" loading="eager" decoding="async"></span><span class="p-id"><span class="pname">Rishabh Kumar</span><span class="prole-title">Models and voice</span></span></div><p class="prole">AI researcher with a PhD track at IIT Bombay, B.Tech from IIT Dhanbad, and BharatGen experience; bridges model research with Bishop and the patient-agent stack.</p><div class="pcred"><span class="pbadge">PhD AI, IITB</span><span class="pbadge">IIT Dhanbad</span><span class="pbadge">BharatGen</span></div></article>
+            <article class="person"><a class="pli" href="https://www.linkedin.com/in/rishabh-kumar-iit/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a5"><img src="images/rishabh-kumar.jpg" alt="" aria-hidden="true" loading="eager" decoding="async"></span><span class="p-id"><span class="pname">Rishabh Kumar</span><span class="prole-title">Models and voice</span></span></div><p class="prole">AI researcher specializing in ASR, speech-LLMs, and multi-agent systems, with papers at ACL, EMNLP, EACL, and Interspeech. PhD at IIT Bombay, B.Tech from IIT Dhanbad, and BharatGen experience, working on our models and the patient-agent stack behind Bishop.</p><div class="pcred"><span class="pbadge">PhD AI, IITB</span><span class="pbadge">ASR &middot; Speech-LLM</span><span class="pbadge">ACL/EMNLP/Interspeech</span></div></article>
             <article class="person"><a class="pli" href="https://www.linkedin.com/in/tasmay-tibrewal/" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg></a><div class="p-head"><span class="mtile a1"><img src="images/tasmay-pankaj-tibrewal.jpg" alt="" aria-hidden="true" loading="eager" decoding="async"></span><span class="p-id"><span class="pname">Tasmay Pankaj Tibrewal</span><span class="prole-title">Research and models</span></span></div><p class="prole">IIT Kharagpur AI researcher and incoming MARS Fellow with CAISH/Redwood Research; past work spans Fractal, Harvard, and SambaNova.</p><div class="pcred"><span class="pbadge">IIT KGP</span><span class="pbadge">Redwood/CAISH</span><span class="pbadge">Fractal/Harvard</span></div></article>
           </div>
         </div>
@@ -1612,7 +1631,7 @@
 
         <div class="row">
           <div class="col-label"><span class="cl-ix">05</span><span class="cl-name">Join us</span><span class="cl-rule"></span><span class="cl-meta">Open roles</span></div>
-          <div class="joinbox"><div class="prose"><p>We are hiring across research, engineering, and operations, in Houston and Bangalore. If this is the kind of problem you want to spend your time on, get in touch.</p></div></div>
+          <div class="joinbox"><div class="prose"><p>We are hiring across research, engineering, and operations, in Houston and Bangalore. If building the AI that runs a clinic, and carrying good healthcare to far more people, is the kind of problem you want to spend your time on, we would love to hear from you at <a href="mailto:hello@independenceos.ai" style="text-decoration:underline;text-underline-offset:2px">hello@independenceos.ai</a>.</p></div></div>
         </div>
 
       </div>
@@ -1629,7 +1648,7 @@
         <div class="fbrand"><img class="brand-logo" src="indoslogo.png" alt="" aria-hidden="true"> Independence OS</div>
         <p>We run our own clinics, and build the software that runs them. Pre-launch.</p>
       </div>
-      <div class="fmeta">Houston and Bangalore<br><a href="mailto:hello@independenceos.ai">hello@independenceos.ai</a></div>
+      <div class="fmeta">Houston and Bangalore<br><a href="mailto:hello@independenceos.ai">hello@independenceos.ai</a><br><a href="tel:+916303193346">+91 63031 93346</a> &middot; Ajay<br><a href="tel:+917678185743">+91 76781 85743</a> &middot; Pratham</div>
     </div>
     <p class="copy">&copy; 2026 Independence OS</p>
   </div>
