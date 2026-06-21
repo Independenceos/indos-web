@@ -46,6 +46,22 @@
   .nav-links a{font-size:14px;font-weight:500;color:var(--bone-2);padding:8px 13px;border-radius:8px;transition:color .15s ease,background .15s ease;}
   .nav-links a:hover{color:var(--bone);background:rgba(236,234,224,.05);}
   .nav-links a.current{color:var(--bone);background:rgba(236,234,224,.06);}
+  .nav-right{display:flex;align-items:center;gap:6px;}
+  .nav-toggle{display:none;width:38px;height:38px;padding:0;border-radius:9px;border:1px solid var(--line);background:transparent;color:var(--bone-2);align-items:center;justify-content:center;cursor:pointer;flex:0 0 auto;margin-left:6px;transition:color .18s ease,border-color .18s ease;}
+  .nav-toggle svg{width:20px;height:20px;display:block;}
+  .nav-toggle .i-close{display:none;}
+  .nav-toggle:hover{color:var(--bone);border-color:var(--bone-3);}
+  header.nav.menu-open .nav-toggle .i-menu{display:none;}
+  header.nav.menu-open .nav-toggle .i-close{display:block;}
+  @media (max-width:760px){
+    .nav-toggle{display:inline-flex;}
+    .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:2px;background:rgba(17,18,13,.94);backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid var(--line);padding:10px 30px 18px;max-height:0;overflow:hidden;opacity:0;pointer-events:none;transition:max-height .3s ease,opacity .22s ease,padding .3s ease;}
+    header.nav.menu-open{background:rgba(17,18,13,.9);backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);border-bottom-color:transparent;}
+    header.nav.menu-open .nav-links{max-height:70vh;opacity:1;pointer-events:auto;}
+    .nav-links a{padding:12px 8px;font-size:16px;border-radius:8px;}
+  }
+  html[data-theme="light"] .nav-toggle{border-color:rgba(20,21,15,.14);color:var(--bone-2);}
+  @media (max-width:760px){ html[data-theme="light"] .nav-links{background:rgba(250,251,246,.96);} html[data-theme="light"] header.nav.menu-open{background:rgba(250,251,246,.92);} }
 
   main [data-page]{display:none;}
   main [data-page].active{display:block;}
@@ -499,7 +515,7 @@
   @media (prefers-reduced-motion:reduce){ .js .cmap .conn{stroke-dashoffset:0;transition:none;} .cmap .flow{display:none;} .js .cmap .pt,.js .cmap .jct{opacity:1;} }
   .vhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
   .eco-wrap{margin:28px 0 2px;}
-  .eco-board{width:100%;max-width:1200px;height:auto;display:block;margin:0 auto;}
+  .eco-board{width:100%;max-width:1070px;height:auto;display:block;margin:0 auto;}
   .eco-board .gd{fill:var(--bone-3);fill-opacity:.16;}
   .eco-board .rim{fill:none;stroke:var(--bone-3);stroke-opacity:.16;stroke-width:1.2;stroke-dasharray:2 8;}
   .eco-board .tick{fill:none;stroke:var(--bone-3);stroke-opacity:.5;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
@@ -921,6 +937,16 @@
     .tc-t{grid-column:2;} .tc-d{grid-column:2;}
     .tchain::before{left:21px;}
   }
+
+  /* mobile: reclaim side space and right-size the hero */
+  @media (max-width:640px){
+    :root{--maxw:100%;}
+    .container{padding:0 20px;}
+  }
+  @media (max-width:560px){
+    h1.hero{font-size:clamp(1.85rem,7.6vw,2.55rem);line-height:1.13;}
+    .hero{max-width:none;}
+  }
   </style>
 </head>
 <body>
@@ -933,16 +959,22 @@
       <img class="brand-logo" src="indoslogo.png" alt="" aria-hidden="true">
       Independence OS
     </a>
-    <nav class="nav-links">
-      <a data-nav="overview" href="#overview">Overview</a>
-      <a data-nav="products" href="#products">Products</a>
-      <a data-nav="vision" href="#vision">Vision</a>
-      <a data-nav="team" href="#team">Team</a>
+    <div class="nav-right">
+      <nav class="nav-links" id="navLinks">
+        <a data-nav="overview" href="#overview">Overview</a>
+        <a data-nav="products" href="#products">Products</a>
+        <a data-nav="vision" href="#vision">Vision</a>
+        <a data-nav="team" href="#team">Team</a>
+      </nav>
       <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" aria-pressed="true" title="Toggle theme">
         <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.1"></circle><path d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6M18.7 18.7l-1.6-1.6M6.9 6.9 5.3 5.3"></path></svg>
         <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.4A8 8 0 1 1 9.6 4 6.3 6.3 0 0 0 20 14.4z"></path></svg>
       </button>
-    </nav>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <svg class="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3.5 7h17M3.5 12h17M3.5 17h17"></path></svg>
+        <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"></path></svg>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -1127,28 +1159,28 @@
           <h2>Everything runs around one practice.</h2>
         </div>
         <div class="eco-wrap">
-          <svg class="eco-board" viewBox="0 0 900 680" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The clinic at the center, with four groups of AI products plugging into one shared record around it">
+          <svg class="eco-board" viewBox="0 0 1120 680" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The clinic at the center, with four groups of AI products plugging into one shared record around it">
               <defs><pattern id="ecogrid" width="26" height="26" patternUnits="userSpaceOnUse"><circle class="gd" cx="1" cy="1" r="1"></circle></pattern></defs>
-              <rect x="0" y="0" width="900" height="680" fill="url(#ecogrid)"></rect>
-              <rect class="rim" x="24" y="24" width="852" height="632" rx="18"></rect>
+              <rect x="0" y="0" width="1120" height="680" fill="url(#ecogrid)"></rect>
+              <rect class="rim" x="24" y="24" width="1072" height="632" rx="18"></rect>
               <path class="tick" d="M24,40 L24,24 L40,24"></path>
-              <path class="tick" d="M860,24 L876,24 L876,40"></path>
+              <path class="tick" d="M1080,24 L1096,24 L1096,40"></path>
               <path class="tick" d="M24,640 L24,656 L40,656"></path>
-              <path class="tick" d="M860,656 L876,656 L876,640"></path>
+              <path class="tick" d="M1080,656 L1096,656 L1096,640"></path>
               <path class="out" d="M24,334 L16,340 L24,346"></path>
-              <path class="out" d="M876,334 L884,340 L876,346"></path>
-              <line class="chan t" x1="308" y1="208" x2="344" y2="286"></line>
-              <line class="chan g" x1="592" y1="248" x2="556" y2="286"></line>
-              <line class="chan b" x1="308" y1="438" x2="344" y2="394"></line>
-              <line class="chan g" x1="592" y1="478" x2="556" y2="394"></line>
-              <rect class="port t" x="336" y="280" width="16" height="12" rx="3"></rect>
-              <rect class="port g" x="548" y="280" width="16" height="12" rx="3"></rect>
-              <rect class="port b" x="336" y="388" width="16" height="12" rx="3"></rect>
-              <rect class="port g" x="548" y="388" width="16" height="12" rx="3"></rect>
+              <path class="out" d="M1096,334 L1104,340 L1096,346"></path>
+              <line class="chan t" x1="308" y1="208" x2="454" y2="286"></line>
+              <line class="chan g" x1="812" y1="248" x2="666" y2="286"></line>
+              <line class="chan b" x1="308" y1="438" x2="454" y2="394"></line>
+              <line class="chan g" x1="812" y1="478" x2="666" y2="394"></line>
+              <rect class="port t" x="446" y="280" width="16" height="12" rx="3"></rect>
+              <rect class="port g" x="658" y="280" width="16" height="12" rx="3"></rect>
+              <rect class="port b" x="446" y="388" width="16" height="12" rx="3"></rect>
+              <rect class="port g" x="658" y="388" width="16" height="12" rx="3"></rect>
               <circle class="jx jt" cx="308" cy="208" r="3.6"></circle>
-              <circle class="jx jg" cx="592" cy="248" r="3.6"></circle>
+              <circle class="jx jg" cx="812" cy="248" r="3.6"></circle>
               <circle class="jx jb" cx="308" cy="438" r="3.6"></circle>
-              <circle class="jx jg" cx="592" cy="478" r="3.6"></circle>
+              <circle class="jx jg" cx="812" cy="478" r="3.6"></circle>
               <rect class="mod t" x="44" y="68" width="264" height="140" rx="11"></rect>
               <text class="gname" x="62" y="96">Foundation</text>
               <line class="gdiv t" x1="60" y1="108" x2="292" y2="108"></line>
@@ -1156,15 +1188,15 @@
               <text class="pdesc" x="80" y="150">the shared data layer</text></a>
               <a class="eco-link" data-eco="models"><circle class="pd t" cx="66" cy="170" r="3"></circle><text class="pi" x="80" y="174">Models</text>
               <text class="pdesc" x="80" y="190">clinical and voice models</text></a>
-              <rect class="mod g" x="592" y="68" width="264" height="180" rx="11"></rect>
-              <text class="gname" x="610" y="96">In the clinic</text>
-              <line class="gdiv g" x1="608" y1="108" x2="840" y2="108"></line>
-              <a class="eco-link" data-eco="scribe"><circle class="pd g" cx="614" cy="130" r="3"></circle><text class="pi" x="628" y="134">Scribe</text>
-              <text class="pdesc" x="628" y="150">notes and coding, per visit</text></a>
-              <a class="eco-link" data-eco="clinics"><circle class="pd g" cx="614" cy="170" r="3"></circle><text class="pi" x="628" y="174">Clinics</text>
-              <text class="pdesc" x="628" y="190">voice agent at the front desk</text></a>
-              <a class="eco-link" data-eco="guardian"><circle class="pd g" cx="614" cy="210" r="3"></circle><text class="pi" x="628" y="214">Guardian</text>
-              <text class="pdesc" x="628" y="230">care tracking over time</text></a>
+              <rect class="mod g" x="812" y="68" width="264" height="180" rx="11"></rect>
+              <text class="gname" x="830" y="96">In the clinic</text>
+              <line class="gdiv g" x1="828" y1="108" x2="1060" y2="108"></line>
+              <a class="eco-link" data-eco="scribe"><circle class="pd g" cx="834" cy="130" r="3"></circle><text class="pi" x="848" y="134">Scribe</text>
+              <text class="pdesc" x="848" y="150">notes and coding, per visit</text></a>
+              <a class="eco-link" data-eco="clinics"><circle class="pd g" cx="834" cy="170" r="3"></circle><text class="pi" x="848" y="174">Clinics</text>
+              <text class="pdesc" x="848" y="190">voice agent at the front desk</text></a>
+              <a class="eco-link" data-eco="guardian"><circle class="pd g" cx="834" cy="210" r="3"></circle><text class="pi" x="848" y="214">Guardian</text>
+              <text class="pdesc" x="848" y="230">care tracking over time</text></a>
               <rect class="mod b" x="44" y="438" width="264" height="180" rx="11"></rect>
               <text class="gname" x="62" y="466">Revenue and ops</text>
               <line class="gdiv b" x1="60" y1="478" x2="292" y2="478"></line>
@@ -1174,19 +1206,19 @@
               <text class="pdesc" x="80" y="560">eligibility and payers</text></a>
               <a class="eco-link" data-eco="supply"><circle class="pd b" cx="66" cy="580" r="3"></circle><text class="pi" x="80" y="584">Supply chain</text>
               <text class="pdesc" x="80" y="600">inventory and ordering</text></a>
-              <rect class="mod g" x="592" y="478" width="264" height="140" rx="11"></rect>
-              <text class="gname" x="610" y="506">Beyond the clinic</text>
-              <line class="gdiv g" x1="608" y1="518" x2="840" y2="518"></line>
-              <a class="eco-link" data-eco="castle"><circle class="pd g" cx="614" cy="540" r="3"></circle><text class="pi" x="628" y="544">Castle</text>
-              <text class="pdesc" x="628" y="560">buying and running practices</text></a>
-              <a class="eco-link" data-eco="bishop"><circle class="pd g" cx="614" cy="580" r="3"></circle><text class="pi" x="628" y="584">Bishop</text>
-              <text class="pdesc" x="628" y="600">the patient assistant</text></a>
-              <rect class="ecocore" x="344" y="286" width="212" height="108" rx="14"></rect>
-              <line class="coreline" x1="344" y1="312" x2="556" y2="312"></line>
-              <circle class="corelive" cx="366" cy="300" r="3"></circle>
-              <text class="corelivetx" x="378" y="303">live in our clinics</text>
-              <text class="coretx" x="450" y="350">The clinic</text>
-              <text class="coresub" x="450" y="372">one shared record</text>
+              <rect class="mod g" x="812" y="478" width="264" height="140" rx="11"></rect>
+              <text class="gname" x="830" y="506">Beyond the clinic</text>
+              <line class="gdiv g" x1="828" y1="518" x2="1060" y2="518"></line>
+              <a class="eco-link" data-eco="castle"><circle class="pd g" cx="834" cy="540" r="3"></circle><text class="pi" x="848" y="544">Castle</text>
+              <text class="pdesc" x="848" y="560">buying and running practices</text></a>
+              <a class="eco-link" data-eco="bishop"><circle class="pd g" cx="834" cy="580" r="3"></circle><text class="pi" x="848" y="584">Bishop</text>
+              <text class="pdesc" x="848" y="600">the patient assistant</text></a>
+              <rect class="ecocore" x="454" y="286" width="212" height="108" rx="14"></rect>
+              <line class="coreline" x1="454" y1="312" x2="666" y2="312"></line>
+              <circle class="corelive" cx="476" cy="300" r="3"></circle>
+              <text class="corelivetx" x="488" y="303">live in our clinics</text>
+              <text class="coretx" x="560" y="350">The clinic</text>
+              <text class="coresub" x="560" y="372">one shared record</text>
             </svg>
           <p class="eco-cap">Our clinics sit at the center. Every group of AI products plugs into the same record, from the visit and the front desk to billing and what comes next. As each one proves out in our own practices, the circle widens to others.</p>
         </div>
@@ -2066,6 +2098,17 @@ if (document.readyState==='loading') document.addEventListener('DOMContentLoaded
       setTimeout(function(){ el.classList.remove('ov-flash'); }, 1500);
     });
   });
+})();
+</script>
+<script>
+(function(){
+  var hdr=document.querySelector('header.nav'), tog=document.getElementById('navToggle');
+  if(!hdr||!tog) return;
+  function setOpen(o){ hdr.classList.toggle('menu-open',o); tog.setAttribute('aria-expanded',o?'true':'false'); tog.setAttribute('aria-label', o?'Close menu':'Open menu'); }
+  tog.addEventListener('click', function(){ setOpen(!hdr.classList.contains('menu-open')); });
+  document.querySelectorAll('#navLinks [data-nav]').forEach(function(a){ a.addEventListener('click', function(){ setOpen(false); }); });
+  window.addEventListener('resize', function(){ if(window.innerWidth>760) setOpen(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') setOpen(false); });
 })();
 </script>
 </body>
