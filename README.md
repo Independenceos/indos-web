@@ -4,7 +4,7 @@ Marketing site for **Independence OS**, which runs its own clinics and builds th
 
 It's a single, self-contained page with client-side (hash) routing across four views: **Overview**, **Products**, **Vision**, and **Team**. No framework, no build step, no dependencies.
 
-**Live:** independenceos.ai
+**Live:** [independenceos.ai](https://independenceos.ai)
 
 ## Run locally
 
@@ -67,4 +67,4 @@ Any other static host (Netlify, Vercel, S3, …) works too — just publish the 
 
 ---
 
-Houston · Bangalore — [hello@independenceos.ai](mailto:hello@independenceos.ai)
+Houston · Bangalore — [admin@independenceos.ai](mailto:admin@independenceos.ai)
