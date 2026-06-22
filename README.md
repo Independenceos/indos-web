@@ -53,7 +53,7 @@ Everything lives in `index.html`:
 
 This repo is published with GitHub Pages from the default branch at:
 
-> <https://tasmay-tibrewal.github.io/indos-web/>
+> <https://independenceos.github.io/indos-web/>
 
 Requirements for it to serve the site (rather than the README):
 
